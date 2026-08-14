@@ -1,0 +1,9 @@
+{
+  "BudgetName": "ChangeMoment-Test-Monthly-USD-10",
+  "BudgetLimit": {
+    "Amount": "10",
+    "Unit": "USD"
+  },
+  "TimeUnit": "MONTHLY",
+  "BudgetType": "COST"
+}

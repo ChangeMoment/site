@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManageOnlyChangeMomentLightsailResources",
+      "Effect": "Allow",
+      "Action": [
+        "lightsail:AllocateStaticIp",
+        "lightsail:AttachStaticIp",
+        "lightsail:CreateInstances",
+        "lightsail:GetBlueprints",
+        "lightsail:GetBundles",
+        "lightsail:GetInstance",
+        "lightsail:GetInstanceAccessDetails",
+        "lightsail:GetInstanceMetricData",
+        "lightsail:GetInstancePortStates",
+        "lightsail:GetInstances",
+        "lightsail:GetOperations",
+        "lightsail:GetStaticIp",
+        "lightsail:GetStaticIps",
+        "lightsail:OpenInstancePublicPorts",
+        "lightsail:PutInstancePublicPorts",
+        "lightsail:RebootInstance",
+        "lightsail:StartInstance",
+        "lightsail:StopInstance"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIfExists": {
+          "aws:RequestedRegion": "ca-central-1"
+        }
+      }
+    },
+    {
+      "Sid": "ReadDeploymentIdentity",
+      "Effect": "Allow",
+      "Action": "sts:GetCallerIdentity",
+      "Resource": "*"
+    }
+  ]
+}
+

@@ -1,0 +1,16 @@
+[Unit]
+Description=Build and atomically publish ChangeMoment after a WordPress update
+After=network-online.target apache2.service mariadb.service
+
+[Service]
+Type=oneshot
+User=admin
+Group=www-data
+WorkingDirectory=/srv/changemoment/app
+ExecStart=/usr/local/sbin/changemoment-rebuild
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/changemoment /var/lib/changemoment /run/lock

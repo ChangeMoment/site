@@ -1,0 +1,957 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* ── ChangeMoment brand palette ───────────────────────────── */
+  --brand-copper: #b18369;   /* Faded Copper — selective warm CTAs, emotional accents */
+  --brand-sand: #ddbda6;     /* Desert Sand — gentle support tone, used sparingly */
+  --brand-bone: #e8ddd0;     /* Bone — soft supporting backgrounds */
+  --brand-sage: #c0c79e;     /* Dry Sage — visible calm brand accent */
+  --brand-muted-olive: #999a72; /* Muted Olive — rhythm, dividers, icon grounds */
+  --brand-deep-olive: #7c8067;  /* Deep Olive — grounded high-contrast brand presence */
+  --brand-white: #ffffff;    /* White — main background */
+
+  /* Derived soft tints for airy surfaces */
+  --brand-copper-soft: #eadbd3;
+  --brand-sage-soft: #eef1e5;
+  --brand-olive-soft: #f4f6ec;
+  --brand-bone-soft: #f8f4ef;
+  --brand-ink: #34382d;      /* olive near-black for text */
+  --brand-ink-muted: #69705e;
+
+  /* Brand fonts */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-fa-heading: 'Doran';
+  --font-fa-body: 'Pinar';
+
+  --background: #ffffff;
+  --foreground: #34382d;
+  --card: #ffffff;
+  --card-foreground: #34382d;
+  --popover: #ffffff;
+  --popover-foreground: #34382d;
+  --primary: #7c8067;
+  --primary-foreground: #ffffff;
+  --secondary: #eef1e5;
+  --secondary-foreground: #34382d;
+  --muted: #f8f4ef;
+  --muted-foreground: #69705e;
+  --accent: #c0c79e;
+  --accent-foreground: #34382d;
+  --destructive: #c0533b;
+  --destructive-foreground: #ffffff;
+  --border: rgba(124, 128, 103, 0.22);
+  --input: transparent;
+  --input-background: #f8faf3;
+  --switch-background: #c0c79e;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #c0c79e;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-copper: var(--brand-copper);
+  --color-sand: var(--brand-sand);
+  --color-bone: var(--brand-bone);
+  --color-sage: var(--brand-sage);
+  --color-muted-olive: var(--brand-muted-olive);
+  --color-deep-olive: var(--brand-deep-olive);
+  --color-copper-soft: var(--brand-copper-soft);
+  --color-sage-soft: var(--brand-sage-soft);
+  --color-olive-soft: var(--brand-olive-soft);
+  --color-bone-soft: var(--brand-bone-soft);
+  --color-ink: var(--brand-ink);
+  --color-ink-muted: var(--brand-ink-muted);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* English and French typography contract */
+  html[lang='en'] body,
+  html[lang='fr'] body,
+  html[lang='en'] button,
+  html[lang='fr'] button,
+  html[lang='en'] input,
+  html[lang='fr'] input,
+  html[lang='en'] textarea,
+  html[lang='fr'] textarea,
+  html[lang='en'] select,
+  html[lang='fr'] select,
+  html[lang='en'] .font-body,
+  html[lang='fr'] .font-body {
+    font-family: var(--font-body);
+  }
+
+  html[lang='en'] h1,
+  html[lang='en'] h2,
+  html[lang='en'] h3,
+  html[lang='en'] h4,
+  html[lang='fr'] h1,
+  html[lang='fr'] h2,
+  html[lang='fr'] h3,
+  html[lang='fr'] h4,
+  html[lang='en'] .font-heading,
+  html[lang='fr'] .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  /* Persian typography: Doran for titles, Pinar for body text; no letter-spacing */
+  html[lang='fa'],
+  html[lang='fa'] *,
+  html[lang='fa'] *::before,
+  html[lang='fa'] *::after {
+    letter-spacing: 0 !important;
+    font-kerning: normal;
+  }
+
+  html[lang='fa'] body,
+  html[lang='fa'] button,
+  html[lang='fa'] input,
+  html[lang='fa'] textarea,
+  html[lang='fa'] select,
+  html[lang='fa'] .font-body {
+    font-family: var(--font-fa-body) !important;
+  }
+
+  html[lang='fa'] h1,
+  html[lang='fa'] h2,
+  html[lang='fa'] h3,
+  html[lang='fa'] h4,
+  html[lang='fa'] h5,
+  html[lang='fa'] h6,
+  html[lang='fa'] .font-heading {
+    font-family: var(--font-fa-heading) !important;
+    line-height: 1.38 !important;
+  }
+
+  html[lang='fa'] h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem) !important;
+    line-height: 1.34 !important;
+  }
+
+  html[lang='fa'] h2 {
+    font-size: clamp(1.75rem, 3vw, 2.45rem) !important;
+    line-height: 1.36 !important;
+  }
+
+  html[lang='fa'] h3 {
+    font-size: clamp(1.2rem, 1.85vw, 1.55rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  html[lang='fa'] h4,
+  html[lang='fa'] h5,
+  html[lang='fa'] h6 {
+    font-size: 1.05rem !important;
+    line-height: 1.45 !important;
+  }
+
+
+  html[lang='fa'] .fa-hero-title {
+    font-size: clamp(1.45rem, 2.35vw, 2.45rem) !important;
+    line-height: 1.58 !important;
+  }
+
+  html[lang='fa'] .fa-support-card-title {
+    font-size: 0.92rem !important;
+    line-height: 1.72 !important;
+  }
+
+  html[lang='fa'] .fa-how-card-title {
+    font-size: 0.95rem !important;
+    line-height: 1.72 !important;
+  }
+
+  html[lang='fa'] .fa-blog-card-title {
+    font-size: 1rem !important;
+    line-height: 1.78 !important;
+  }
+
+  html[lang='fa'] .fa-step-number {
+    font-size: 2rem !important;
+    line-height: 1 !important;
+  }
+
+  /* Service pages: section headings and card titles in Persian — must live inside
+     @layer base so these !important rules outrank the global h2/h3 rules above. */
+  html[lang='fa'] .service-modern-body h2,
+  html[lang='fa'] .service-modern-body .online-fa-mixed-title {
+    font-size: clamp(1.05rem, 1.58vw, 1.42rem) !important;
+    line-height: 1.82 !important;
+  }
+
+  html[lang='fa'] .service-modern-body h3 {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Shared service-audience heading: Persian needs the same hierarchy as the
+     other section titles while retaining natural wrapping on narrow screens. */
+  html[lang='fa'] .service-modern-body .service-who-heading h2 {
+    font-size: clamp(1.45rem, 5.4vw, 1.85rem) !important;
+    line-height: 1.62 !important;
+    white-space: normal !important;
+  }
+
+  @media (min-width: 1024px) {
+    html[lang='fa'] .service-modern-body .service-who-heading h2 {
+      font-size: clamp(1.55rem, 2.1vw, 2.2rem) !important;
+      line-height: 1.55 !important;
+    }
+  }
+
+  /**
+  * Default typography styles for HTML elements.
+  * Headings use Cormorant Garamond; sizes are intentionally generous and calm.
+  */
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--brand-ink);
+    font-weight: 700 !important;
+    font-variant-position: normal;
+    font-variant-numeric: normal;
+    font-feature-settings: "ordn" 0, "sups" 0, "subs" 0;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700 !important;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    font-weight: 700 !important;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 700 !important;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 700 !important;
+    line-height: 1.3;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+
+  .no-ordinal {
+    font-variant-position: normal;
+    font-variant-numeric: normal;
+    font-feature-settings: "ordn" 0, "sups" 0, "subs" 0;
+  }
+  .font-heading { font-family: var(--font-heading); font-weight: 700 !important; }
+  .font-body { font-family: var(--font-body); }
+
+  /* Calm fade-up reveal driven by IntersectionObserver toggling .is-visible */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Gentle image reveal using clip-path */
+  .reveal-mask {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal-mask.is-visible {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Logo-inspired hero curve drawing animation */
+  .draw-line {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: draw 2.4s ease-out forwards;
+  }
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Dot travelling along the "moment of change" curve */
+  .moment-dot {
+    animation: moment-travel 6s ease-in-out infinite alternate;
+  }
+  @keyframes moment-travel {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+  }
+
+  .card-lift {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -28px rgba(124, 128, 103, 0.36);
+    border-color: var(--brand-muted-olive);
+  }
+
+  .service-card-uniform {
+    background-color: var(--brand-bone-soft) !important;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.35s ease;
+  }
+
+  .service-card-uniform:hover {
+    background-color: var(--brand-sage) !important;
+  }
+
+  .sage-glow:hover {
+    box-shadow: 0 0 0 3px rgba(192, 199, 158, 0.45);
+  }
+  .support-gather-section {
+    overflow-anchor: none;
+    overflow: visible;
+    contain: layout style;
+  }
+
+  .support-card-gather {
+    opacity: 0;
+    filter: blur(12px) saturate(0.82);
+    transform: translate3d(calc(var(--gather-x, 0) * 1.45), calc(var(--gather-y, 0) * 1.45), 0) rotate(calc(var(--gather-rotate, 0deg) * 2.4)) scale(0.54);
+    transition: box-shadow 360ms ease, transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0ms;
+    will-change: opacity, filter, transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: center;
+  }
+
+  .support-gather-section.is-visible .support-card-gather {
+    animation: support-petal-bloom 1280ms cubic-bezier(0.16, 1, 0.3, 1) var(--gather-delay, 0ms) both;
+  }
+
+  .support-gather-section.is-complete .support-card-gather {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    animation: none;
+    will-change: auto;
+  }
+
+  .support-gather-section.is-complete .support-card-gather:hover {
+    transform: translate3d(0, -9px, 0) rotate(0deg) scale(1.035);
+    box-shadow: 0 38px 72px -30px rgba(52, 56, 45, 0.46);
+  }
+
+  @keyframes support-petal-bloom {
+    0% {
+      opacity: 0;
+      filter: blur(12px) saturate(0.82);
+      transform: translate3d(calc(var(--gather-x, 0) * 1.45), calc(var(--gather-y, 0) * 1.45), 0) rotate(calc(var(--gather-rotate, 0deg) * 2.4)) scale(0.54);
+    }
+    48% {
+      opacity: 1;
+      filter: blur(2px) saturate(1.05);
+      transform: translate3d(calc(var(--gather-x, 0) * -0.16), calc(var(--gather-y, 0) * -0.16), 0) rotate(calc(var(--gather-rotate, 0deg) * -0.55)) scale(1.08);
+    }
+    68% {
+      filter: blur(0) saturate(1);
+      transform: translate3d(calc(var(--gather-x, 0) * 0.06), calc(var(--gather-y, 0) * 0.06), 0) rotate(calc(var(--gather-rotate, 0deg) * 0.22)) scale(0.975);
+    }
+    84% {
+      transform: translate3d(calc(var(--gather-x, 0) * -0.025), calc(var(--gather-y, 0) * -0.025), 0) rotate(calc(var(--gather-rotate, 0deg) * -0.08)) scale(1.018);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0) saturate(1);
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .reveal-mask { clip-path: inset(0 0 0 0); }
+  .draw-line { stroke-dashoffset: 0; }
+  .support-card-gather {
+    opacity: 0;
+    transform: none !important;
+    transition: opacity 200ms ease !important;
+    transition-delay: 0ms !important;
+    will-change: auto !important;
+  }
+  .support-gather-section.is-visible .support-card-gather {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+}
+
+@keyframes serviceHeroDrift {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.075); }
+}
+
+/* Hide the page scrollbar while preserving scroll behavior on desktop and mobile. */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Mobile hamburger menu: hide internal scrollbar but keep touch scrolling. */
+.mobile-menu-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+
+@media (max-width: 767px) {
+  html[lang='fa'],
+  html[lang='fa'] body,
+  html[lang='fa'] #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip !important;
+  }
+
+  html[lang='fa'] main,
+  html[lang='fa'] header,
+  html[lang='fa'] footer,
+  html[lang='fa'] section {
+    max-width: 100vw;
+  }
+
+  html[lang='fa'] .support-gather-section {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+
+  html[lang='fa'] .home-hero-image {
+    transform: scaleX(-1);
+    object-position: 96% 50% !important;
+  }
+
+  html[lang='fa'] .home-hero-linear {
+    background: linear-gradient(270deg, rgba(255,255,255,0.74) 0%, rgba(255,255,255,0.62) 34%, rgba(255,255,255,0.26) 58%, rgba(255,255,255,0) 100%) !important;
+  }
+
+  html[lang='fa'] .home-hero-radial {
+    background: radial-gradient(circle at 92% 72%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.18) 55%, rgba(255,255,255,0) 78%) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .support-gather-section {
+    contain: none;
+    overflow: visible;
+  }
+
+  .support-card-gather,
+  .support-gather-section.is-visible .support-card-gather,
+  .support-gather-section.is-complete .support-card-gather {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1) !important;
+    animation: none !important;
+    transition: box-shadow 260ms ease, transform 260ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+    transition-delay: 0ms !important;
+    will-change: auto !important;
+  }
+
+  .support-gather-section.is-complete .support-card-gather:hover {
+    transform: translate3d(0, -4px, 0) scale(1.012) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .support-card-gather {
+    opacity: 0 !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: transform, opacity !important;
+  }
+
+  .support-card-gather:nth-child(odd) {
+    transform: translate3d(-28px, 10px, 0) !important;
+  }
+
+  .support-card-gather:nth-child(even) {
+    transform: translate3d(28px, 10px, 0) !important;
+  }
+
+  .support-gather-section.is-visible .support-card-gather {
+    animation: support-mobile-slide-in 560ms cubic-bezier(0.2, 0.82, 0.22, 1) var(--gather-delay, 0ms) both !important;
+  }
+
+  .support-gather-section.is-complete .support-card-gather {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translate3d(0, 0, 0) !important;
+    animation: none !important;
+    transition: box-shadow 260ms ease, transform 260ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+    will-change: auto !important;
+  }
+
+  .support-gather-section.is-complete .support-card-gather:hover {
+    transform: translate3d(0, -4px, 0) scale(1.012) !important;
+  }
+}
+
+@keyframes support-mobile-slide-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--mobile-enter-x, -24px), 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .support-card-gather:nth-child(odd) {
+    --mobile-enter-x: -28px;
+  }
+
+  .support-card-gather:nth-child(even) {
+    --mobile-enter-x: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .support-gather-section.is-visible .support-card-gather {
+    animation: support-mobile-slide-in 500ms cubic-bezier(0.2, 0.82, 0.22, 1) calc(var(--gather-delay, 0ms) * 0.32) both !important;
+  }
+
+  .support-gather-section.is-complete .support-card-gather {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translate3d(0, 0, 0) !important;
+    animation: none !important;
+    transition: box-shadow 240ms ease, transform 240ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+    will-change: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .support-card-gather {
+    border-radius: 2.75rem !important;
+  }
+
+  .support-card-gather:nth-child(odd) {
+    background-color: var(--brand-bone) !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .support-card-gather:nth-child(even) {
+    background-color: #C0C79E !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+/* Final support-card corner override — keep mobile and desktop identical. */
+.support-card-gather,
+.support-card-gather:nth-child(odd),
+.support-card-gather:nth-child(even) {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 2.75rem !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 2.75rem !important;
+}
+
+@media (max-width: 767px) {
+  .support-card-gather,
+  .support-card-gather:nth-child(odd),
+  .support-card-gather:nth-child(even) {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 2.75rem !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 2.75rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html[lang='fa'] .home-hero-actions {
+    align-items: flex-end !important;
+    text-align: right;
+  }
+
+  html[lang='fa'] .home-hero-actions a {
+    width: 12.5rem !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  html[lang='fa'] .home-hero-actions {
+    display: flex !important;
+    width: 100% !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    direction: rtl !important;
+  }
+
+  html[lang='fa'] .home-hero-actions a {
+    width: 12.5rem !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    align-self: flex-end !important;
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  html[lang='fa'] .service-hero-image {
+    transform: scaleX(-1) !important;
+  }
+}
+
+html[lang='fa'] .home-support-heading-fa {
+  max-width: none !important;
+}
+
+html[lang='fa'] .home-support-heading-fa h2 {
+  white-space: nowrap;
+  font-size: clamp(1rem, 4.2vw, 2.7rem);
+}
+
+@media (max-width: 767px) {
+  html[lang='fa'] .home-support-heading-fa h2 {
+    white-space: normal !important;
+    font-size: clamp(1.45rem, 7.4vw, 2.05rem) !important;
+    line-height: 1.55 !important;
+  }
+}
+
+html[lang='fa'] .welcome-eyebrow-fa {
+  letter-spacing: 0 !important;
+}
+
+.welcome-eyebrow-fa,
+html[lang='fa'] .welcome-eyebrow-fa,
+[dir='rtl'] .welcome-eyebrow-fa {
+  letter-spacing: 0 !important;
+  font-kerning: normal !important;
+}
+
+@media (max-width: 767px) {
+  .online-how-grid,
+  .online-how-visual,
+  .online-how-frame,
+  .online-how-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: clip !important;
+  }
+
+  .online-how-glow {
+    right: 0 !important;
+    max-width: 42vw !important;
+    opacity: 0.65;
+  }
+
+  .online-how-frame {
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .online-how-note {
+    position: static !important;
+    margin: 0.75rem 0 0 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  .online-how-copy .reveal,
+  .online-how-copy,
+  .online-how-copy * {
+    max-width: 100%;
+  }
+}
+
+/* Couples service: retain a calm, single-line desktop heading without affecting compact layouts. */
+@media (min-width: 1024px) {
+  .service-modern-body .couples-helpful-heading h2 {
+    font-size: clamp(1.65rem, 2vw, 2rem);
+    line-height: 1.18;
+    white-space: nowrap;
+  }
+}
+
+/* Introductory titles in the shared service template: keep long desktop titles
+   comfortably within two lines without inserting manual line breaks. */
+@media (min-width: 1024px) {
+  .service-modern-body .service-intro-heading h2,
+  .service-modern-body h2.service-intro-heading {
+    font-size: clamp(2rem, 2.45vw, 2.35rem);
+    line-height: 1.15;
+  }
+
+  html[lang='fa'] .service-modern-body .service-intro-heading h2,
+  html[lang='fa'] .service-modern-body h2.service-intro-heading {
+    font-size: clamp(1.18rem, 1.55vw, 1.4rem) !important;
+    line-height: 1.82 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  html[lang='fa'] .online-fa-nowrap-heading {
+    max-width: none !important;
+  }
+
+  html[lang='fa'] .online-fa-nowrap-heading h2 {
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  html[lang='fa'] .online-fa-mixed-title {
+    white-space: nowrap !important;
+  }
+}
+
+html[lang='fa'] .online-who-card-title,
+html[lang='fa'] .online-how-card-title {
+  font-size: 0.78rem !important;
+  line-height: 1.5 !important;
+}
+
+@media (min-width: 1024px) {
+  html[lang='fa'] .online-who-card-title,
+  html[lang='fa'] .online-how-card-title {
+    white-space: nowrap !important;
+  }
+}
+
+html[lang='fa'] .online-who-card-title,
+html[lang='fa'] .online-how-card-title {
+  font-size: 0.62rem !important;
+  line-height: 1.6 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+@media (min-width: 1024px) {
+  html[lang='fa'] .online-who-card-title,
+  html[lang='fa'] .online-how-card-title {
+    white-space: normal !important;
+  }
+}
+
+
+
+/* Service page Persian font overrides are inside @layer base above (line ~269).
+   Unlayered !important cannot override @layer base !important per CSS cascade spec. */
+
+/* Persian Couples service: the benefit-list heading stays on one desktop line,
+   while narrow viewports retain natural wrapping. */
+@media (min-width: 1024px) {
+  html[lang='fa'] .service-modern-body .couples-fa-list-heading h2 {
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem) !important;
+    line-height: 1.75 !important;
+    white-space: nowrap;
+  }
+}
+
+/* Family service: keep the helpfulness heading on one desktop line in all languages.
+   It remains naturally responsive below the desktop breakpoint. */
+@media (min-width: 1024px) {
+  .service-modern-body .family-helpful-heading h2 {
+    font-size: clamp(1.6rem, 1.9vw, 1.95rem);
+    line-height: 1.18;
+    white-space: nowrap;
+  }
+
+  html[lang='fa'] .service-modern-body .family-helpful-heading h2 {
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem) !important;
+    line-height: 1.75 !important;
+  }
+}
+
+/* Shared "Who is this service for?" heading across all 14 service pages.
+   It uses the same scale as the other primary section titles, gains a wider
+   desktop measure, and wraps naturally whenever the viewport cannot support one line. */
+@media (min-width: 1024px) {
+  .service-modern-body .service-who-heading h2 {
+    font-size: clamp(1.75rem, 2.4vw, 2.5rem);
+    line-height: 1.14;
+    white-space: normal;
+  }
+
+}
+
+/* Family service teen card: one calm desktop line in Persian; it wraps normally below desktop. */
+@media (min-width: 1024px) {
+  html[lang='fa'] .service-modern-body .family-fa-teen-heading h2 {
+    font-size: clamp(1rem, 1.2vw, 1.16rem) !important;
+    line-height: 1.75 !important;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,16 @@
+node_modules/
+.pnpm-store/
+__pycache__/
+*.py[cod]
+.prerender/
+.playwright-cli/
+dist/
+coverage/
+playwright-report/
+test-results/
+output/
+.env
+.env.*
+!.env.example
+*.log
+deploy/tmp/
