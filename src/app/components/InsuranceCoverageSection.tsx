@@ -31,7 +31,6 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
             </div>
             <ParticipatingInsurers
               compact
-              heading={t("insuranceCoverage.insurersHeading")}
               className="mx-auto mt-10 max-w-5xl border-t border-white/10 pt-8"
             />
           </Reveal>
@@ -69,7 +68,6 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
             </div>
             <Reveal delay={140}>
               <ParticipatingInsurers
-                heading={t("insuranceCoverage.insurersHeading")}
                 className="mt-14 border-t border-white/10 pt-10 md:mt-16"
               />
             </Reveal>

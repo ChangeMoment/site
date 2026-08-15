@@ -16,6 +16,7 @@ for (const route of routes) {
     failures.push(`${route.path}: missing index.html`);
     continue;
   }
+  if (html.includes("\0")) failures.push(`${route.path}: contains invalid NUL bytes`);
   if (!/<div id="root">\s*\S/i.test(html)) failures.push(`${route.path}: empty prerendered root`);
   if (!/<link rel="canonical"/i.test(html)) failures.push(`${route.path}: missing canonical`);
   if (!/<meta name="description" content="[^"].+"/i.test(html)) failures.push(`${route.path}: missing description`);

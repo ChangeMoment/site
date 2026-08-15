@@ -199,8 +199,9 @@ export const fr: TranslationShape = {
     },
     directBilling: {
       eyebrow: "Assurance et couverture",
-      heading: "Facturation directe: moins de paperasse, plus de guérison",
-      intro: "Chez ChangeMoment, nous croyons que rien ne devrait vous empêcher d'accéder au soutien dont vous avez besoin. C'est pourquoi nous offrons la facturation directe avec la plupart des grands assureurs. Vous ne payez que votre part au moment de la séance, et nous nous occupons du reste.",
+      heading: "Facturation directe",
+      tagline: "Moins de paperasse, plus de temps pour guérir",
+      intro: "Nous offrons la facturation directe avec la plupart des assureurs. Si votre régime ne la permet pas, nous vous envoyons un reçu valide après chaque séance afin que vous puissiez demander un remboursement.",
       benefits: [
         {
           title: "Payez seulement votre part",
@@ -211,8 +212,8 @@ export const fr: TranslationShape = {
           body: "Nous gérons toutes les soumissions et les communications avec votre assureur, pour que vous puissiez arriver à votre séance entièrement concentré sur votre mieux-être.",
         },
         {
-          title: "Sachez à quoi vous attendre",
-          body: "Nous vérifions votre couverture à l'avance pour vous donner une image claire de ce qui est inclus avant le début de votre rendez-vous. Aucune mauvaise surprise.",
+          title: "Des reçus lorsque nécessaire",
+          body: "Si la facturation directe n'est pas offerte par votre régime, nous vous envoyons un reçu valide après chaque séance pour votre demande de remboursement.",
         },
       ],
       stepsHeading: "Comment ça fonctionne",
@@ -230,7 +231,7 @@ export const fr: TranslationShape = {
           body: "Arrivez à votre séance et laissez-nous gérer la facturation. Nous traitons votre réclamation directement et ne débitons que la partie non couverte de votre carte.",
         },
       ],
-      note: "La facturation directe est disponible avec la plupart des grands assureurs. Si votre régime ne la prend pas en charge, nous vous fournissons des reçus détaillés pour une soumission indépendante.",
+      note: "La couverture et l'admissibilité à la facturation directe varient selon le régime. Veuillez confirmer vos avantages auprès de votre assureur avant le premier rendez-vous.",
       insurersHeading: "Les assureurs avec lesquels nous travaillons",
     },
   },

@@ -15,7 +15,8 @@ import {
   ScanSearch,
   CheckCircle2,
 } from "lucide-react";
-import changeMomentIcon from "../../imports/ChangeMoment_Icon_Dark_Dry_Sage__1_.png";
+import type { CSSProperties } from "react";
+import ChangeMomentLogo from "../../imports/ChangeMomentLogo";
 import bitaFounderImage from "../../imports/bita-ramezannia-founder.jpg";
 import { Seo } from "../components/Seo";
 import { PageHero } from "../components/PageHero";
@@ -88,11 +89,14 @@ export function About() {
           </Reveal>
           <Reveal delay={120}>
             <div className="mx-auto flex min-h-[280px] w-full max-w-[400px] items-center justify-center md:min-h-[320px] lg:min-h-[380px]">
-              <img
-                src={changeMomentIcon}
-                alt="ChangeMoment"
-                className="h-auto w-56 object-contain drop-shadow-[0_22px_34px_rgba(52,56,45,0.16)] md:w-64 lg:w-72"
-              />
+              <div
+                role="img"
+                aria-label="ChangeMoment"
+                className="h-[17rem] w-[14.85rem] text-[var(--brand-copper)] drop-shadow-[0_22px_34px_rgba(91,61,44,0.14)] md:h-[19rem] md:w-[16.6rem] lg:h-[21rem] lg:w-[18.35rem]"
+                style={{ "--fill-0": "currentColor" } as CSSProperties}
+              >
+                <ChangeMomentLogo />
+              </div>
             </div>
           </Reveal>
         </div>
@@ -104,10 +108,10 @@ export function About() {
           <Reveal>
             <div className="relative mx-auto w-full max-w-2xl">
               <div
-                className="absolute -bottom-3 -start-3 size-28 rounded-bl-[2.75rem] border-b border-s border-[var(--brand-copper)]/45 md:-bottom-5 md:-start-5 md:size-40"
+                className="absolute -bottom-3 -left-3 size-28 rounded-bl-[2.75rem] border-b border-l border-[var(--brand-copper)]/45 md:-bottom-5 md:-left-5 md:size-40"
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-[2.75rem] rounded-tr-none bg-[var(--brand-olive-soft)] shadow-[0_24px_60px_rgba(52,56,45,0.14)] rtl:rounded-tl-none rtl:rounded-tr-[2.75rem]">
+              <div className="relative overflow-hidden rounded-[2.75rem] rounded-tr-none bg-[var(--brand-olive-soft)] shadow-[0_24px_60px_rgba(52,56,45,0.14)]">
                 <ImageWithFallback
                   src={bitaFounderImage}
                   alt={t("about.founder.photoAlt")}
@@ -120,19 +124,13 @@ export function About() {
 
           <Reveal delay={120}>
             <div className="mx-auto max-w-xl lg:mx-0">
-              <p className="text-sm uppercase tracking-[0.18em] text-[var(--brand-copper)]">
-                {t("about.founder.eyebrow")}
-              </p>
-              <h2 className="mt-3 text-[var(--brand-ink)]" style={{ fontSize: "clamp(2rem, 3.4vw, 3.15rem)", lineHeight: 1.08 }}>
-                {t("about.founder.heading")}
-              </h2>
-              <p className="mt-3 font-medium text-[var(--brand-deep-olive)]">
-                {t("about.founder.role")}
-              </p>
-              <blockquote className="mt-8 border-s-2 border-[var(--brand-copper)]/65 ps-6 md:ps-8">
+              <blockquote className="border-s-2 border-[var(--brand-copper)]/65 ps-6 md:ps-8">
                 <p className="font-heading text-[1.4rem] leading-[1.65] text-[var(--brand-ink)] md:text-[1.65rem] md:leading-[1.58] fa:font-body fa:text-[1.08rem] fa:leading-[2.05] md:fa:text-[1.18rem]">
                   {t("about.founder.quote")}
                 </p>
+                <footer className="mt-6 text-sm font-semibold tracking-[0.08em] text-[var(--brand-copper)]" dir="ltr">
+                  Bita Ramezannia M.A., R.C.C
+                </footer>
               </blockquote>
             </div>
           </Reveal>
@@ -210,13 +208,17 @@ export function About() {
       </Section>
 
       {/* Direct Billing */}
-      <section id="insurance-coverage" className="bg-[var(--brand-deep-olive)] py-20 md:py-28">
+      <section id="insurance-coverage" className="relative overflow-hidden bg-[var(--brand-bone-soft)] py-20 md:py-28">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-2 bg-[var(--brand-copper)]/65" aria-hidden="true" />
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-sm font-medium uppercase tracking-widest text-white/90">{t("about.directBilling.eyebrow")}</p>
-              <h2 className="font-heading text-white" style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.15 }}>{t("about.directBilling.heading")}</h2>
-              <p className="mt-5 text-lg font-medium leading-relaxed text-white/95">{t("about.directBilling.intro")}</p>
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-[var(--brand-deep-olive)]/65">{t("about.directBilling.eyebrow")}</p>
+              <h2 className="font-heading text-[var(--brand-deep-olive)]" style={{ fontSize: "clamp(2.5rem, 5vw, 4.8rem)", lineHeight: 0.98 }}>{t("about.directBilling.heading")}</h2>
+              <p className="mt-5 font-heading text-[var(--brand-copper)]" style={{ fontSize: "clamp(1.45rem, 2.8vw, 2.35rem)", lineHeight: 1.15 }}>
+                {t("about.directBilling.tagline")}
+              </p>
+              <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed text-[var(--brand-ink-muted)]">{t("about.directBilling.intro")}</p>
             </div>
           </Reveal>
 
@@ -228,12 +230,12 @@ export function About() {
               { key: "2", Icon: ScanSearch },
             ] as const).map(({ key, Icon }, i) => (
               <Reveal key={key} delay={i * 80}>
-                <div className="flex h-full flex-col rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur-sm">
-                  <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-white/15 text-white">
+                <div className="flex h-full flex-col rounded-3xl border border-[var(--brand-muted-olive)]/20 bg-white p-7 shadow-[0_18px_40px_-30px_rgba(52,56,45,0.32)]">
+                  <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-[var(--brand-sage-soft)] text-[var(--brand-deep-olive)]">
                     <Icon className="size-6" strokeWidth={1.5} />
                   </span>
-                  <h3 className="mt-5 text-white" style={{ fontSize: "1.15rem" }}>{t(`about.directBilling.benefits.${key}.title`)}</h3>
-                  <p className="mt-2 text-[0.95rem] font-medium leading-relaxed text-white/95">{t(`about.directBilling.benefits.${key}.body`)}</p>
+                  <h3 className="mt-5 text-[var(--brand-ink)]" style={{ fontSize: "1.15rem" }}>{t(`about.directBilling.benefits.${key}.title`)}</h3>
+                  <p className="mt-2 text-[0.95rem] leading-relaxed text-[var(--brand-ink-muted)]">{t(`about.directBilling.benefits.${key}.body`)}</p>
                 </div>
               </Reveal>
             ))}
@@ -241,8 +243,8 @@ export function About() {
 
           {/* How it works */}
           <Reveal delay={80}>
-            <div className="mt-14 rounded-[2.5rem] rounded-tr-none border border-white/15 bg-white/8 p-8 backdrop-blur-sm md:p-10">
-              <h3 className="text-center text-white" style={{ fontSize: "1.5rem" }}>{t("about.directBilling.stepsHeading")}</h3>
+            <div className="mt-14 rounded-[2.5rem] rounded-tr-none border border-[var(--brand-muted-olive)]/18 bg-[var(--brand-olive-soft)] p-8 md:p-10">
+              <h3 className="text-center text-[var(--brand-ink)]" style={{ fontSize: "1.5rem" }}>{t("about.directBilling.stepsHeading")}</h3>
               <div className="mt-8 grid gap-6 md:grid-cols-3">
                 {(["0", "1", "2"] as const).map((key, i) => (
                   <div key={key} className="flex gap-4">
@@ -250,15 +252,15 @@ export function About() {
                       {i + 1}
                     </div>
                     <div>
-                      <p className="font-heading text-white" style={{ fontSize: "1rem" }}>{t(`about.directBilling.steps.${key}.title`)}</p>
-                      <p className="mt-1.5 text-[0.95rem] font-medium leading-relaxed text-white/95">{t(`about.directBilling.steps.${key}.body`)}</p>
+                      <p className="font-heading text-[var(--brand-ink)]" style={{ fontSize: "1rem" }}>{t(`about.directBilling.steps.${key}.title`)}</p>
+                      <p className="mt-1.5 text-[0.95rem] leading-relaxed text-[var(--brand-ink-muted)]">{t(`about.directBilling.steps.${key}.body`)}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 flex items-start gap-3 rounded-2xl border border-white/15 bg-white/10 px-5 py-4">
-                <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-white/90" strokeWidth={1.75} />
-                <p className="text-[0.95rem] font-medium leading-relaxed text-white/95">{t("about.directBilling.note")}</p>
+              <div className="mt-8 flex items-start gap-3 rounded-2xl border border-[var(--brand-muted-olive)]/18 bg-white/70 px-5 py-4">
+                <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[var(--brand-deep-olive)]" strokeWidth={1.75} />
+                <p className="text-[0.95rem] leading-relaxed text-[var(--brand-ink-muted)]">{t("about.directBilling.note")}</p>
               </div>
             </div>
           </Reveal>
@@ -266,8 +268,7 @@ export function About() {
           {/* Insurance providers */}
           <Reveal delay={120}>
             <ParticipatingInsurers
-              heading={t("about.directBilling.insurersHeading")}
-              className="mt-16 md:mt-20"
+              className="mt-14 rounded-[2rem] border border-[var(--brand-muted-olive)]/16 bg-white px-5 py-7 shadow-[0_18px_42px_-34px_rgba(52,56,45,0.28)] md:mt-16 md:px-9"
             />
           </Reveal>
         </div>

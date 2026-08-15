@@ -41,7 +41,7 @@ const copy = {
       ],
     },
     introEyebrow: "Care teams, not profiles",
-    introTitle: "Support is organized around what you need, not around who happens to be available.",
+    introTitle: "Care begins with what you need and the kind of support that fits.",
     introBody:
       "ChangeMoment brings together therapists with complementary training, languages, and clinical focus areas. You do not need to decide what kind of care you need before you reach out; we begin by listening to what has been feeling hard.",
     teamsTitle: "The care teams we offer",
@@ -117,7 +117,7 @@ const copy = {
       ],
     },
     introEyebrow: "تیم درمانی، نه فهرستی از اسم‌ها",
-    introTitle: "حمایت بر اساس نیاز شما شکل می‌گیرد، نه بر اساس اینکه چه کسی در دسترس است.",
+    introTitle: "حمایت با توجه به نیاز شما و نوع مراقبتی که برایتان مناسب است شکل می‌گیرد.",
     introBody:
       "در ChangeMoment درمانگرانی با تجربه‌ها، زبان‌ها و حوزه‌های تخصصی متفاوت کنار هم کار می‌کنند. لازم نیست پیش از تماس بدانید دقیقاً چه نوع کمکی می‌خواهید؛ ما از شنیدن آنچه این روزها برایتان سخت شده شروع می‌کنیم.",
     teamsTitle: "تیم‌های درمانی ما",
@@ -169,7 +169,7 @@ const copy = {
       ],
     },
     introEyebrow: "Des équipes de soin, pas des profils",
-    introTitle: "Le soutien s’organise autour de vos besoins, pas autour de la disponibilité du moment.",
+    introTitle: "L’accompagnement commence par vos besoins et le type de soutien qui vous convient.",
     introBody:
       "ChangeMoment réunit des thérapeutes aux formations, langues et domaines cliniques complémentaires. Vous n’avez pas besoin de savoir quel type de soin il vous faut avant de nous joindre; nous commençons par écouter ce qui est difficile en ce moment.",
     teamsTitle: "Nos équipes de soin",
@@ -288,17 +288,17 @@ export function Team() {
       </section>
 
       {/* ── Section 3: Who I work with ───────────────────────── */}
-      <section className="bg-[var(--brand-olive-soft)] py-20 md:py-24">
+      <section className="bg-[var(--brand-deep-olive)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="text-center text-sm uppercase tracking-widest text-[var(--brand-deep-olive)]/60">{page.bita.focusEyebrow}</p>
-            <h2 className="mt-2 text-center text-[var(--brand-ink)]" style={{ fontSize: "clamp(1.6rem,2.5vw,2.2rem)" }}>{page.bita.focusHeading}</h2>
+            <p className="text-center text-sm uppercase tracking-widest text-white/60">{page.bita.focusEyebrow}</p>
+            <h2 className="mt-2 text-center text-white" style={{ fontSize: "clamp(1.6rem,2.5vw,2.2rem)" }}>{page.bita.focusHeading}</h2>
           </Reveal>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             {page.bita.focusItems.map((item, i) => (
               <div key={item.title} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]">
                 <Reveal delay={i * 60}>
-                  <div className="flex h-full flex-col gap-2 rounded-2xl border border-[var(--brand-muted-olive)]/20 bg-white/65 p-6 backdrop-blur-sm">
+                  <div className="flex h-full flex-col gap-2 rounded-2xl border border-white/12 bg-[var(--brand-sage-soft)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)]">
                     <h3 className="text-[var(--brand-ink)]" style={{ fontSize: "1.05rem" }}>{item.title}</h3>
                     <p className="text-sm leading-relaxed text-[var(--brand-ink-muted)]">{item.body}</p>
                   </div>

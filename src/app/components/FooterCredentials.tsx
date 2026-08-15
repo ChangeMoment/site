@@ -35,7 +35,7 @@ function PsychologyTodaySeal() {
   }, []);
 
   return (
-    <div className="relative flex min-h-[78px] min-w-[150px] items-center justify-center">
+    <div className="relative flex min-h-[78px] w-full min-w-[150px] items-center justify-center text-center">
       <a
         ref={sealRef}
         href="https://www.psychologytoday.com/profile/1057338"
@@ -50,7 +50,7 @@ function PsychologyTodaySeal() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Verified profile on Psychology Today"
-          className="inline-flex min-h-[66px] min-w-[150px] flex-col items-center justify-center rounded-sm border border-[#3c4322]/45 bg-white/70 px-4 py-2 text-center text-[#2f3520] shadow-[0_8px_24px_-18px_rgba(60,67,34,0.6)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-deep-olive)]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-olive-soft)]"
+          className="absolute left-1/2 inline-flex min-h-[66px] min-w-[150px] -translate-x-1/2 flex-col items-center justify-center rounded-sm border border-[#3c4322]/45 bg-white/70 px-4 py-2 text-center text-[#2f3520] shadow-[0_8px_24px_-18px_rgba(60,67,34,0.6)] transition-transform duration-200 hover:-translate-x-1/2 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-deep-olive)]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-olive-soft)]"
         >
           <span className="font-heading text-[1.05rem] leading-none">Psychology Today</span>
           <span className="mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-[#596045]">
@@ -95,7 +95,7 @@ export function FooterCredentials() {
           />
         </a>
 
-        <div className="flex min-h-24 items-center justify-center">
+        <div className="col-span-2 flex min-h-24 items-center justify-center lg:col-span-1">
           <PsychologyTodaySeal />
         </div>
 

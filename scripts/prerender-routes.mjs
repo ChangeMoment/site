@@ -72,7 +72,11 @@ for (const route of localizedRoutes(cmsPosts)) {
     continue;
   }
 
-  const { body, seo } = await renderRoute(route.path, route.code);
+  // Static hosts serve each generated directory at a trailing-slash URL.
+  // Render against that same URL so NavLink's exact active state hydrates
+  // identically in the browser (for example, /fa/ rather than /fa).
+  const renderedPath = route.path === "/" ? "/" : `${route.path}/`;
+  const { body, seo } = await renderRoute(renderedPath, route.code);
   await mkdir(resolve(target, ".."), { recursive: true });
   await writeFile(target, assemble(shell, body, seo, route), "utf8");
   rendered += 1;

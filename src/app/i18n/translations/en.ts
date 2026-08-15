@@ -105,7 +105,7 @@ export const en = {
       ],
     },
     insurance: {
-      heading: "Direct billing, made simpler",
+      heading: "Direct Billing",
       body: "We offer direct billing with many major insurers, so you can focus on your care instead of the paperwork.",
     },
     trust: {
@@ -150,7 +150,7 @@ export const en = {
     meta: { title: "About ChangeMoment", desc: "Learn about ChangeMoment Mental Health Centre in Coquitlam, our founder, mission, values, inclusive care, and direct insurance billing." },
     hero: {
       eyebrow: "About ChangeMoment",
-      heading: "Who we are?",
+      heading: "Who we are",
       tagline: "Care that meets you where you are",
       body: "ChangeMoment was built to be a calm, professional, and deeply human space for healing — where every person is welcomed with warmth, respect, and genuine clinical expertise.",
     },
@@ -197,8 +197,9 @@ export const en = {
     },
     directBilling: {
       eyebrow: "Insurance & Coverage",
-      heading: "Direct Billing: Less Paperwork, More Healing",
-      intro: "At ChangeMoment, we believe nothing should stand between you and the support you need. That's why we offer direct billing with most major insurance providers. You pay only your portion at the time of your session, and we handle the rest.",
+      heading: "Direct Billing",
+      tagline: "Less Paperwork, More Healing",
+      intro: "We offer direct billing with most insurance providers. If your plan does not support direct billing, we email you a valid receipt after every session so you can request reimbursement from your insurer.",
       benefits: [
         {
           title: "Pay Only Your Share",
@@ -209,8 +210,8 @@ export const en = {
           body: "We manage all submissions and communication with your insurance provider, so you can arrive at your session focused entirely on your wellbeing.",
         },
         {
-          title: "Know Before You Go",
-          body: "We verify your coverage in advance, giving you a clear picture of what's included before your appointment begins. No surprises, ever.",
+          title: "Receipts When You Need Them",
+          body: "If direct billing is unavailable for your plan, we send you a valid receipt after each session for your reimbursement claim.",
         },
       ],
       stepsHeading: "How It Works",
@@ -228,7 +229,7 @@ export const en = {
           body: "Show up to your session and let us take care of the billing. We process your claim directly and only charge the uncovered portion to your card.",
         },
       ],
-      note: "Direct billing is available with most major insurance providers. If your plan doesn't support direct billing, we provide detailed receipts for independent submission.",
+      note: "Coverage and direct-billing eligibility vary by plan. Please confirm your benefits directly with your insurer before your first appointment.",
       insurersHeading: "Insurance Providers We Work With",
     },
   },
