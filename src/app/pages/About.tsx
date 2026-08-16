@@ -28,7 +28,6 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { JaneNotice } from "../components/JaneNotice";
 import { ParticipatingInsurers } from "../components/ParticipatingInsurers";
 import { useLang } from "../i18n/LanguageProvider";
-import { aboutImage } from "../data/images";
 import { absoluteSiteUrl } from "../lib/seo";
 
 const valueIcons = [Layers, Rainbow, ShieldCheck, HeartHandshake, FlaskConical, Sprout, Network, Globe2, Sparkles];
