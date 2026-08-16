@@ -2740,8 +2740,6 @@ export function ServiceDetail() {
         title={localizedName}
         description={serviceSeoDescription}
         path={`/services/${service.slug}`}
-        image={heroImage}
-        imageAlt={localizedName}
         jsonLd={jsonLd}
       />
 

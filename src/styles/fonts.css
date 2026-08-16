@@ -1,94 +1,87 @@
 /* Brand typography
    Headings (EN/FR): Cormorant Garamond
    Body (EN/FR): IBM Plex Sans
-   Persian (FA): Doran headings and Pinar body — fully self-hosted. */
+   Persian (FA): Doran headings and Pinar body — fully self-hosted.
+
+   Persian font licences (commercial, purchased by ChangeMoment):
+     Doran 3 (Eco) — licence code 1UX6A0BI
+     Pinar V4      — licence code YTU7LVP6QP
+   See ATTRIBUTIONS.md. Files live in public/fonts and are served same-origin,
+   so no third-party font host is contacted and no CSP exception is required. */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
-/* Persian (FA): Doran — self-hosted */
+
+/* Persian (FA) titles: Doran — self-hosted.
+   The Eco licence ships two weights (Regular and ExtraBold). ExtraBold is
+   mapped to 700 as well so bold headings never fall back to a synthesised face. */
 @font-face {
   font-family: 'Doran';
-  src: url('/fonts/Doran-Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: block;
-}
-@font-face {
-  font-family: 'Doran';
-  src: url('/fonts/Doran-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: block;
-}
-@font-face {
-  font-family: 'Doran';
-  src: url('/fonts/Doran-Regular.ttf') format('truetype');
+  src: url('/fonts/Doran-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Doran';
-  src: url('/fonts/Doran-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: block;
-}
-@font-face {
-  font-family: 'Doran';
-  src: url('/fonts/Doran-Bold.ttf') format('truetype');
+  src: url('/fonts/Doran-ExtraBold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Doran';
-  src: url('/fonts/Doran-ExtraBold.ttf') format('truetype');
+  src: url('/fonts/Doran-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
-/* Persian (FA) body: Pinar — self-hosted
-   Available weights: Light (300), Medium (500), SemiBold (600), ExtraBold (800), Black (900).
-   Medium is also mapped to 400 so normal body copy renders in Pinar. */
+/* Persian (FA) body: Pinar — self-hosted, full weight range. */
 @font-face {
   font-family: 'Pinar';
-  src: url('/fonts/Pinar-Light.ttf') format('truetype');
+  src: url('/fonts/Pinar-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Pinar';
-  src: url('/fonts/Pinar-Medium.ttf') format('truetype');
+  src: url('/fonts/Pinar-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Pinar';
-  src: url('/fonts/Pinar-Medium.ttf') format('truetype');
+  src: url('/fonts/Pinar-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Pinar';
-  src: url('/fonts/Pinar-SemiBold.ttf') format('truetype');
+  src: url('/fonts/Pinar-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Pinar';
-  src: url('/fonts/Pinar-ExtraBold.ttf') format('truetype');
+  src: url('/fonts/Pinar-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pinar';
+  src: url('/fonts/Pinar-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Pinar';
-  src: url('/fonts/Pinar-Black.ttf') format('truetype');
+  src: url('/fonts/Pinar-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }

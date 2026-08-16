@@ -105,8 +105,6 @@ export function Home() {
         title={t("home.meta.title")}
         description={t("home.meta.desc")}
         path="/"
-        image={changeMomentHeroImage}
-        imageAlt={t("home.hero.photoAlt")}
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}

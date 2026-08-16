@@ -15,7 +15,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
     month: "long",
     day: "numeric",
   });
-  const image = post.featuredImage || getBlogImage(post.id);
+  const image = post.featuredImage || getBlogImage(post.slug, post.id);
 
   return (
     <article className="card-lift group flex h-full flex-col overflow-hidden rounded-3xl border border-[var(--brand-muted-olive)]/20 bg-white">
@@ -23,7 +23,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         <div className="aspect-[16/10] overflow-hidden bg-[var(--brand-bone-soft)]">
           <ImageWithFallback
             src={image}
-            alt={post.title[lang]}
+            alt={`${post.title[lang]} — ${t("brand.full")}`}
             className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />

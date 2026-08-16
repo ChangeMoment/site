@@ -363,7 +363,7 @@ export function BlogDetail() {
   });
 
   const related = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
-  const image = post.featuredImage || getBlogImage(post.id);
+  const image = post.featuredImage || getBlogImage(post.slug, post.id);
   const articleUrl = localizedUrl(`/blogs/${post.slug}`, lang);
   const seoTitle = post.slug === "what-is-therapy"
     ? lang === "fa"
@@ -420,8 +420,6 @@ export function BlogDetail() {
         title={seoTitle}
         description={post.excerpt[lang]}
         path={`/blogs/${post.slug}`}
-        image={image}
-        imageAlt={post.title[lang]}
         type="article"
         publishedTime={post.date}
         jsonLd={jsonLd}
@@ -460,7 +458,7 @@ export function BlogDetail() {
           <div className="-mt-2 overflow-hidden rounded-[2rem] border-8 border-white shadow-[0_30px_60px_-35px_rgba(177,131,105,0.5)]">
             <ImageWithFallback
               src={image}
-              alt={post.title[lang]}
+              alt={`${post.title[lang]} — ${t("brand.full")}`}
               className="aspect-[16/9] w-full object-cover"
               loading="eager"
               fetchPriority="high"

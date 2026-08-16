@@ -99,8 +99,10 @@ export function Seo({
     : `${title} · ${TITLE_BRAND}`;
   const seoDescription = conciseDescription(description);
   const url = localizedUrl(path, lang);
+  // The branded ChangeMoment card is the social preview for every link on the
+  // site. Pages may still pass `image` for a page-specific override.
   const ogImage = absoluteSiteUrl(image ?? "/og-image.jpg");
-  const ogImageAlt = imageAlt ?? `${SITE_NAME} — counselling and mental health support`;
+  const ogImageAlt = imageAlt ?? `${SITE_NAME} — One Moment, Endless Hope`;
   const locale = SEO_LOCALES[lang];
   const collector = useSeoCollector();
 
@@ -135,6 +137,10 @@ export function Seo({
       sameAs: [
         "https://www.instagram.com/changemoment.ca",
         "https://www.facebook.com/people/ChangeMoment-Mental-Health-Center/61592336473451/",
+        "https://www.linkedin.com/in/bita-ramezannia-m-a-rcc-91b143164/",
+        "https://www.psychologytoday.com/ca/therapists/bita-ramezannia-byt-rmdn-ny-coquitlam-bc/1057338",
+        "https://bcacc.ca/counsellors/bita-ramezannia/",
+        "https://counsellingbc.com/listings/bitaramezannia.htm",
       ],
     };
 

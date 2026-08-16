@@ -69,7 +69,15 @@ export const serviceImages: Record<string, string> = {
   ifhp: "https://images.unsplash.com/photo-1714976694867-bc0e012fab70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1100",
 };
 
-// Blog id -> image
+// Blog slug -> image. Slug is the stable key: WordPress assigns its own numeric
+// post ids, so matching on id alone sent every CMS post to the fallback and made
+// two different articles share one photo.
+export const blogImagesBySlug: Record<string, string> = {
+  "what-is-therapy": blogImage1,
+  "anxiety-beyond-worry": blogImage2,
+};
+
+// Legacy id -> image, kept for the bundled fallback posts.
 export const blogImages: Record<string, string> = {
   "blog-1": blogImage1,
   "blog-2": blogImage2,
@@ -77,8 +85,8 @@ export const blogImages: Record<string, string> = {
 
 export const fallbackBlogImage = blogImage1;
 
-export function getBlogImage(postId: string) {
-  return blogImages[postId] ?? fallbackBlogImage;
+export function getBlogImage(slug: string, postId?: string) {
+  return blogImagesBySlug[slug] ?? (postId ? blogImages[postId] : undefined) ?? fallbackBlogImage;
 }
 
 // Therapist id -> portrait

@@ -1,4 +1,4 @@
-import { useId, type CSSProperties } from "react";
+import { useId } from "react";
 import manulifeLogo from "../../imports/insurance/manulife.png";
 import sunLifeLogo from "../../imports/insurance/sun-life.png";
 import desjardinsLogo from "../../imports/insurance/desjardins.png";
@@ -7,12 +7,12 @@ import canadaLifeLogo from "../../imports/insurance/canada-life.png";
 import greenShieldLogo from "../../imports/insurance/greenshield.png";
 
 const insurers = [
-  { name: "Manulife", logo: manulifeLogo, color: "#00a758" },
-  { name: "Sun Life", logo: sunLifeLogo, color: "#242424" },
-  { name: "Desjardins", logo: desjardinsLogo, color: "#00874e" },
-  { name: "Pacific Blue Cross", logo: pacificBlueCrossLogo, color: "#0068a5" },
-  { name: "Canada Life", logo: canadaLifeLogo, color: "#c8102e" },
-  { name: "GreenShield", logo: greenShieldLogo, color: "#007f5f" },
+  { name: "Manulife", logo: manulifeLogo },
+  { name: "Sun Life", logo: sunLifeLogo },
+  { name: "Desjardins", logo: desjardinsLogo },
+  { name: "Pacific Blue Cross", logo: pacificBlueCrossLogo },
+  { name: "Canada Life", logo: canadaLifeLogo },
+  { name: "GreenShield", logo: greenShieldLogo },
 ];
 
 export function ParticipatingInsurers({
@@ -48,22 +48,12 @@ export function ParticipatingInsurers({
             key={insurer.name}
             className={`${compact ? "h-20 px-3" : "h-24 px-4"} flex items-center justify-center rounded-2xl border border-[var(--brand-muted-olive)]/14 bg-white shadow-[0_12px_28px_-24px_rgba(52,56,45,0.35)]`}
           >
-            <span
-              role="img"
-              aria-label={insurer.name}
+            <img
+              src={insurer.logo}
+              alt={`${insurer.name} — insurance provider we can direct bill`}
               className={`${compact ? "max-h-10" : "max-h-12"} w-full object-contain`}
-              style={{
-                backgroundColor: insurer.color,
-                WebkitMaskImage: `url(${insurer.logo})`,
-                maskImage: `url(${insurer.logo})`,
-                WebkitMaskPosition: "center",
-                maskPosition: "center",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-                WebkitMaskSize: "contain",
-                maskSize: "contain",
-                height: compact ? "2.5rem" : "3rem",
-              } as CSSProperties}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))}

@@ -14,3 +14,4 @@ output/
 !.env.example
 *.log
 deploy/tmp/
+.claude/

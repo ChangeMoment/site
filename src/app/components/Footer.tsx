@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { MapPin, Phone, Mail, ExternalLink, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink, Instagram, Facebook, Linkedin } from "lucide-react";
 import { FooterLogoMark } from "./FooterLogoMark";
 import { useLang } from "../i18n/LanguageProvider";
 import { services } from "../data/services";
@@ -141,6 +141,15 @@ export function Footer() {
               className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)] sm:size-10"
             >
               <Facebook className="size-5" aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bita-ramezannia-m-a-rcc-91b143164/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)] sm:size-10"
+            >
+              <Linkedin className="size-5" aria-hidden="true" />
             </a>
           </div>
         </div>
