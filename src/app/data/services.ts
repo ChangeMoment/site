@@ -690,12 +690,12 @@ export const services: Service[] = [
     name: {
       en: "Interim Federal Health Program (IFHP)",
       fr: "Programme fédéral de santé intérimaire (PFSI)",
-      fa: "مشاوره تحت پوشش برنامه موقت فدرال سلامت (IFHP)",
+      fa: "مراجعان IFHP",
     },
     short: {
       en: "Counselling coverage for refugees, protected persons, and newcomers under the IFHP.",
       fr: "Une couverture de counselling pour les réfugiés, personnes protégées et nouveaux arrivants grâce au PFSI.",
-      fa: "خدمات مشاوره برای پناهندگان، افراد تحت حمایت و تازه‌واردان واجد شرایط پوشش IFHP.",
+      fa: "جلسات مشاوره برای پناهندگان، تازه واردان و افراد تحت پوشش IFHP",
     },
     intro: {
       en: "Rebuilding life in a new country can feel overwhelming. Through the Interim Federal Health Program, we offer counselling support with care, dignity, and respect.",

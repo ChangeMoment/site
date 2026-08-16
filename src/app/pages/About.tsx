@@ -28,7 +28,6 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { JaneNotice } from "../components/JaneNotice";
 import { ParticipatingInsurers } from "../components/ParticipatingInsurers";
 import { useLang } from "../i18n/LanguageProvider";
-import { aboutImage } from "../data/images";
 import { absoluteSiteUrl } from "../lib/seo";
 
 const valueIcons = [Layers, Rainbow, ShieldCheck, HeartHandshake, FlaskConical, Sprout, Network, Globe2, Sparkles];
@@ -43,8 +42,6 @@ export function About() {
         title={t("about.meta.title")}
         description={t("about.meta.desc")}
         path="/about"
-        image={bitaFounderImage}
-        imageAlt={t("about.founder.photoAlt")}
         schemaType="AboutPage"
         jsonLd={[
           {
@@ -208,8 +205,7 @@ export function About() {
       </Section>
 
       {/* Direct Billing */}
-      <section id="insurance-coverage" className="relative overflow-hidden bg-[var(--brand-bone-soft)] py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-2 bg-[var(--brand-copper)]/65" aria-hidden="true" />
+      <section id="insurance-coverage" className="relative overflow-hidden bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <div className="mx-auto max-w-4xl text-center">

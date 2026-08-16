@@ -406,8 +406,122 @@ export const fr: TranslationShape = {
     emailChangeMoment: "Écrire à ChangeMoment",
   },
   legal: {
-    privacy: { title: "Politique de confidentialité", body: "Ceci est un contenu d’espace réservé pour la politique de confidentialité du Centre de santé mentale ChangeMoment. À remplacer par la politique officielle avant le lancement." },
-    terms: { title: "Conditions d’utilisation", body: "Ceci est un contenu d’espace réservé pour les conditions d’utilisation du Centre de santé mentale ChangeMoment. À remplacer par les conditions officielles avant le lancement." },
-    accessibility: { title: "Accessibilité", body: "ChangeMoment s’engage à offrir des soins accessibles et inclusifs. À remplacer par votre déclaration officielle avant le lancement." },
+    updatedLabel: "Dernière mise à jour",
+    updated: "16 août 2026",
+    privacy: {
+      title: "Politique de confidentialité",
+      metaDesc:
+        "Comment le Centre de santé mentale ChangeMoment recueille, utilise, conserve et protège vos renseignements personnels et de santé, selon les lois de la Colombie-Britannique et du Canada.",
+      body:
+        "Le Centre de santé mentale ChangeMoment respecte votre vie privée. Cette politique explique quels renseignements personnels nous recueillons, pourquoi, et comment nous les protégeons. Nous respectons la Personal Information Protection Act (PIPA) de la Colombie-Britannique, la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE) du Canada, ainsi que les normes de tenue de dossiers de la BC Association of Clinical Counsellors.",
+      sections: [
+        {
+          title: "Ce que nous recueillons",
+          body: "Nous recueillons uniquement ce qui est nécessaire au counselling : votre nom et vos coordonnées, les renseignements que vous nous transmettez lors d’une réservation ou d’un message, vos informations d’assurance si vous demandez la facturation directe, et les dossiers cliniques créés durant votre suivi. Notre site n’utilise ni témoins publicitaires ni témoins de suivi.",
+        },
+        {
+          title: "Pourquoi nous les recueillons",
+          body: "Pour organiser et offrir le counselling, communiquer avec vous au sujet des rendez-vous, vous facturer ou facturer votre assureur, et respecter nos obligations professionnelles et légales. Nous ne vendons pas vos renseignements et ne les utilisons pas à des fins publicitaires.",
+        },
+        {
+          title: "Consentement",
+          body: "Nous recueillons, utilisons et communiquons vos renseignements personnels avec votre consentement. Vous pouvez le retirer en tout temps par écrit, sous réserve des limites légales et professionnelles. Un retrait de consentement peut nous empêcher de poursuivre les soins.",
+        },
+        {
+          title: "Confidentialité et ses limites",
+          body: "Ce que vous partagez en séance demeure confidentiel, sauf dans les cas restreints prévus par la loi : un risque de préjudice grave pour vous ou pour autrui, un soupçon de maltraitance ou de négligence envers un enfant ou un adulte vulnérable, ou une ordonnance du tribunal. Votre thérapeute vous expliquera ces limites à la première séance.",
+        },
+        {
+          title: "Fournisseurs de services",
+          body: "Nous utilisons Jane App, une plateforme canadienne de gestion de cabinet, pour les réservations, les dossiers et les paiements; ses serveurs sont situés au Canada. Notre site est hébergé sur Amazon Web Services. Ces fournisseurs traitent les renseignements pour notre compte, par contrat, et ne peuvent les utiliser à leurs propres fins.",
+        },
+        {
+          title: "Conservation et sécurité",
+          body: "Les dossiers cliniques sont conservés de façon sécurisée et chiffrée, pendant la période minimale exigée des Registered Clinical Counsellors en Colombie-Britannique — normalement sept ans après la dernière séance, ou sept ans après que le client a atteint l’âge de la majorité. Ils sont ensuite détruits de façon sécuritaire.",
+        },
+        {
+          title: "Vos droits",
+          body: "Vous pouvez demander à consulter les renseignements personnels que nous détenons à votre sujet, demander la correction de toute inexactitude et savoir comment ils ont été utilisés. Nous répondons dans les 30 jours. Certains éléments cliniques peuvent être retenus lorsque la loi le permet.",
+        },
+        {
+          title: "Nous joindre et porter plainte",
+          body: "Écrivez à notre responsable de la protection de la vie privée à info@changemoment.ca ou appelez le +1 (604) 366-6690. Si notre réponse ne vous satisfait pas, vous pouvez communiquer avec l’Office of the Information and Privacy Commissioner for British Columbia.",
+        },
+      ],
+    },
+    terms: {
+      title: "Conditions d’utilisation",
+      metaDesc:
+        "Les conditions applicables à l’utilisation du site du Centre de santé mentale ChangeMoment : réservations, honoraires, annulations et portée de l’information publiée.",
+      body:
+        "Ces conditions s’appliquent à votre utilisation du site du Centre de santé mentale ChangeMoment. En utilisant ce site, vous les acceptez. Elles sont régies par les lois de la Colombie-Britannique et du Canada.",
+      sections: [
+        {
+          title: "Ce site ne constitue pas un avis médical",
+          body: "Le contenu présenté ici est de l’information générale sur la santé mentale et nos services. Il ne s’agit ni d’un diagnostic, ni d’un plan de traitement, ni d’un substitut aux soins d’un professionnel qualifié. La lecture de ce site ne crée pas de relation thérapeutique.",
+        },
+        {
+          title: "En cas d’urgence",
+          body: "Ce site n’est pas surveillé et ne peut servir à obtenir de l’aide urgente. Si vous ou une autre personne êtes en danger immédiat, composez le 911. Pour un soutien en situation de crise en Colombie-Britannique, appelez la BC Crisis Line au (604) 872-3311, ou le 9-8-8 pour la prévention du suicide.",
+        },
+        {
+          title: "Réservations et rendez-vous",
+          body: "Les rendez-vous se prennent par Jane App et sont soumis à ses propres conditions. Une réservation n’est confirmée qu’à la réception de notre confirmation. Nous pouvons refuser ou mettre fin à un suivi lorsqu’un service n’est pas cliniquement approprié, et nous vous aiderons alors à trouver une référence adaptée.",
+        },
+        {
+          title: "Honoraires, annulations et assurance",
+          body: "Les honoraires en vigueur sont confirmés avant la première séance. Une séance annulée à moins de 24 heures d’avis peut être facturée en entier. La facturation directe dépend de votre assureur et de votre régime; tout montant non couvert demeure à votre charge.",
+        },
+        {
+          title: "Propriété intellectuelle",
+          body: "Les textes, images, logos et le design de ce site appartiennent au Centre de santé mentale ChangeMoment ou à ses concédants. Vous pouvez lire et partager nos articles en citant la source, mais non les republier ou les adapter à des fins commerciales sans autorisation écrite.",
+        },
+        {
+          title: "Liens externes",
+          body: "Nous renvoyons à des répertoires professionnels, à des assureurs et à des services de soutien par commodité. Nous ne contrôlons pas ces sites et ne sommes pas responsables de leur contenu ni de leurs pratiques de confidentialité.",
+        },
+        {
+          title: "Limitation de responsabilité",
+          body: "Nous maintenons ce site exact et accessible dans la mesure du raisonnable, mais il est fourni « tel quel ». Dans la mesure permise par la loi, nous ne sommes pas responsables des pertes découlant de son utilisation ou de la confiance que vous lui accordez.",
+        },
+        {
+          title: "Modifications et contact",
+          body: "Nous pouvons modifier ces conditions; la date ci-dessus indique la dernière mise à jour. Vos questions peuvent être envoyées à info@changemoment.ca.",
+        },
+      ],
+    },
+    accessibility: {
+      title: "Accessibilité",
+      metaDesc:
+        "L’engagement du Centre de santé mentale ChangeMoment envers des soins et un site accessibles, incluant la conformité WCAG 2.1 AA et les demandes d’accommodement.",
+      body:
+        "Le Centre de santé mentale ChangeMoment s’engage à offrir des soins et un site que tout le monde peut utiliser. Nous visons les Règles pour l’accessibilité des contenus Web (WCAG) 2.1 niveau AA ainsi que les objectifs de l’Accessible British Columbia Act.",
+      sections: [
+        {
+          title: "Ce qui est déjà en place",
+          body: "Une structure sémantique et des repères pour les lecteurs d’écran, des textes alternatifs utiles sur les images, une navigation complète au clavier avec un focus visible, des contrastes conformes au niveau AA, un texte qui se redistribue sur petits écrans et à 200 % de zoom, et une prise en charge complète de la lecture de droite à gauche pour le persan.",
+        },
+        {
+          title: "Accès linguistique",
+          body: "Le site et nos services de counselling sont offerts en anglais, en français et en persan, afin que vous puissiez vous informer — et être accompagné — dans la langue où vous êtes le plus à l’aise.",
+        },
+        {
+          title: "Accès à nos bureaux",
+          body: "Notre bureau de Coquitlam est situé au #211 – 3030 Lincoln Avenue. Pour toute question sur l’accès physique, le stationnement ou le trajet, communiquez avec nous avant votre rendez-vous et nous vous expliquerons exactement à quoi vous attendre.",
+        },
+        {
+          title: "Demander un accommodement",
+          body: "Dites-nous ce qui faciliterait votre suivi : des séances en ligne plutôt qu’en personne, des rendez-vous plus longs, des résumés écrits, la présence d’une personne de confiance, ou des documents dans un autre format. Nous ferons ce qui est raisonnablement possible.",
+        },
+        {
+          title: "Limites connues",
+          body: "Certains contenus de blogue plus anciens et certains éléments intégrés de tiers, comme le système de réservation en ligne et les badges de répertoires professionnels, ne relèvent pas entièrement de nous. Nous travaillons avec ces fournisseurs et offrons une solution accessible sur demande.",
+        },
+        {
+          title: "Vos commentaires",
+          body: "Si une partie de ce site ou de nos services est difficile à utiliser, écrivez à info@changemoment.ca ou appelez le +1 (604) 366-6690. Nous visons une réponse en cinq jours ouvrables et traitons ces commentaires en priorité.",
+        },
+      ],
+    },
   },
 };

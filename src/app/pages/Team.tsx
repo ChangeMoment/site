@@ -204,8 +204,6 @@ export function Team() {
         title={t("team.meta.title")}
         description={t("team.meta.desc")}
         path="/team"
-        image={bitaPhoto}
-        imageAlt={`Bita Ramezannia — ${page.bita.founderEyebrow}`}
         schemaType="ProfilePage"
         jsonLd={[
           {
@@ -288,17 +286,17 @@ export function Team() {
       </section>
 
       {/* ── Section 3: Who I work with ───────────────────────── */}
-      <section className="bg-[var(--brand-deep-olive)] py-20 md:py-24">
+      <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="text-center text-sm uppercase tracking-widest text-white/60">{page.bita.focusEyebrow}</p>
-            <h2 className="mt-2 text-center text-white" style={{ fontSize: "clamp(1.6rem,2.5vw,2.2rem)" }}>{page.bita.focusHeading}</h2>
+            <p className="text-center text-sm uppercase tracking-widest text-[var(--brand-deep-olive)]/60">{page.bita.focusEyebrow}</p>
+            <h2 className="mt-2 text-center text-[var(--brand-ink)]" style={{ fontSize: "clamp(1.6rem,2.5vw,2.2rem)" }}>{page.bita.focusHeading}</h2>
           </Reveal>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             {page.bita.focusItems.map((item, i) => (
               <div key={item.title} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]">
                 <Reveal delay={i * 60}>
-                  <div className="flex h-full flex-col gap-2 rounded-2xl border border-white/12 bg-[var(--brand-sage-soft)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)]">
+                  <div className="flex h-full flex-col gap-2 rounded-2xl border border-[var(--brand-muted-olive)]/18 bg-[var(--brand-sage-soft)] p-6 shadow-[0_18px_40px_-30px_rgba(52,56,45,0.28)]">
                     <h3 className="text-[var(--brand-ink)]" style={{ fontSize: "1.05rem" }}>{item.title}</h3>
                     <p className="text-sm leading-relaxed text-[var(--brand-ink-muted)]">{item.body}</p>
                   </div>

@@ -404,9 +404,123 @@ export const en = {
     emailChangeMoment: "Email ChangeMoment",
   },
   legal: {
-    privacy: { title: "Privacy Policy", body: "This is placeholder privacy policy content for ChangeMoment Mental Health Centre. Replace with your organisation’s official privacy policy before launch." },
-    terms: { title: "Terms of Use", body: "This is placeholder terms of use content for ChangeMoment Mental Health Centre. Replace with your organisation’s official terms before launch." },
-    accessibility: { title: "Accessibility", body: "ChangeMoment is committed to accessible, inclusive care. This placeholder describes our accessibility commitments — replace with your official statement before launch." },
+    updatedLabel: "Last updated",
+    updated: "16 August 2026",
+    privacy: {
+      title: "Privacy Policy",
+      metaDesc:
+        "How ChangeMoment Mental Health Centre collects, uses, stores and protects your personal and health information under British Columbia and Canadian privacy law.",
+      body:
+        "ChangeMoment Mental Health Centre respects your privacy. This policy explains what personal information we collect, why we collect it, and how we protect it. We follow British Columbia’s Personal Information Protection Act (PIPA), Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA), and the record-keeping standards of the BC Association of Clinical Counsellors.",
+      sections: [
+        {
+          title: "What we collect",
+          body: "We collect only what we need to provide counselling: your name and contact details, the information you give us when booking or writing to us, your insurance details if you ask us to bill directly, and the clinical records created during your care. Our website does not use advertising or tracking cookies.",
+        },
+        {
+          title: "Why we collect it",
+          body: "To arrange and provide counselling, to communicate with you about appointments, to bill you or your insurer, and to meet our professional and legal obligations. We do not sell your information or use it for advertising.",
+        },
+        {
+          title: "Consent",
+          body: "We collect, use and disclose your personal information with your consent. You may withdraw consent at any time, subject to legal or professional limits, by writing to us. Withdrawing consent may affect our ability to continue providing care.",
+        },
+        {
+          title: "Confidentiality and its limits",
+          body: "What you share in session stays confidential, with narrow exceptions required by law: a risk of serious harm to you or another person, suspected abuse or neglect of a child or vulnerable adult, or a court order or subpoena. Your counsellor will explain these limits at your first session.",
+        },
+        {
+          title: "Service providers",
+          body: "We use Jane App, a Canadian practice-management platform, to handle booking, records and payments; its servers are located in Canada. Our website is hosted on Amazon Web Services. These providers process information on our behalf under contract and may not use it for their own purposes.",
+        },
+        {
+          title: "Storage and retention",
+          body: "Clinical records are stored securely and encrypted, and are kept for the minimum period required of Registered Clinical Counsellors in British Columbia — normally seven years after your last session, or seven years after a client reaches the age of majority. After that they are securely destroyed.",
+        },
+        {
+          title: "Your rights",
+          body: "You may ask to see the personal information we hold about you, ask us to correct anything inaccurate, and ask how it has been used. We will respond within 30 days. Some clinical material may be withheld where the law allows.",
+        },
+        {
+          title: "Contact and complaints",
+          body: "Write to our Privacy Officer at info@changemoment.ca or call +1 (604) 366-6690. If you are not satisfied with our response, you may contact the Office of the Information and Privacy Commissioner for British Columbia.",
+        },
+      ],
+    },
+    terms: {
+      title: "Terms of Use",
+      metaDesc:
+        "The terms that apply when you use the ChangeMoment Mental Health Centre website, including booking, fees, cancellations and the limits of the information published here.",
+      body:
+        "These terms apply to your use of the ChangeMoment Mental Health Centre website. By using this site you accept them. They are governed by the laws of British Columbia and of Canada.",
+      sections: [
+        {
+          title: "This website is not medical advice",
+          body: "The content here is general information about mental health and our services. It is not a diagnosis, a treatment plan, or a substitute for care from a qualified professional. Reading this site does not create a counsellor–client relationship.",
+        },
+        {
+          title: "In an emergency",
+          body: "This website is not monitored and cannot be used for urgent help. If you or someone else is in immediate danger, call 911. For mental-health crisis support in British Columbia, call the BC Crisis Line at (604) 872-3311 or 9-8-8 for suicide crisis support.",
+        },
+        {
+          title: "Booking and appointments",
+          body: "Appointments are booked through Jane App and are subject to its own terms. A booking is confirmed only once you receive a confirmation from us. We may decline or end care where a service is not clinically appropriate, and will help you find a suitable referral.",
+        },
+        {
+          title: "Fees, cancellations and insurance",
+          body: "Current fees are confirmed before your first session. Sessions cancelled with less than 24 hours’ notice may be charged in full. Direct billing depends on your insurer and your specific plan; any amount your plan does not cover remains payable by you.",
+        },
+        {
+          title: "Intellectual property",
+          body: "The text, images, logos and design of this site belong to ChangeMoment Mental Health Centre or its licensors. You may read and share our articles with attribution, but you may not republish or adapt them commercially without written permission.",
+        },
+        {
+          title: "External links",
+          body: "We link to third-party directories, insurers and support services for convenience. We do not control those sites and are not responsible for their content or their privacy practices.",
+        },
+        {
+          title: "Limitation of liability",
+          body: "We keep this site accurate and available as far as we reasonably can, but provide it “as is”. To the extent permitted by law, we are not liable for loss arising from your use of, or reliance on, this website.",
+        },
+        {
+          title: "Changes and contact",
+          body: "We may update these terms; the date above shows when they last changed. Questions can be sent to info@changemoment.ca.",
+        },
+      ],
+    },
+    accessibility: {
+      title: "Accessibility",
+      metaDesc:
+        "ChangeMoment Mental Health Centre’s commitment to accessible counselling and an accessible website, including WCAG 2.1 AA conformance and how to request accommodations.",
+      body:
+        "ChangeMoment Mental Health Centre is committed to care and to a website that everyone can use. We work toward the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA and the goals of the Accessible British Columbia Act.",
+      sections: [
+        {
+          title: "What we have built in",
+          body: "Semantic structure and landmarks for screen readers, meaningful alternative text on images, full keyboard navigation with visible focus, colour combinations that meet AA contrast, text that reflows on small screens and at 200% zoom, and proper right-to-left support for Persian.",
+        },
+        {
+          title: "Language access",
+          body: "The site and our counselling services are offered in English, French and Persian, so you can read about care — and receive it — in the language you are most comfortable in.",
+        },
+        {
+          title: "Accessing our office",
+          body: "Our Coquitlam office is at #211 – 3030 Lincoln Avenue. If you have questions about physical access, parking or getting to us, contact us before your appointment and we will tell you exactly what to expect.",
+        },
+        {
+          title: "Requesting an accommodation",
+          body: "Tell us what would make care work better for you — online rather than in-person sessions, longer appointments, written summaries, a support person present, or materials in another format. We will do what we reasonably can to accommodate you.",
+        },
+        {
+          title: "Known limitations",
+          body: "Some older blog content and third-party embeds, such as the online booking system and professional directory badges, are not fully under our control. We are working with those providers and will offer an accessible alternative on request.",
+        },
+        {
+          title: "Give us feedback",
+          body: "If any part of this site or our service is difficult to use, email info@changemoment.ca or call +1 (604) 366-6690. We aim to reply within five business days and treat accessibility feedback as a priority.",
+        },
+      ],
+    },
   },
 };
 

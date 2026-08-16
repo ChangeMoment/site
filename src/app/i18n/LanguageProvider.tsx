@@ -45,15 +45,16 @@ const STORAGE_KEY = "changemoment.lang";
 /**
  * Critical Persian fonts to preload the moment FA becomes active.
  * These are the two weights that carry almost all Persian text:
- *   - Doran-Bold  → headings (var(--font-fa-heading))
- *   - Pinar-Medium → body copy (var(--font-fa-body), mapped to 400/500)
+ *   - Doran-ExtraBold → headings (var(--font-fa-heading), rendered at 700/800)
+ *   - Pinar-Regular   → body copy (var(--font-fa-body) at the default weight)
  * Preloading lets the browser fetch them in parallel immediately instead of
  * only after CSS is parsed and the text is laid out — this is what removes the
  * slow / late font swap seen on mobile and slow connections.
+ * Keep these filenames in sync with the @font-face rules in src/styles/fonts.css.
  */
 const FA_CRITICAL_FONTS = [
-  { href: "/fonts/Doran-Bold.ttf", type: "font/ttf" },
-  { href: "/fonts/Pinar-Medium.ttf", type: "font/ttf" },
+  { href: "/fonts/Doran-ExtraBold.woff2", type: "font/woff2" },
+  { href: "/fonts/Pinar-Regular.woff2", type: "font/woff2" },
 ];
 
 function preloadPersianFonts() {
