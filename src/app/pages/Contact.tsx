@@ -7,6 +7,7 @@ import { Section, LinkButton } from "../components/ui-kit";
 import { BrandSelect } from "../components/BrandSelect";
 import { useLang } from "../i18n/LanguageProvider";
 import { CONTACT_EMAIL, CONTACT_PHONE_TEL } from "../lib/constants";
+import { submitContactForm } from "../lib/contact";
 
 interface FormState {
   name: string;
@@ -14,6 +15,7 @@ interface FormState {
   phone: string;
   language: string;
   message: string;
+  website: string;
 }
 
 interface Errors {
@@ -30,10 +32,12 @@ export function Contact() {
     phone: "",
     language: "en",
     message: "",
+    website: "",
   });
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const set = (key: keyof FormState, value: string) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -51,16 +55,25 @@ export function Contact() {
     return Object.keys(next).length === 0;
   };
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+
     setSubmitting(true);
-    // Mock submission — replace with a real endpoint or form service.
-    setTimeout(() => {
-      setSubmitting(false);
+    setSubmitError(false);
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15_000);
+
+    try {
+      await submitContactForm(form, controller.signal);
       setSuccess(true);
-      setForm({ name: "", email: "", phone: "", language: "en", message: "" });
-    }, 900);
+      setForm({ name: "", email: "", phone: "", language: "en", message: "", website: "" });
+    } catch {
+      setSubmitError(true);
+    } finally {
+      window.clearTimeout(timeout);
+      setSubmitting(false);
+    }
   };
 
   const inputClass =
@@ -104,6 +117,17 @@ export function Contact() {
                 </div>
               ) : (
                 <form className="mt-6 space-y-5" onSubmit={onSubmit} noValidate>
+                  <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+                    <label htmlFor="c-website">Website</label>
+                    <input
+                      id="c-website"
+                      type="text"
+                      value={form.website}
+                      onChange={(e) => set("website", e.target.value)}
+                      autoComplete="off"
+                      tabIndex={-1}
+                    />
+                  </div>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="c-name" className="mb-1.5 block text-sm">
@@ -115,6 +139,7 @@ export function Contact() {
                         value={form.name}
                         onChange={(e) => set("name", e.target.value)}
                         placeholder={t("contact.form.namePlaceholder")}
+                        maxLength={120}
                         className={`${inputClass} ${errors.name ? errClass : ""}`}
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? "err-name" : undefined}
@@ -135,6 +160,7 @@ export function Contact() {
                         value={form.email}
                         onChange={(e) => set("email", e.target.value)}
                         placeholder={t("contact.form.emailPlaceholder")}
+                        maxLength={254}
                         dir="ltr"
                         className={`${inputClass} ${errors.email ? errClass : ""}`}
                         aria-invalid={!!errors.email}
@@ -159,6 +185,7 @@ export function Contact() {
                         value={form.phone}
                         onChange={(e) => set("phone", e.target.value)}
                         placeholder={t("contact.form.phonePlaceholder")}
+                        maxLength={50}
                         dir="ltr"
                         className={`${inputClass} ${lang === "fa" ? "placeholder:text-right" : ""}`}
                       />
@@ -191,6 +218,7 @@ export function Contact() {
                       value={form.message}
                       onChange={(e) => set("message", e.target.value)}
                       placeholder={t("contact.form.messagePlaceholder")}
+                      maxLength={5000}
                       className={`${inputClass} resize-none ${errors.message ? errClass : ""}`}
                       aria-invalid={!!errors.message}
                       aria-describedby={errors.message ? "err-message" : undefined}
@@ -201,6 +229,14 @@ export function Contact() {
                       </p>
                     )}
                   </div>
+
+                  <p className="text-sm text-[var(--brand-ink-muted)]">{t("contact.form.privacy")}</p>
+
+                  {submitError && (
+                    <div role="alert" className="rounded-2xl border border-[#c0533b]/30 bg-[#fbf0ec] p-4 text-sm text-[#7a3526]">
+                      {t("contact.form.error")}
+                    </div>
+                  )}
 
                   <button
                     type="submit"

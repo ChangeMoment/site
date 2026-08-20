@@ -355,7 +355,22 @@ Then repeat the public smoke tests. Do not delete the failed release until the r
 
 Before treating a deployment as production-ready, provide and verify:
 
-- A real contact-form delivery backend and recipient address
+- Delivery from the included WordPress contact endpoint to `info@changemoment.ca` through an authenticated SMTP transport; the endpoint validates input, rate-limits requests, and fails closed when `wp_mail` cannot queue the message
 - Final privacy, terms, and accessibility content
 - Licensed Doran and Pinar Persian font files, or an approved fallback-font decision
 - The production domain, DNS access, and HTTPS certificate
+
+## Production domain cutover
+
+The canonical public URL is `https://changemoment.ca`; WordPress remains mounted at
+`https://changemoment.ca/cms`. Install `deploy/wordpress/apache-changemoment.conf`
+as an Apache configuration fragment and `deploy/wordpress/apache-changemoment-site.conf`
+as the HTTP virtual host before changing DNS. Point only the apex `A` record to the
+server's static IP and keep `www` as a CNAME to the apex. Do not change MX or other
+Google Workspace mail records.
+
+After DNS resolves to the server, issue a certificate for both `changemoment.ca` and
+`www.changemoment.ca`, enable the HTTP-to-HTTPS redirect, then set WordPress `home`,
+`siteurl`, `WP_HOME`, and `WP_SITEURL` to `https://changemoment.ca/cms`. Run the
+production rebuild only after those values are in place. The rebuild script bakes
+the canonical domain into the static SEO output and atomically activates the release.

@@ -350,6 +350,8 @@ export const fr: TranslationShape = {
       submit: "Envoyer le message",
       sending: "Envoi…",
       success: "Merci — votre message a bien été reçu. Nous vous répondrons bientôt.",
+      error: "Votre message n’a pas pu être envoyé. Réessayez ou écrivez à info@changemoment.ca.",
+      privacy: "N’incluez pas de renseignements médicaux sensibles et n’utilisez pas ce formulaire en cas d’urgence.",
       required: "Ce champ est obligatoire",
       invalidEmail: "Veuillez saisir une adresse courriel valide",
       namePlaceholder: "Votre nom",

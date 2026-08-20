@@ -10,8 +10,8 @@ MARKER=/var/lib/changemoment/rebuild-requested
 
 cd "$APP_DIR"
 WORDPRESS_URL=http://127.0.0.1/cms \
-SITE_URL=http://15-156-55-113.nip.io \
-VITE_SITE_URL=http://15-156-55-113.nip.io \
+SITE_URL=https://changemoment.ca \
+VITE_SITE_URL=https://changemoment.ca \
   /usr/local/bin/pnpm run build
 
 mkdir -p "$RELEASE_DIR"

@@ -348,6 +348,8 @@ export const en = {
       submit: "Send message",
       sending: "Sending…",
       success: "Thank you — your message has been received. We’ll be in touch soon.",
+      error: "We couldn’t send your message. Please try again, or email info@changemoment.ca.",
+      privacy: "Please do not include sensitive medical information or use this form for urgent help.",
       required: "This field is required",
       invalidEmail: "Please enter a valid email address",
       namePlaceholder: "Your name",

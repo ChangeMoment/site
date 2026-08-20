@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: ChangeMoment Headless Blog
- * Description: Three-language editorial fields and a sanitized REST contract for the ChangeMoment frontend.
- * Version: 1.0.0
+ * Description: Three-language editorial fields plus sanitized blog and contact REST contracts for the ChangeMoment frontend.
+ * Version: 1.1.0
  */
 
 if (!defined('ABSPATH')) { exit; }
@@ -12,6 +12,90 @@ const CM_META_FIELDS = [
     'title_fa' => 'Persian title', 'excerpt_fa' => 'Persian excerpt', 'content_fa' => 'Persian content',
     'category' => 'Frontend category', 'read_minutes' => 'Reading time (minutes)',
 ];
+
+function cm_contact_allowed_origins() {
+    $origins = [
+        'https://changemoment.ca',
+        'https://www.changemoment.ca',
+        'http://15-156-55-113.nip.io',
+    ];
+    $home_parts = wp_parse_url(home_url());
+    if (!empty($home_parts['scheme']) && !empty($home_parts['host'])) {
+        $home_origin = $home_parts['scheme'] . '://' . $home_parts['host'];
+        if (!empty($home_parts['port'])) $home_origin .= ':' . intval($home_parts['port']);
+        $origins[] = $home_origin;
+    }
+    return array_unique($origins);
+}
+
+function cm_contact_response($data, $status) {
+    $response = new WP_REST_Response($data, $status);
+    $response->header('Cache-Control', 'no-store');
+    return $response;
+}
+
+function cm_submit_contact(WP_REST_Request $request) {
+    $origin = untrailingslashit((string) $request->get_header('origin'));
+    if (!$origin || !in_array($origin, cm_contact_allowed_origins(), true)) {
+        return cm_contact_response(['code' => 'origin_not_allowed'], 403);
+    }
+
+    $params = $request->get_json_params();
+    if (!is_array($params)) {
+        return cm_contact_response(['code' => 'invalid_request'], 400);
+    }
+
+    // A filled honeypot is acknowledged without sending mail so bots receive no signal.
+    if (!empty($params['website'])) {
+        return cm_contact_response(['accepted' => true], 202);
+    }
+
+    $name = sanitize_text_field($params['name'] ?? '');
+    $email = sanitize_email($params['email'] ?? '');
+    $phone = sanitize_text_field($params['phone'] ?? '');
+    $language = sanitize_key($params['language'] ?? 'en');
+    $message = sanitize_textarea_field($params['message'] ?? '');
+
+    if (!$name || !$email || !is_email($email) || !$message) {
+        return cm_contact_response(['code' => 'invalid_fields'], 400);
+    }
+    if (mb_strlen($name) > 120 || mb_strlen($email) > 254 || mb_strlen($phone) > 50 || mb_strlen($message) > 5000) {
+        return cm_contact_response(['code' => 'invalid_fields'], 400);
+    }
+    if (!in_array($language, ['en', 'fr', 'fa'], true)) $language = 'en';
+
+    $remote_address = isset($_SERVER['REMOTE_ADDR']) ? (string) $_SERVER['REMOTE_ADDR'] : 'unknown';
+    $rate_key = 'cm_contact_' . hash_hmac('sha256', $remote_address, wp_salt('nonce'));
+    $attempts = intval(get_transient($rate_key));
+    if ($attempts >= 5) {
+        return cm_contact_response(['code' => 'rate_limited'], 429);
+    }
+    set_transient($rate_key, $attempts + 1, HOUR_IN_SECONDS);
+
+    $subject = sprintf('[ChangeMoment website] New %s message', strtoupper($language));
+    $body = implode("\n", [
+        'A new message was submitted through changemoment.ca.',
+        '',
+        'Name: ' . $name,
+        'Email: ' . $email,
+        'Phone: ' . ($phone ?: 'Not provided'),
+        'Preferred language: ' . strtoupper($language),
+        '',
+        'Message:',
+        $message,
+    ]);
+    $headers = [
+        'Content-Type: text/plain; charset=UTF-8',
+        'From: ChangeMoment Website <website@changemoment.ca>',
+        'Reply-To: ' . $name . ' <' . $email . '>',
+    ];
+
+    if (!wp_mail('info@changemoment.ca', $subject, $body, $headers)) {
+        return cm_contact_response(['code' => 'delivery_failed'], 502);
+    }
+
+    return cm_contact_response(['accepted' => true], 202);
+}
 
 add_action('add_meta_boxes', function () {
     add_meta_box('cm_translations', 'ChangeMoment translations', function ($post) {
@@ -75,6 +159,11 @@ add_action('rest_api_init', function () {
                 ];
             }, $posts);
         },
+    ]);
+    register_rest_route('changemoment/v1', '/contact', [
+        'methods' => 'POST',
+        'permission_callback' => '__return_true',
+        'callback' => 'cm_submit_contact',
     ]);
 });
 
