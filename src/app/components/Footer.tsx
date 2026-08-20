@@ -36,7 +36,7 @@ export function Footer() {
             <p className="mt-5 hidden max-w-sm text-sm leading-relaxed text-[#3c4322] sm:block">
               {t("footer.description")}
             </p>
-            <div className="mt-7 flex justify-start rtl:justify-center sm:mt-5">
+            <div className="mt-7 flex justify-center sm:mt-5 sm:justify-start">
               <a
                 href={JANE_URL}
                 target="_blank"
@@ -114,6 +114,35 @@ export function Footer() {
                 </a>
               </li>
             </ul>
+            <div className="mt-5 flex items-center justify-center gap-2 sm:justify-start">
+              <a
+                href="https://www.instagram.com/changemoment.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)]"
+              >
+                <Instagram className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.facebook.com/people/ChangeMoment-Mental-Health-Center/61592336473451/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)]"
+              >
+                <Facebook className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/changemoment/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)]"
+              >
+                <Linkedin className="size-5" aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -123,35 +152,6 @@ export function Footer() {
           <p className="min-w-0">
             © {year} · {t("footer.rights")}
           </p>
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <a
-              href="https://www.instagram.com/changemoment.ca"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)] sm:size-10"
-            >
-              <Instagram className="size-5" aria-hidden="true" />
-            </a>
-            <a
-              href="https://www.facebook.com/people/ChangeMoment-Mental-Health-Center/61592336473451/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)] sm:size-10"
-            >
-              <Facebook className="size-5" aria-hidden="true" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/bita-ramezannia-m-a-rcc-91b143164/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="inline-flex size-9 items-center justify-center rounded-full bg-[var(--brand-sage)]/35 text-[#3c4322] transition-colors hover:bg-white hover:text-[var(--brand-deep-olive)] sm:size-10"
-            >
-              <Linkedin className="size-5" aria-hidden="true" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>

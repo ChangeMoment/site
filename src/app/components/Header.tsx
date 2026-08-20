@@ -112,7 +112,7 @@ export function Header() {
                   )}
                 </NavLink>
 
-                <div className={`absolute left-1/2 top-full z-50 w-[28rem] -translate-x-1/2 pt-4 transition-all duration-300 ease-out ${desktopServicesOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-2 opacity-0 pointer-events-none"}`}>
+                <div className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 transition-all duration-300 ease-out ${lang === "fa" ? "w-[28rem]" : "w-[34rem]"} ${desktopServicesOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-2 opacity-0 pointer-events-none"}`}>
                   <div className="max-h-[calc(100vh-7rem)] overflow-y-auto rounded-[1.5rem] border border-white/70 bg-[rgba(248,249,243,0.82)] p-2.5 shadow-[0_24px_64px_-30px_rgba(52,56,45,0.46)] backdrop-blur-[18px] backdrop-saturate-125">
                     <div className="grid grid-cols-2 gap-1">
                       {services.map((service) => (
@@ -120,11 +120,11 @@ export function Header() {
                           key={service.id}
                           to={localize(`/services/${service.slug}`)}
                           onClick={() => setDesktopServicesOpen(false)}
-                          className="group/item rounded-xl px-3 py-2.5 transition-colors hover:bg-[var(--brand-sage-soft)] focus-visible:bg-[var(--brand-sage-soft)] focus-visible:outline-none"
+                          className={`group/item rounded-xl px-3 py-2.5 transition-colors hover:bg-[var(--brand-sage-soft)] focus-visible:bg-[var(--brand-sage-soft)] focus-visible:outline-none ${service.slug === "ifhp" && lang !== "fa" ? "col-span-2" : ""}`}
                         >
                           <span className="flex items-center gap-2.5">
                             <span className="size-1.5 shrink-0 rounded-full bg-[var(--brand-sage)] ring-3 ring-[var(--brand-olive-soft)] transition-colors group-hover/item:bg-[var(--brand-deep-olive)]" />
-                            <span className="block text-sm font-medium leading-snug text-[var(--brand-ink)] transition-colors group-hover/item:text-[var(--brand-deep-olive)]">
+                            <span className={`block text-sm font-medium leading-snug text-[var(--brand-ink)] transition-colors group-hover/item:text-[var(--brand-deep-olive)] ${service.slug === "ifhp" && lang !== "fa" ? "whitespace-nowrap" : ""}`}>
                               {formatLgbtqia2sText(service.name[lang])}
                             </span>
                           </span>

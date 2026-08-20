@@ -12,7 +12,7 @@ export function FooterLogoMark({ className = "", title = "ChangeMoment Mental He
       src={creamLogo}
       alt={title}
       className={`block w-auto max-w-full shrink-0 ${className}`}
-      loading="eager"
+      loading="lazy"
       decoding="async"
     />
   );

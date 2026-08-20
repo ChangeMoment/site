@@ -71,7 +71,7 @@ export function About() {
       {/* Meaning of ChangeMoment */}
       <Section>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal>
+          <Reveal className="order-2 lg:order-1">
             <div>
               <SectionHeading title={t("about.meaning.heading")} />
               <p className="mt-5 text-[var(--brand-ink-muted)]">{t("about.meaning.body1")}</p>
@@ -84,7 +84,7 @@ export function About() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal delay={120} className="order-1 lg:order-2">
             <div className="mx-auto flex min-h-[280px] w-full max-w-[400px] items-center justify-center md:min-h-[320px] lg:min-h-[380px]">
               <div
                 role="img"
@@ -101,7 +101,7 @@ export function About() {
 
       {/* Founder */}
       <Section bg="sage-soft">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+        <div className={`grid items-center gap-10 lg:gap-16 ${lang === "fa" ? "lg:grid-cols-[0.92fr_1.08fr]" : "lg:grid-cols-[1.08fr_0.92fr]"}`}>
           <Reveal>
             <div className="relative mx-auto w-full max-w-2xl">
               <div
@@ -120,7 +120,7 @@ export function About() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="mx-auto max-w-xl lg:mx-0">
+            <div className={`mx-auto lg:mx-0 ${lang === "fa" ? "max-w-2xl" : "max-w-xl"}`}>
               <blockquote className="border-s-2 border-[var(--brand-copper)]/65 ps-6 md:ps-8">
                 <p className="font-heading text-[1.4rem] leading-[1.65] text-[var(--brand-ink)] md:text-[1.65rem] md:leading-[1.58] fa:font-body fa:text-[1.08rem] fa:leading-[2.05] md:fa:text-[1.18rem]">
                   {t("about.founder.quote")}

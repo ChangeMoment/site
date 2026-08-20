@@ -49,7 +49,7 @@ export function FooterCredentials() {
           <img
             src={psychologyTodayBadge}
             alt="Verified by Psychology Today"
-            className="h-auto w-full max-w-[196px] object-contain sm:max-w-[212px]"
+            className="h-auto w-full max-w-[236px] object-contain sm:max-w-[260px] lg:max-w-[248px]"
             loading="lazy"
             decoding="async"
           />

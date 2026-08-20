@@ -28,6 +28,13 @@ const cleanHtml = (value = "") => sanitizeHtml(value, {
   },
 });
 
+const stripTrailingReferences = (slug, value) => {
+  if (slug !== "anxiety-beyond-worry") return value;
+  return value
+    .replace(/<h[2-6][^>]*>\s*(?:References|Références|منابع)\s*<\/h[2-6]>[\s\S]*$/i, "")
+    .trim();
+};
+
 function rewriteOrigin(value) {
   if (!cmsUrl || typeof value !== "string") return value;
   return value.split(cmsUrl).join(siteUrl);
@@ -95,7 +102,10 @@ async function main() {
       title: source.title,
       excerpt: source.excerpt,
       contentHtml: Object.fromEntries(
-        Object.entries(source.contentHtml).map(([lang, html]) => [lang, rewriteOrigin(cleanHtml(html))]),
+        Object.entries(source.contentHtml).map(([lang, html]) => [
+          lang,
+          rewriteOrigin(stripTrailingReferences(source.slug, cleanHtml(html))),
+        ]),
       ),
       body: [],
       tags: source.tags || [],

@@ -693,9 +693,9 @@ export const services: Service[] = [
       fa: "مراجعان IFHP",
     },
     short: {
-      en: "Counselling coverage for refugees, protected persons, and newcomers under the IFHP.",
-      fr: "Une couverture de counselling pour les réfugiés, personnes protégées et nouveaux arrivants grâce au PFSI.",
-      fa: "جلسات مشاوره برای پناهندگان، تازه واردان و افراد تحت پوشش IFHP",
+      en: "Counselling support for eligible IFHP clients, with coverage confirmed before care.",
+      fr: "Du counselling pour les clients admissibles au PFSI, avec confirmation de la couverture avant les soins.",
+      fa: "خدمات مشاوره برای مراجعان واجد شرایط IFHP، با تأیید پوشش پیش از جلسه",
     },
     intro: {
       en: "Rebuilding life in a new country can feel overwhelming. Through the Interim Federal Health Program, we offer counselling support with care, dignity, and respect.",
@@ -703,7 +703,7 @@ export const services: Service[] = [
       fa: "ساختن دوباره زندگی در کشوری تازه می‌تواند بسیار سنگین باشد. از طریق برنامه موقت فدرال سلامت (IFHP)، ما با مراقبت و همدلی در کنار شما هستیم.",
     },
     help: [
-      "Access counselling covered under the IFHP",
+      "Access eligible counselling through the IFHP",
       "Process trauma, loss, and the stress of displacement",
       "Rebuild a sense of safety and belonging in a new country",
       "Receive culturally sensitive, trauma-informed care",
@@ -727,7 +727,7 @@ export const services: Service[] = [
       "Anyone navigating the emotional impact of displacement",
     ],
     faqs: [
-      { q: "What is the IFHP?", a: "The Interim Federal Health Program provides limited, temporary health coverage — including mental health counselling — to eligible refugees, protected persons, and certain other groups who are not yet covered by provincial health insurance." },
+      { q: "What is the IFHP?", a: "The Interim Federal Health Program provides limited, temporary health coverage — including eligible mental health counselling — to eligible refugees, protected persons, and certain other groups who are not yet covered by provincial health insurance. Since May 1, 2026, eligible supplemental counselling has a 30% client co-payment." },
       { q: "Am I eligible for IFHP counselling?", a: "Eligibility is determined by the Government of Canada. If you hold valid IFHP coverage that includes mental health services, we can help you get started." },
       { q: "Is the care trauma-informed?", a: "Yes. Our counselling is grounded in trauma-informed, culturally sensitive practice that honours your experience with dignity and respect." },
     ],

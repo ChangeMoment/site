@@ -105,7 +105,7 @@ export const en = {
       ],
     },
     insurance: {
-      heading: "Direct Billing",
+      heading: "Direct Billing for Counselling in Coquitlam, BC",
       body: "We offer direct billing with many major insurers, so you can focus on your care instead of the paperwork.",
     },
     trust: {
@@ -270,8 +270,9 @@ export const en = {
       inContent: "Also related to your search",
     },
     insurance: {
+      title: "Direct Billing",
       heading: "Less paperwork between you and care",
-      body: "For eligible plans, we can submit claims directly to many major insurance providers. You typically pay only any remaining balance after your coverage is applied.",
+      body: "For eligible plans, we can submit claims directly to many major insurance providers. Coverage and direct billing eligibility vary by plan. Please confirm your benefits with your insurer.",
       highlights: [
         "Claims submitted directly to participating insurers",
         "Pay only the portion not covered by your plan",

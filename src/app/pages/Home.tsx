@@ -215,7 +215,8 @@ export function Home() {
                   src={secondSectionImage}
                   alt={t("home.welcome.photoAlt")}
                   className="absolute inset-0 size-full object-cover object-[54%_50%]"
-                  loading="eager"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -405,7 +406,8 @@ export function Home() {
                 src={founderSpotlightImage}
                 alt={t("home.teamPreview.photoAlt")}
                 className="absolute inset-0 size-full object-cover object-[52%_50%]"
-                loading="eager"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </Reveal>

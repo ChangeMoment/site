@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { ParticipatingInsurers } from "./ParticipatingInsurers";
 import { useLang } from "../i18n/LanguageProvider";
+import { PubliclyFundedPrograms } from "./PubliclyFundedPrograms";
 
 export function InsuranceCoverageSection({ variant }: { variant: "home" | "services" }) {
   const { t, tList, lang } = useLang();
@@ -20,8 +21,8 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
               <p className="text-xs uppercase tracking-[0.2em] text-white/50">{t("insuranceCoverage.eyebrow")}</p>
               <h2
                 id="home-insurance-heading"
-                className="mt-3 font-heading text-white"
-                style={{ fontSize: "clamp(1.7rem, 3vw, 2.35rem)" }}
+                className="mt-3 font-heading text-white lg:whitespace-nowrap"
+                style={{ fontSize: "clamp(1.6rem, 2.7vw, 2.35rem)" }}
               >
                 {t("home.insurance.heading")}
               </h2>
@@ -33,6 +34,7 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
               compact
               className="mx-auto mt-10 max-w-5xl border-t border-white/10 pt-8"
             />
+            <PubliclyFundedPrograms />
           </Reveal>
         ) : (
           <>
@@ -40,17 +42,18 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
               <Reveal>
                 <div className={lang === "fa" ? "text-right" : ""}>
                   <p className="text-xs uppercase tracking-[0.2em] text-white/50">{t("insuranceCoverage.eyebrow")}</p>
-                  <h2
-                    id="services-insurance-heading"
-                    className="mt-3 font-heading text-white"
+                  <h2 id="services-insurance-heading" className="mt-3 font-heading text-2xl text-white md:text-3xl">
+                    {t("services.insurance.title")}
+                  </h2>
+                  <h3
+                    className="mt-2 font-heading text-white"
                     style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.15 }}
                   >
                     {t("services.insurance.heading")}
-                  </h2>
+                  </h3>
                   <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
                     {t("services.insurance.body")}
                   </p>
-                  <p className="mt-5 text-sm leading-relaxed text-white/50">{t("services.insurance.note")}</p>
                 </div>
               </Reveal>
               <Reveal delay={100}>
@@ -70,6 +73,7 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
               <ParticipatingInsurers
                 className="mt-14 border-t border-white/10 pt-10 md:mt-16"
               />
+              <PubliclyFundedPrograms />
             </Reveal>
           </>
         )}

@@ -8,8 +8,6 @@
      Pinar V4      — licence code YTU7LVP6QP
    See ATTRIBUTIONS.md. Files live in public/fonts and are served same-origin,
    so no third-party font host is contacted and no CSP exception is required. */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
-
 /* Persian (FA) titles: Doran — self-hosted.
    The Eco licence ships two weights (Regular and ExtraBold). ExtraBold is
    mapped to 700 as well so bold headings never fall back to a synthesised face. */

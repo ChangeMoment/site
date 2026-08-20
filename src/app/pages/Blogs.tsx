@@ -18,8 +18,8 @@ export function Blogs() {
   const chip = (selected: boolean) =>
     `rounded-full px-4 py-2 text-sm transition-colors ${
       selected
-        ? "bg-[var(--brand-deep-olive)] text-white"
-        : "bg-[var(--brand-sage-soft)] text-[var(--brand-ink)] hover:bg-[var(--brand-sage)]"
+        ? "bg-[var(--brand-copper)] text-white shadow-[0_8px_18px_-12px_rgba(91,61,44,0.7)]"
+        : "bg-[var(--brand-bone)] text-[var(--brand-ink)] hover:bg-[var(--brand-bone-soft)]"
     }`;
 
   return (

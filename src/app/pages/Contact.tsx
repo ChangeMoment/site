@@ -223,7 +223,14 @@ export function Contact() {
                   <h3 style={{ fontSize: "1.1rem", color: "#a8442f" }}>
                     {t("contact.emergency.title")}
                   </h3>
-                  <p className="mt-2 text-sm text-[#7a3526]">{t("contact.emergency.body")}</p>
+                  <p className="mt-2 text-sm text-[#7a3526]">
+                    {lang === "fa" ? (
+                      <>
+                        اگر در خطر هستید یا به کمک فوری نیاز دارید، همین الان با ۹۱۱ تماس بگیرید. برای دریافت کمک در بحران‌های روانی، با خط بحران BC تماس بگیرید:{" "}
+                        <bdi dir="ltr">(604) 872-3311</bdi>.
+                      </>
+                    ) : t("contact.emergency.body")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -265,7 +272,7 @@ export function Contact() {
 
             <Reveal delay={160}>
               <a
-                href="https://www.google.com/maps/place/3030+Lincoln+Ave,+Coquitlam,+BC+V3B+6B4,+Canada/@49.2787064,-122.7917019,17z"
+                href="https://maps.app.goo.gl/Gjekb7iP8Gu2J2276?g_st=it"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block overflow-hidden rounded-3xl border border-[var(--brand-muted-olive)]/20"
@@ -277,7 +284,7 @@ export function Contact() {
                     src="https://www.google.com/maps?q=49.2787064,-122.7917019&z=17&output=embed"
                     width="100%"
                     height="100%"
-                    className="absolute inset-0 h-full w-full border-0"
+                    className="pointer-events-none absolute inset-0 h-full w-full border-0"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />

@@ -107,7 +107,7 @@ export const fr: TranslationShape = {
       ],
     },
     insurance: {
-      heading: "La facturation directe, en toute simplicité",
+      heading: "Facturation directe pour le counselling à Coquitlam, C.-B.",
       body: "Nous offrons la facturation directe avec de nombreux grands assureurs, pour que vous puissiez vous concentrer sur vos soins plutôt que sur la paperasse.",
     },
     trust: {
@@ -272,6 +272,7 @@ export const fr: TranslationShape = {
       inContent: "Également lié à votre recherche",
     },
     insurance: {
+      title: "Facturation directe",
       heading: "Moins de paperasse entre vous et vos soins",
       body: "Pour les régimes admissibles, nous pouvons soumettre les réclamations directement à de nombreux grands assureurs. Vous ne payez généralement que le solde restant après l’application de votre couverture.",
       highlights: [

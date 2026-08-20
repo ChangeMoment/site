@@ -3,7 +3,7 @@
 .cms-article-content {
   color: var(--brand-ink);
   font-size: 1.125rem;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 .cms-article-content :is(h2, h3) {
@@ -13,8 +13,8 @@
 
 .cms-article-content h2 { font-size: clamp(1.35rem, 2vw, 1.65rem); }
 .cms-article-content h3 { font-size: 1.1rem; }
-.cms-article-content p { margin-top: 1.25rem; }
-.cms-article-content :is(ul, ol) { margin-top: 1.25rem; padding-inline-start: 1.5rem; }
+.cms-article-content p { margin-top: 1.5rem; }
+.cms-article-content :is(ul, ol) { margin-top: 1.5rem; padding-inline-start: 1.5rem; }
 .cms-article-content li + li { margin-top: 0.6rem; }
 .cms-article-content a {
   color: var(--brand-deep-olive);

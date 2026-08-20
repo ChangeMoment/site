@@ -91,7 +91,7 @@ function renderBody(lines: string[], lang: Lang): ReactNode[] {
     } else {
       elements.push(
         <Reveal key={i} delay={(i % 8) * 30}>
-          <p className="mt-5 text-lg leading-relaxed text-[var(--brand-ink)]">
+          <p className="mt-6 text-lg leading-8 text-[var(--brand-ink)] md:leading-9">
             {parseInlineLinks(line, lang)}
           </p>
         </Reveal>
@@ -216,11 +216,6 @@ export const frBlogBodies: Record<string, string[]> = {
     "Mais les émotions n'arrivent pas toujours avec une explication claire. Se sentir anxieux quand tout semble bien se passer ne signifie pas que vous êtes irrationnel, ingrat ou trop sensible. C'est peut-être un signe que votre esprit et votre corps répondent à l'incertitude, à des menaces perçues, ou à des schémas qui se sont développés au fil du temps.",
     "Alors, au lieu de vous demander seulement : « Pourquoi suis-je anxieux alors que rien ne va mal ? » — vous pourriez aussi vous demander : « Qu'est-ce que mon anxiété me demande de remarquer ? »",
     "Parfois, comprendre cette question est là où commence le changement. Si vous souhaitez explorer comment l'anxiété affecte votre vie, [prenez rendez-vous pour une consultation gratuite](/book) avec notre équipe chez ChangeMoment.",
-    "## Références",
-    "Craske, M. G., & Stein, M. B. (2016). Anxiety. [The Lancet, 388(10063), 3048–3059.](https://doi.org/10.1016/S0140-6736(16)30381-6)",
-    "Grupe, D. W., & Nitschke, J. B. (2013). Uncertainty and anticipation in anxiety: An integrated neurobiological and psychological perspective. [Nature Reviews Neuroscience, 14, 488–501.](https://www.nature.com/articles/nrn3524)",
-    "Gross, C., & Hen, R. (2004). The developmental origins of anxiety. [Nature Reviews Neuroscience, 5, 545–552.](https://www.nature.com/articles/nrn1429)",
-    "American Psychiatric Association. (2022). Diagnostic and Statistical Manual of Mental Disorders (5th ed., text rev.; DSM-5-TR). American Psychiatric Association Publishing.",
   ],
 };
 
@@ -338,11 +333,6 @@ export const faBlogBodies: Record<string, string[]> = {
     "اما احساسات همیشه با توضیح واضحی نمی‌آیند. احساس اضطراب وقتی همه چیز خوب به نظر می‌رسد به این معنی نیست که غیرمنطقی، ناسپاس یا بیش از حد حساس هستید. ممکن است نشانه‌ای باشد که ذهن و بدن شما به عدم قطعیت، تهدیدات درک‌شده، یا الگوهایی که در طول زمان توسعه یافته‌اند پاسخ می‌دهند.",
     "پس به‌جای اینکه فقط بپرسید: «چرا وقتی هیچ چیز اشتباه نیست مضطرب هستم؟» — می‌توانید هم بپرسید: «اضطراب من چه چیزی را از من می‌خواهد که متوجه شوم؟»",
     "گاهی، درک آن سؤال جایی است که تغییر شروع می‌شود. اگر می‌خواهید بررسی کنید اضطراب چگونه بر زندگی شما تأثیر می‌گذارد، [یک مشاوره رایگان رزرو کنید](/book) با تیم ما در ChangeMoment.",
-    "## منابع",
-    "Craske, M. G., & Stein, M. B. (2016). Anxiety. [The Lancet, 388(10063), 3048–3059.](https://doi.org/10.1016/S0140-6736(16)30381-6)",
-    "Grupe, D. W., & Nitschke, J. B. (2013). Uncertainty and anticipation in anxiety: An integrated neurobiological and psychological perspective. [Nature Reviews Neuroscience, 14, 488–501.](https://www.nature.com/articles/nrn3524)",
-    "Gross, C., & Hen, R. (2004). The developmental origins of anxiety. [Nature Reviews Neuroscience, 5, 545–552.](https://www.nature.com/articles/nrn1429)",
-    "American Psychiatric Association. (2022). Diagnostic and Statistical Manual of Mental Disorders (5th ed., text rev.; DSM-5-TR). American Psychiatric Association Publishing.",
   ],
 };
 
