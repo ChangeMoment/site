@@ -54,8 +54,8 @@ function renderBody(lines: string[], lang: Lang): ReactNode[] {
     const line = lines[i];
     if (line.startsWith("## ")) {
       elements.push(
-        <Reveal key={i}>
-          <h2 className="mt-12 mb-1" style={{ fontSize: "clamp(1.35rem, 2vw, 1.65rem)" }}>
+        <Reveal key={i} className="article-section-heading">
+          <h2>
             {line.slice(3)}
           </h2>
         </Reveal>
@@ -63,8 +63,8 @@ function renderBody(lines: string[], lang: Lang): ReactNode[] {
       i++;
     } else if (line.startsWith("### ")) {
       elements.push(
-        <Reveal key={i}>
-          <h3 className="mt-7 mb-1" style={{ fontSize: "1.1rem" }}>
+        <Reveal key={i} className="article-subsection-heading">
+          <h3>
             {line.slice(4)}
           </h3>
         </Reveal>
@@ -77,10 +77,10 @@ function renderBody(lines: string[], lang: Lang): ReactNode[] {
         i++;
       }
       elements.push(
-        <Reveal key={`ul-${i}`}>
-          <ul className="mt-5 space-y-2.5">
+        <Reveal key={`ul-${i}`} className="article-list-block">
+          <ul className="space-y-3">
             {items.map((item, j) => (
-              <li key={j} className="flex items-start gap-3 text-lg leading-relaxed text-[var(--brand-ink)]">
+              <li key={j} className="flex items-start gap-3">
                 <span className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-[var(--brand-copper)]" aria-hidden="true" />
                 <span>{parseInlineLinks(item, lang)}</span>
               </li>
@@ -90,8 +90,8 @@ function renderBody(lines: string[], lang: Lang): ReactNode[] {
       );
     } else {
       elements.push(
-        <Reveal key={i} delay={(i % 8) * 30}>
-          <p className="mt-6 text-lg leading-8 text-[var(--brand-ink)] md:leading-9">
+        <Reveal key={i} className="article-paragraph" delay={(i % 8) * 30}>
+          <p>
             {parseInlineLinks(line, lang)}
           </p>
         </Reveal>
@@ -455,17 +455,21 @@ export function BlogDetail() {
             />
           </div>
 
-          <div className="py-12">
-            {post.contentHtml?.[lang] ? (
-              <div
-                className="cms-article-content"
-                // WordPress output is allowlist-sanitized by the CMS endpoint;
-                // DOMPurify is a second browser-side boundary for network data.
-                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.contentHtml[lang]!) }}
-              />
-            ) : (
-              renderBody(bodyLines, lang)
-            )}
+          <div className="py-14 md:py-20">
+            <div
+              className={`blog-article-content ${post.contentHtml?.[lang] ? "cms-article-content" : "repository-article-content"}`}
+              data-blog-article-content
+            >
+              {post.contentHtml?.[lang] ? (
+                <div
+                  // WordPress output is allowlist-sanitized by the CMS endpoint;
+                  // DOMPurify is a second browser-side boundary for network data.
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.contentHtml[lang]!) }}
+                />
+              ) : (
+                renderBody(bodyLines, lang)
+              )}
+            </div>
 
             <BlogShareBar
               slug={post.slug}
@@ -473,7 +477,7 @@ export function BlogDetail() {
               tags={post.tags}
             />
 
-            <div className="mt-8 pt-2">
+            <div className="mt-10 pt-2">
               <Link
                 to={localizedPath("/blogs", lang)}
                 className="inline-flex items-center gap-2 text-[var(--brand-deep-olive)] transition-all hover:gap-3"

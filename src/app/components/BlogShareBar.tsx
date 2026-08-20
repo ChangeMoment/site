@@ -87,7 +87,7 @@ export function BlogShareBar({ slug, title, tags }: BlogShareBarProps) {
   ];
 
   return (
-    <div className="mt-12 space-y-6 border-t border-[var(--brand-muted-olive)]/20 pt-8">
+    <div className="mt-16 space-y-7 border-t border-[var(--brand-muted-olive)]/20 pt-10">
       {/* Tags */}
       {tags.length > 0 && (
         <div className="flex flex-wrap items-center gap-2">

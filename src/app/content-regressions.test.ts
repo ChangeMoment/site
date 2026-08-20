@@ -14,12 +14,14 @@ const files = {
   apache: source("../../deploy/wordpress/apache-changemoment.conf"),
   blogDetail: source("./pages/BlogDetail.tsx"),
   blogs: source("./pages/Blogs.tsx"),
+  blogShareBar: source("./components/BlogShareBar.tsx"),
   contact: source("./pages/Contact.tsx"),
   footer: source("./components/Footer.tsx"),
   footerCredentials: source("./components/FooterCredentials.tsx"),
   footerLogo: source("./components/FooterLogoMark.tsx"),
   header: source("./components/Header.tsx"),
   index: source("../../index.html"),
+  indexStyles: source("../styles/index.css"),
   insurance: source("./components/InsuranceCoverageSection.tsx"),
   languageProvider: source("./i18n/LanguageProvider.tsx"),
   pageHero: source("./components/PageHero.tsx"),
@@ -28,6 +30,7 @@ const files = {
   serviceDetail: source("./pages/ServiceDetail.tsx"),
   team: source("./pages/Team.tsx"),
   theme: source("../styles/theme.css"),
+  articleStyles: source("../styles/globals.css"),
   uiKit: source("./components/ui-kit.tsx"),
   fonts: source("../styles/fonts.css"),
 };
@@ -47,8 +50,9 @@ describe("Bahar feedback: message-by-message release checklist", () => {
   });
 
   it("421827 adds readable paragraph and list spacing to full articles", () => {
-    expect(files.blogDetail).toContain('className="mt-6 text-lg leading-8');
-    expect(files.blogDetail).toContain('className="mt-5 space-y-2.5"');
+    expect(files.blogDetail).toContain('className="article-paragraph"');
+    expect(files.blogDetail).toContain('className="article-list-block"');
+    expect(files.articleStyles).toContain("--article-block-gap: 1.625rem;");
   });
 
   it("421828 uses cream inactive blog filters and a brown active filter", () => {
@@ -306,5 +310,31 @@ describe("Bahar feedback: message-by-message release checklist", () => {
   it("the August 20 follow-up requests every insurer logo eagerly instead of waiting for scroll", () => {
     expect(files.participatingInsurers.match(/fetchpriority: "high"/g)).toHaveLength(1);
     expect(files.participatingInsurers).not.toContain('loading="lazy"');
+  });
+
+  it("the blog typography follow-up loads one shared article rhythm for CMS and repository content", () => {
+    expect(files.indexStyles).toContain("@import './globals.css';");
+    expect(files.blogDetail).toContain("blog-article-content");
+    expect(files.blogDetail).toContain("cms-article-content");
+    expect(files.blogDetail).toContain("repository-article-content");
+    expectEvery(files.articleStyles, [
+      "line-height: 1.9;",
+      'html[lang="fa"] .blog-article-content',
+      "--article-section-gap: 3.5rem;",
+      "--article-heading-gap: 1.125rem;",
+    ]);
+  });
+
+  it("the blog typography follow-up standardizes rich article shapes and supporting controls", () => {
+    expectEvery(files.articleStyles, [
+      ".blog-article-content blockquote",
+      ".blog-article-content img",
+      ".blog-article-content figcaption",
+      ".blog-article-content hr",
+      ".blog-article-content table",
+      ".blog-article-content pre",
+    ]);
+    expect(files.blogShareBar).toContain("mt-16 space-y-7");
+    expect(files.blogDetail).toContain('className="py-14 md:py-20"');
   });
 });
