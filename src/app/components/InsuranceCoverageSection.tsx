@@ -10,7 +10,7 @@ export function InsuranceCoverageSection({ variant }: { variant: "home" | "servi
 
   return (
     <section
-      className={`relative overflow-hidden bg-[var(--brand-deep-olive)] ${isCompact ? "py-16 md:py-20" : "py-20 md:py-28"}`}
+      className={`relative overflow-hidden bg-[var(--brand-deep-olive)] ${isCompact ? "py-20 md:py-24" : "py-24 md:py-32"}`}
       aria-labelledby={`${variant}-insurance-heading`}
     >
       <div className="pointer-events-none absolute inset-0 opacity-25 [background:radial-gradient(circle_at_12%_20%,rgba(255,255,255,0.12),transparent_35%),radial-gradient(circle_at_88%_80%,rgba(189,151,126,0.18),transparent_34%)]" />

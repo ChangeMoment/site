@@ -5,7 +5,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist/**", ".prerender/**", "node_modules/**", "deploy/tmp/**", "src/imports/pasted_text/**"] },
+  { ignores: ["dist/**", ".prerender/**", "node_modules/**", "output/**", "deploy/tmp/**", "src/imports/pasted_text/**"] },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {

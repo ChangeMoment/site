@@ -126,7 +126,7 @@ export function Section({
     "sage-soft": "bg-[var(--brand-sage-soft)]",
   } as const;
   return (
-    <section id={id} className={`${bgMap[bg]} py-20 md:py-28 ${className}`}>
+    <section id={id} className={`${bgMap[bg]} py-24 md:py-32 ${className}`}>
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">{children}</div>
     </section>
   );
@@ -147,9 +147,9 @@ export function SectionHeading({
 }) {
   return (
     <div className={`${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"} ${className}`}>
-      {eyebrow && <Eyebrow className="mb-4">{eyebrow}</Eyebrow>}
+      {eyebrow && <Eyebrow className="mb-5">{eyebrow}</Eyebrow>}
       <h2>{title}</h2>
-      {subtitle && <p className="mt-4 text-[var(--brand-ink-muted)]">{subtitle}</p>}
+      {subtitle && <p className="mt-6 leading-8 text-[var(--brand-ink-muted)]">{subtitle}</p>}
     </div>
   );
 }

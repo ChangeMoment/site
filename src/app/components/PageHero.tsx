@@ -21,7 +21,7 @@ export function PageHero({
   mirrorDecoration?: boolean;
 }) {
   return (
-    <section className="relative overflow-hidden bg-[var(--brand-olive-soft)] pt-32 pb-16 md:pt-40 md:pb-24">
+    <section className="relative overflow-hidden bg-[var(--brand-olive-soft)] pt-32 pb-20 md:pt-40 md:pb-28">
       <CurveDecoration
         draw
         className={`pointer-events-none absolute top-8 hidden h-80 w-[34rem] md:block ${mirrorDecoration ? "left-[-4%] scale-x-[-1]" : "right-[-4%]"}`}
@@ -40,12 +40,12 @@ export function PageHero({
           </Reveal>
           {body && (
             <Reveal delay={160}>
-              <p className="mt-5 text-lg text-[var(--brand-ink-muted)]">{body}</p>
+              <p className="mt-6 text-lg leading-8 text-[var(--brand-ink-muted)]">{body}</p>
             </Reveal>
           )}
           {children && (
             <Reveal delay={240}>
-              <div className="mt-8">{children}</div>
+              <div className="mt-10">{children}</div>
             </Reveal>
           )}
         </div>

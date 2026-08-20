@@ -191,6 +191,7 @@ const icons = [Brain, HeartHandshake, ShieldCheck, Languages, MonitorCheck, User
 export function Team() {
   const { t, lang } = useLang();
   const page = copy[lang];
+  const bitaDisplayName = lang === "fa" ? "بیتا رمضان‌نیا" : "Bita Ramezannia";
 
   return (
     <>
@@ -227,9 +228,9 @@ export function Team() {
             {/* Text */}
             <div>
               <p className="text-sm uppercase tracking-widest text-[var(--brand-copper)]">{page.bita.founderEyebrow}</p>
-              <h2 className="mt-2" style={{ fontSize: "clamp(1.9rem,3vw,2.6rem)" }}>Bita Ramezannia</h2>
-              <p className="mt-1 text-base text-[var(--brand-ink-muted)]" dir="ltr">{page.bita.credentials}</p>
-              <div className="mt-7 space-y-4 text-[var(--brand-ink-muted)] leading-relaxed">
+              <h2 className="mt-3" style={{ fontSize: "clamp(1.9rem,3vw,2.6rem)" }}>{bitaDisplayName}</h2>
+              <p className="mt-2 text-base text-[var(--brand-ink-muted)]" dir="ltr">{page.bita.credentials}</p>
+              <div className="mt-8 space-y-6 text-[var(--brand-ink-muted)] leading-relaxed">
                 {page.bita.bioParagraphs.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
@@ -243,7 +244,7 @@ export function Team() {
               >
                 <img
                   src={bitaPhoto}
-                  alt={`Bita Ramezannia — ${page.bita.founderEyebrow}`}
+                  alt={`${bitaDisplayName} — ${page.bita.founderEyebrow}`}
                   className="absolute inset-0 h-full w-full object-cover object-top"
                   loading="lazy"
                   decoding="async"
@@ -259,7 +260,7 @@ export function Team() {
       </Section>
 
       {/* ── Section 2: Approach ──────────────────────────────── */}
-      <section className="bg-[var(--brand-bone-soft)] py-20 md:py-24">
+      <section className="bg-[var(--brand-bone-soft)] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="text-sm uppercase tracking-widest text-[var(--brand-deep-olive)]/60 text-center">{page.bita.approachEyebrow}</p>
@@ -280,7 +281,7 @@ export function Team() {
       </section>
 
       {/* ── Section 3: Who I work with ───────────────────────── */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-white py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="text-center text-sm uppercase tracking-widest text-[var(--brand-deep-olive)]/60">{page.bita.focusEyebrow}</p>

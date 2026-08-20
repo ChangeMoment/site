@@ -12,7 +12,7 @@ interface CTABandProps {
 export function CTABand({ heading, body, primaryTo = "/book" }: CTABandProps) {
   const { t, lang } = useLang();
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-24 md:py-32">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] border border-[var(--brand-muted-olive)]/20 bg-[var(--brand-bone-soft)] px-6 py-16 text-center md:px-16">

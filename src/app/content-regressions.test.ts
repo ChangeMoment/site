@@ -22,10 +22,13 @@ const files = {
   index: source("../../index.html"),
   insurance: source("./components/InsuranceCoverageSection.tsx"),
   languageProvider: source("./i18n/LanguageProvider.tsx"),
+  pageHero: source("./components/PageHero.tsx"),
   participatingInsurers: source("./components/ParticipatingInsurers.tsx"),
   programs: source("./components/PubliclyFundedPrograms.tsx"),
   serviceDetail: source("./pages/ServiceDetail.tsx"),
   team: source("./pages/Team.tsx"),
+  theme: source("../styles/theme.css"),
+  uiKit: source("./components/ui-kit.tsx"),
   fonts: source("../styles/fonts.css"),
 };
 
@@ -113,7 +116,8 @@ describe("Bahar feedback: message-by-message release checklist", () => {
   });
 
   it("421840 widens the Persian founder quote on desktop", () => {
-    expect(files.about).toContain('lang === "fa" ? "max-w-2xl" : "max-w-xl"');
+    expect(files.about).toContain('lang === "fa" ? "lg:grid-cols-[0.72fr_1.28fr]"');
+    expect(files.about).toContain('lang === "fa" ? "max-w-none" : "max-w-xl"');
   });
 
   it("421850 applies every Persian Team replacement from the attached Word file", () => {
@@ -266,13 +270,41 @@ describe("Bahar feedback: message-by-message release checklist", () => {
     expect(ifhp.fa).not.toContain("آیا این مشاوره تحت پوشش بیمه است؟");
   });
 
-  it("421955 keeps below-fold images and logos lazy while prioritizing hero images and fonts", () => {
-    expectEvery(files.footerLogo + files.footerCredentials + files.participatingInsurers, ['loading="lazy"', 'decoding="async"']);
+  it("421955 keeps footer media lazy while prioritizing hero images, fonts and participating insurers", () => {
+    expectEvery(files.footerLogo + files.footerCredentials, ['loading="lazy"', 'decoding="async"']);
+    expectEvery(files.participatingInsurers, ['loading="eager"', 'fetchpriority: "high"', 'decoding="async"']);
     expect(files.serviceDetail).toContain('loading="eager"');
     expect(files.serviceDetail).toContain('fetchPriority="high"');
     expect(files.index).toContain('rel="preconnect" href="https://fonts.gstatic.com"');
     expect(files.fonts).toContain("font-display: swap");
     expect(files.languageProvider).toContain('if (prefix === "fa") preloadPersianFonts();');
     expect(files.languageProvider).not.toContain('saved === "fa"');
+  });
+
+  it("the August 20 follow-up increases shared paragraph, title and section spacing in every language", () => {
+    expect(files.uiKit).toContain("py-24 md:py-32");
+    expect(files.uiKit).toContain('className="mt-6 leading-8 text-[var(--brand-ink-muted)]"');
+    expect(files.pageHero).toContain("pb-20 md:pt-40 md:pb-28");
+    expect(files.pageHero).toContain('className="mt-6 text-lg leading-8');
+    expect(files.theme).toContain("line-height: 1.8;");
+  });
+
+  it("the August 20 follow-up keeps the Persian About quote phrase together in a wider desktop column", () => {
+    expect(translations.fa.about.founder.quote).toContain("درمان می‌تواند");
+    expect(files.about).toContain('lg:grid-cols-[0.72fr_1.28fr]');
+    expect(files.about).toContain('lang === "fa" ? "max-w-none"');
+    expect(files.about).toContain("data-founder-quote");
+  });
+
+  it("the August 20 follow-up localizes Bita's visible name on Persian About and Team pages", () => {
+    expect(files.about).toContain('lang === "fa" ? "بیتا رمضان‌نیا" : "Bita Ramezannia"');
+    expect(files.team).toContain('lang === "fa" ? "بیتا رمضان‌نیا" : "Bita Ramezannia"');
+    expect(files.about).toContain("{bitaDisplayName}");
+    expect(files.team).toContain("{bitaDisplayName}");
+  });
+
+  it("the August 20 follow-up requests every insurer logo eagerly instead of waiting for scroll", () => {
+    expect(files.participatingInsurers.match(/fetchpriority: "high"/g)).toHaveLength(1);
+    expect(files.participatingInsurers).not.toContain('loading="lazy"');
   });
 });

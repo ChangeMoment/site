@@ -52,8 +52,9 @@ export function ParticipatingInsurers({
               src={insurer.logo}
               alt={`${insurer.name} — insurance provider we can direct bill`}
               className={`${compact ? "max-h-10" : "max-h-12"} w-full object-contain`}
-              loading="lazy"
+              loading="eager"
               decoding="async"
+              {...{ fetchpriority: "high" }}
             />
           </div>
         ))}
