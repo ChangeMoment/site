@@ -49,8 +49,6 @@ const copy = {
     fitTitle: "How we begin with you",
     fitBody:
       "If you are new, start with a free consultation. We listen to what is happening, answer your questions, and make sense of a next step together—without asking you to diagnose yourself first.",
-    ctaTitle: "You do not need to know where to begin.",
-    ctaBody: "Start with a free consultation and tell us what has been feeling difficult.",
     consultation: "Book a Free Consultation",
     teams: [
       {
@@ -125,8 +123,6 @@ const copy = {
     fitTitle: "چطور از شما شروع می‌کنیم",
     fitBody:
       "اگر برای اولین بار مراجعه می‌کنید، می‌توانید با یک مشاوره رایگان شروع کنید. با دقت گوش می‌دهیم، به پرسش‌ها پاسخ می‌دهیم و بدون اینکه لازم باشد خودتان را تشخیص دهید، قدم بعدی را با هم روشن می‌کنیم.",
-    ctaTitle: "لازم نیست از همین حالا بدانید از کجا شروع کنید.",
-    ctaBody: "با یک مشاوره رایگان شروع کنید و بگویید این روزها چه چیزی برایتان سخت شده است.",
     consultation: "رزرو مشاوره رایگان",
     teams: [
       { title: "تیم مشاوره فردی", body: "برای اضطراب، افسردگی، سوگ، تغییرات زندگی، هویت، استرس و زمان‌هایی که نیاز دارید در فضایی امن خودتان را بهتر بفهمید.", helps: ["تنظیم هیجان", "خودشناسی", "رشد فردی"] },
@@ -177,8 +173,6 @@ const copy = {
     fitTitle: "Comment nous commençons avec vous",
     fitBody:
       "Si vous êtes nouveau, commencez par une consultation gratuite. Nous écoutons ce qui se passe, répondons à vos questions et réfléchissons avec vous au prochain pas, sans vous demander de vous diagnostiquer d’abord.",
-    ctaTitle: "Vous n’avez pas besoin de savoir par où commencer.",
-    ctaBody: "Commencez par une consultation gratuite et racontez-nous ce qui est difficile en ce moment.",
     consultation: "Réserver une consultation gratuite",
     teams: [
       { title: "Équipe de counselling individuel", body: "Pour l’anxiété, la dépression, le deuil, les transitions de vie, l’identité, le stress et le besoin d’un espace personnel stable.", helps: ["Régulation émotionnelle", "Compréhension de soi", "Croissance personnelle"] },

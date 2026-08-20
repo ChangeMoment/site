@@ -77,8 +77,7 @@ function preloadPersianFonts() {
 // before React even mounts) when the app is opened directly on a FA page.
 if (typeof window !== "undefined") {
   const prefix = window.location.pathname.split("/")[1];
-  const saved = window.localStorage?.getItem(STORAGE_KEY);
-  if (prefix === "fa" || saved === "fa") preloadPersianFonts();
+  if (prefix === "fa") preloadPersianFonts();
 }
 
 export function LanguageProvider({ children, initialLang }: { children: ReactNode; initialLang?: Lang }) {
