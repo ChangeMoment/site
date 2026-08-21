@@ -203,6 +203,25 @@ sudo install -o www-data -g www-data -m 0644 \
 
 The must-use plugin adds French and Persian editorial fields, exposes the sanitized `/wp-json/changemoment/v1/posts` contract, and writes a rebuild marker whenever a post is published.
 
+The same plugin delivers contact-form messages through Resend. Store the API
+credential outside the repository and outside every web document root:
+
+```bash
+sudo install -d -o root -g www-data -m 0750 /etc/changemoment
+sudo install -o root -g www-data -m 0640 /dev/null /etc/changemoment/.env
+sudoedit /etc/changemoment/.env
+```
+
+The file must contain exactly one secret assignment:
+
+```dotenv
+RESEND_API_KEY=replace-with-a-real-resend-key
+```
+
+Never put this key in a `VITE_*` variable, WordPress content, Git history, Apache
+configuration, or a path served by Apache. Resend must have `changemoment.ca`
+verified before `website@changemoment.ca` can be used as the sender.
+
 Verify the CMS contract before building:
 
 ```bash
@@ -355,7 +374,7 @@ Then repeat the public smoke tests. Do not delete the failed release until the r
 
 Before treating a deployment as production-ready, provide and verify:
 
-- Delivery from the included WordPress contact endpoint to `info@changemoment.ca` through an authenticated SMTP transport; the endpoint validates input, rate-limits requests, and fails closed when `wp_mail` cannot queue the message
+- A verified Resend sending domain and a protected `/etc/changemoment/.env`; the contact endpoint validates input, rate-limits requests, and fails closed unless Resend accepts the message
 - Final privacy, terms, and accessibility content
 - Licensed Doran and Pinar Persian font files, or an approved fallback-font decision
 - The production domain, DNS access, and HTTPS certificate

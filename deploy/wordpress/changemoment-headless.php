@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ChangeMoment Headless Blog
  * Description: Three-language editorial fields plus sanitized blog and contact REST contracts for the ChangeMoment frontend.
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 
 if (!defined('ABSPATH')) { exit; }
@@ -12,6 +12,74 @@ const CM_META_FIELDS = [
     'title_fa' => 'Persian title', 'excerpt_fa' => 'Persian excerpt', 'content_fa' => 'Persian content',
     'category' => 'Frontend category', 'read_minutes' => 'Reading time (minutes)',
 ];
+
+const CM_RESEND_ENDPOINT = 'https://api.resend.com/emails';
+const CM_ENV_FILE = '/etc/changemoment/.env';
+
+function cm_env_value($name) {
+    static $file_values = null;
+
+    $runtime_value = getenv($name);
+    if ($runtime_value !== false && trim((string) $runtime_value) !== '') {
+        return trim((string) $runtime_value);
+    }
+
+    if ($file_values === null) {
+        $file_values = [];
+        if (is_readable(CM_ENV_FILE)) {
+            $parsed = @parse_ini_file(CM_ENV_FILE, false, INI_SCANNER_RAW);
+            if (is_array($parsed)) $file_values = $parsed;
+        }
+    }
+
+    return isset($file_values[$name]) ? trim((string) $file_values[$name]) : '';
+}
+
+function cm_send_contact_via_resend($subject, $body, $reply_to) {
+    $api_key = cm_env_value('RESEND_API_KEY');
+    if (!$api_key || !preg_match('/^re_[A-Za-z0-9_-]+$/', $api_key)) {
+        error_log('ChangeMoment contact: Resend is not configured.');
+        return false;
+    }
+
+    $payload = wp_json_encode([
+        'from' => 'ChangeMoment Website <website@changemoment.ca>',
+        'to' => ['info@changemoment.ca'],
+        'reply_to' => $reply_to,
+        'subject' => $subject,
+        'text' => $body,
+        'tags' => [
+            ['name' => 'source', 'value' => 'contact-form'],
+        ],
+    ]);
+    if (!$payload) return false;
+
+    $result = wp_remote_post(CM_RESEND_ENDPOINT, [
+        'timeout' => 15,
+        'redirection' => 0,
+        'reject_unsafe_urls' => true,
+        'headers' => [
+            'Authorization' => 'Bearer ' . $api_key,
+            'Content-Type' => 'application/json',
+            'Idempotency-Key' => wp_generate_uuid4(),
+        ],
+        'body' => $payload,
+    ]);
+
+    if (is_wp_error($result)) {
+        error_log('ChangeMoment contact: Resend transport failed (' . sanitize_key($result->get_error_code()) . ').');
+        return false;
+    }
+
+    $status = wp_remote_retrieve_response_code($result);
+    if ($status < 200 || $status >= 300) {
+        error_log('ChangeMoment contact: Resend returned HTTP ' . intval($status) . '.');
+        return false;
+    }
+
+    $response = json_decode(wp_remote_retrieve_body($result), true);
+    return is_array($response) && !empty($response['id']);
+}
 
 function cm_contact_allowed_origins() {
     $origins = [
@@ -84,13 +152,7 @@ function cm_submit_contact(WP_REST_Request $request) {
         'Message:',
         $message,
     ]);
-    $headers = [
-        'Content-Type: text/plain; charset=UTF-8',
-        'From: ChangeMoment Website <website@changemoment.ca>',
-        'Reply-To: ' . $name . ' <' . $email . '>',
-    ];
-
-    if (!wp_mail('info@changemoment.ca', $subject, $body, $headers)) {
+    if (!cm_send_contact_via_resend($subject, $body, $name . ' <' . $email . '>')) {
         return cm_contact_response(['code' => 'delivery_failed'], 502);
     }
 
