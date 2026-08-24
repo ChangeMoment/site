@@ -224,12 +224,14 @@ export function Team() {
       {/* ── Section 1: Founder bio ───────────────────────────── */}
       <Section>
         <Reveal>
-          <div className="grid items-start gap-10 lg:grid-cols-[1fr_0.72fr] lg:gap-16">
+          <div data-founder-layout="team" className="grid items-start gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
             {/* Text */}
             <div>
               <p className="text-sm uppercase tracking-widest text-[var(--brand-copper)]">{page.bita.founderEyebrow}</p>
               <h2 className="mt-3" style={{ fontSize: "clamp(1.9rem,3vw,2.6rem)" }}>{bitaDisplayName}</h2>
-              <p className="mt-2 text-base text-[var(--brand-ink-muted)]" dir="ltr">{page.bita.credentials}</p>
+              <p className="mt-2 text-base text-[var(--brand-ink-muted)]">
+                <span className="inline-block" dir="ltr">{page.bita.credentials}</span>
+              </p>
               <div className="mt-8 space-y-6 text-[var(--brand-ink-muted)] leading-relaxed">
                 {page.bita.bioParagraphs.map((para, i) => (
                   <p key={i}>{para}</p>

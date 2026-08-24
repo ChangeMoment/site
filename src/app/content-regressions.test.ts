@@ -19,7 +19,9 @@ const files = {
   footer: source("./components/Footer.tsx"),
   footerCredentials: source("./components/FooterCredentials.tsx"),
   footerLogo: source("./components/FooterLogoMark.tsx"),
+  favicon: source("../../public/favicon.svg"),
   header: source("./components/Header.tsx"),
+  home: source("./pages/Home.tsx"),
   index: source("../../index.html"),
   indexStyles: source("../styles/index.css"),
   insurance: source("./components/InsuranceCoverageSection.tsx"),
@@ -27,6 +29,7 @@ const files = {
   pageHero: source("./components/PageHero.tsx"),
   participatingInsurers: source("./components/ParticipatingInsurers.tsx"),
   programs: source("./components/PubliclyFundedPrograms.tsx"),
+  prerender: source("../../scripts/prerender-routes.mjs"),
   serviceDetail: source("./pages/ServiceDetail.tsx"),
   team: source("./pages/Team.tsx"),
   theme: source("../styles/theme.css"),
@@ -119,8 +122,8 @@ describe("Bahar feedback: message-by-message release checklist", () => {
     expect(files.about).toContain('className="order-1 lg:order-2"');
   });
 
-  it("421840 widens the Persian founder quote on desktop", () => {
-    expect(files.about).toContain('lang === "fa" ? "lg:grid-cols-[0.72fr_1.28fr]"');
+  it("421840 keeps the Persian founder quote unconstrained after the latest portrait resize", () => {
+    expect(files.about).toContain('lg:grid-cols-[1.08fr_0.92fr]');
     expect(files.about).toContain('lang === "fa" ? "max-w-none" : "max-w-xl"');
   });
 
@@ -293,9 +296,9 @@ describe("Bahar feedback: message-by-message release checklist", () => {
     expect(files.theme).toContain("line-height: 1.8;");
   });
 
-  it("the August 20 follow-up keeps the Persian About quote phrase together in a wider desktop column", () => {
+  it("the August 24 follow-up keeps the Persian About quote while matching the English portrait size", () => {
     expect(translations.fa.about.founder.quote).toContain("درمان می‌تواند");
-    expect(files.about).toContain('lg:grid-cols-[0.72fr_1.28fr]');
+    expect(files.about).toContain('lg:grid-cols-[1.08fr_0.92fr]');
     expect(files.about).toContain('lang === "fa" ? "max-w-none"');
     expect(files.about).toContain("data-founder-quote");
   });
@@ -305,6 +308,35 @@ describe("Bahar feedback: message-by-message release checklist", () => {
     expect(files.team).toContain('lang === "fa" ? "بیتا رمضان‌نیا" : "Bita Ramezannia"');
     expect(files.about).toContain("{bitaDisplayName}");
     expect(files.team).toContain("{bitaDisplayName}");
+  });
+
+  it("the August 24 follow-up stacks Bita's LTR credentials below her Persian name and enlarges both portraits", () => {
+    expect(files.about).toContain('lang === "fa" ? "flex flex-col items-start gap-1" : ""');
+    expect(files.about).toContain('lang === "fa" ? null : " "');
+    expect(files.about).toContain('dir="ltr">M.A., R.C.C</span>');
+    expect(files.team).toContain('lg:grid-cols-[1fr_0.9fr]');
+    expect(files.team).toContain('<span className="inline-block" dir="ltr">{page.bita.credentials}</span>');
+  });
+
+  it("the August 24 follow-up caps the Home hero to the viewport and removes the old desktop oversizing", () => {
+    expect(files.home).toContain('className="home-hero relative isolate');
+    expect(files.home).toContain('home-hero-content relative z-10');
+    expect(files.home).not.toContain('lg:min-h-[984px]');
+    expect(files.home).not.toContain('lg:translate-y-12');
+    expect(files.theme).toContain('min-height: clamp(42rem, 100svh, 56rem);');
+    expectEvery(files.theme, [".support-gather-section {", "contain: none;", "overflow-x: clip;"]);
+  });
+
+  it("the August 24 follow-up exposes a square branded favicon for Google Search", () => {
+    expect(files.index).toContain('rel="icon" type="image/svg+xml" href="/favicon.svg"');
+    expect(files.favicon).toContain('viewBox="0 0 333 333"');
+    expect(files.favicon).toContain('aria-label="ChangeMoment"');
+  });
+
+  it("the August 24 follow-up prerenders the same slashless routes that production Apache hydrates", () => {
+    expect(files.apache).toContain("DirectorySlash Off");
+    expect(files.prerender).toContain("renderRoute(route.path, route.code)");
+    expect(files.prerender).not.toContain('`${route.path}/`');
   });
 
   it("the August 20 follow-up requests every insurer logo eagerly instead of waiting for scroll", () => {

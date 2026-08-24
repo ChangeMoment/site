@@ -108,7 +108,7 @@ export function Home() {
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative isolate min-h-[720px] overflow-hidden bg-white pt-28 md:min-h-[780px] md:pt-32 lg:min-h-[984px]">
+      <section className="home-hero relative isolate overflow-hidden bg-white pt-24 sm:pt-28 md:pt-32">
         {/* Full-bleed hero image */}
         <div className="absolute inset-0 z-0 bg-[var(--brand-olive-soft)]">
           <ImageWithFallback
@@ -127,13 +127,13 @@ export function Home() {
 
 
         <div
-          className={`relative z-10 mx-auto flex min-h-[592px] w-full max-w-7xl items-center px-5 pb-20 sm:px-8 md:min-h-[648px] lg:min-h-[826px] ${
+          className={`home-hero-content relative z-10 mx-auto flex w-full max-w-7xl items-center px-5 pb-16 sm:px-8 md:pb-20 ${
             lang === "fa" ? "justify-start [direction:ltr]" : ""
           }`}
         >
           <div
             dir={lang === "fa" ? "rtl" : undefined}
-            className={`max-w-[34rem] translate-y-8 lg:translate-y-12 ${lang === "fr" ? "lg:w-[70%] lg:max-w-[58rem]" : "lg:w-[62%] lg:max-w-[64rem]"}`}
+            className={`max-w-[34rem] ${lang === "fr" ? "lg:w-[70%] lg:max-w-[58rem]" : "lg:w-[62%] lg:max-w-[64rem]"}`}
           >
             <Reveal delay={80}>
               <h1

@@ -102,7 +102,7 @@ export function About() {
 
       {/* Founder */}
       <Section bg="sage-soft">
-        <div className={`grid items-center gap-12 lg:gap-16 xl:gap-20 ${lang === "fa" ? "lg:grid-cols-[0.72fr_1.28fr]" : "lg:grid-cols-[1.08fr_0.92fr]"}`}>
+        <div data-founder-layout="about" className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 xl:gap-20">
           <Reveal>
             <div className="relative mx-auto w-full max-w-2xl">
               <div
@@ -126,8 +126,9 @@ export function About() {
                 <p data-founder-quote className="font-heading text-[1.4rem] leading-[1.65] text-[var(--brand-ink)] md:text-[1.65rem] md:leading-[1.58] fa:font-body fa:text-[1.08rem] fa:leading-[2.05] md:fa:text-[1.18rem]">
                   {t("about.founder.quote")}
                 </p>
-                <footer className="mt-8 text-sm font-semibold tracking-[0.08em] text-[var(--brand-copper)]" dir={lang === "fa" ? "rtl" : "ltr"}>
-                  <span>{bitaDisplayName}</span>{" "}
+                <footer className={`mt-8 text-sm font-semibold tracking-[0.08em] text-[var(--brand-copper)] ${lang === "fa" ? "flex flex-col items-start gap-1" : ""}`} dir={lang === "fa" ? "rtl" : "ltr"}>
+                  <span>{bitaDisplayName}</span>
+                  {lang === "fa" ? null : " "}
                   <span className="inline-block" dir="ltr">M.A., R.C.C</span>
                 </footer>
               </blockquote>

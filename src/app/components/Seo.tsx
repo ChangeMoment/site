@@ -117,7 +117,7 @@ export function Seo({
       name: SITE_NAME,
       alternateName: "ChangeMoment",
       url: SITE_URL,
-      logo: `${SITE_URL}/favicon.png`,
+      logo: `${SITE_URL}/favicon.svg`,
       image: `${SITE_URL}/og-image.jpg`,
       telephone: CONTACT_PHONE_TEL,
       email: CONTACT_EMAIL,
