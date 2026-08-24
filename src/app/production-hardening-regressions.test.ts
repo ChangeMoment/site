@@ -53,6 +53,12 @@ describe("production hardening configuration", () => {
     );
   });
 
+  it("serves the branded favicon to WordPress pages that request favicon.ico", () => {
+    expect(apache).toContain(
+      "Alias /favicon.ico /srv/changemoment/current/favicon.png",
+    );
+  });
+
   it("gives the sandboxed rebuild a readable home directory", () => {
     expect(rebuildService).toContain("ProtectHome=true");
     expect(rebuildService).toContain("Environment=HOME=/tmp");
