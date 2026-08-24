@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ChangeMoment Headless Blog
  * Description: Three-language editorial fields plus sanitized blog and contact REST contracts for the ChangeMoment frontend.
- * Version: 1.2.0
+ * Version: 1.2.1
  */
 
 if (!defined('ABSPATH')) { exit; }
@@ -85,7 +85,6 @@ function cm_contact_allowed_origins() {
     $origins = [
         'https://changemoment.ca',
         'https://www.changemoment.ca',
-        'http://15-156-55-113.nip.io',
     ];
     $home_parts = wp_parse_url(home_url());
     if (!empty($home_parts['scheme']) && !empty($home_parts['host'])) {
@@ -95,6 +94,23 @@ function cm_contact_allowed_origins() {
     }
     return array_unique($origins);
 }
+
+// The public headless frontend never consumes WordPress author accounts.
+// Keep authenticated wp-admin/REST access intact while preventing anonymous
+// username enumeration through the core users endpoints.
+add_filter('rest_endpoints', function ($endpoints) {
+    if (is_user_logged_in()) return $endpoints;
+    foreach (array_keys($endpoints) as $route) {
+        if ($route === '/wp/v2/users' || str_starts_with($route, '/wp/v2/users/')) {
+            unset($endpoints[$route]);
+        }
+    }
+    return $endpoints;
+});
+
+// Apache denies xmlrpc.php as the primary control; this keeps the application
+// layer fail-closed if the web-server rule is ever removed accidentally.
+add_filter('xmlrpc_enabled', '__return_false');
 
 function cm_contact_response($data, $status) {
     $response = new WP_REST_Response($data, $status);
