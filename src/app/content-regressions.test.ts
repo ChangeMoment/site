@@ -328,9 +328,12 @@ describe("Bahar feedback: message-by-message release checklist", () => {
   });
 
   it("the August 24 follow-up exposes a square branded favicon for Google Search", () => {
-    expect(files.index).toContain('rel="icon" type="image/svg+xml" href="/favicon.svg"');
+    expect(files.index).toContain(
+      'rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg"',
+    );
     expect(files.favicon).toContain('viewBox="0 0 333 333"');
     expect(files.favicon).toContain('aria-label="ChangeMoment"');
+    expect(files.favicon).toContain('fill="#B18369"');
   });
 
   it("the August 24 follow-up prerenders the same slashless routes that production Apache hydrates", () => {
