@@ -28,4 +28,16 @@ describe("contact backend delivery", () => {
     expect(plugin).toContain("'to' => ['info@changemoment.ca']");
     expect(plugin).toContain("'reply_to' => $reply_to");
   });
+
+  it("accepts only production-owned browser origins", () => {
+    expect(plugin).toContain("'https://changemoment.ca'");
+    expect(plugin).toContain("'https://www.changemoment.ca'");
+    expect(plugin).not.toContain("15-156-55-113.nip.io");
+  });
+
+  it("blocks anonymous author enumeration and legacy XML-RPC", () => {
+    expect(plugin).toContain("add_filter('rest_endpoints'");
+    expect(plugin).toContain("str_starts_with($route, '/wp/v2/users/')");
+    expect(plugin).toContain("add_filter('xmlrpc_enabled', '__return_false')");
+  });
 });

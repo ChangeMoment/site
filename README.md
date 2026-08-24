@@ -289,13 +289,28 @@ sudo install -o root -g root -m 0644 \
   deploy/wordpress/apache-changemoment.conf \
   /etc/apache2/conf-available/changemoment.conf
 
-sudo a2enmod rewrite headers
+sudo install -o root -g root -m 0644 \
+  deploy/wordpress/apache-changemoment-site.conf \
+  /etc/apache2/sites-available/changemoment.conf
+
+sudo install -o root -g root -m 0644 \
+  deploy/wordpress/apache-changemoment-ssl-site.conf \
+  /etc/apache2/sites-available/changemoment-le-ssl.conf
+
+sudo a2enmod rewrite headers ssl
 sudo a2enconf changemoment
+sudo a2dissite 000-default default-ssl
+sudo a2ensite changemoment changemoment-le-ssl
 sudo apache2ctl configtest
 sudo systemctl reload apache2
 ```
 
-The active Apache virtual host must use `/srv/changemoment/current` as its `DocumentRoot`. The included configuration provides static-route handling, real 404 responses, `/cms` routing, CSP, and the other security headers required by the application.
+The active Apache virtual host must use `/srv/changemoment/current` as its
+`DocumentRoot`. The included configuration redirects HTTP and `www` to the
+canonical HTTPS origin, provides static-route handling, real 404 responses,
+`/cms` routing, HSTS, a frontend-only CSP, and the other security headers
+required by the application. The default Apache sites must remain disabled so
+an unknown host cannot bypass the canonical virtual host.
 
 ## Automatic rebuilds after WordPress publishing
 
@@ -383,10 +398,12 @@ Before treating a deployment as production-ready, provide and verify:
 
 The canonical public URL is `https://changemoment.ca`; WordPress remains mounted at
 `https://changemoment.ca/cms`. Install `deploy/wordpress/apache-changemoment.conf`
-as an Apache configuration fragment and `deploy/wordpress/apache-changemoment-site.conf`
-as the HTTP virtual host before changing DNS. Point only the apex `A` record to the
-server's static IP and keep `www` as a CNAME to the apex. Do not change MX or other
-Google Workspace mail records.
+as an Apache configuration fragment, `deploy/wordpress/apache-changemoment-site.conf`
+as the HTTP redirect virtual host, and
+`deploy/wordpress/apache-changemoment-ssl-site.conf` as the HTTPS virtual host
+after Certbot has issued the certificate. Point only the apex `A` record to the
+server's static IP and keep `www` as a CNAME to the apex. Do not change MX or
+other Google Workspace mail records.
 
 After DNS resolves to the server, issue a certificate for both `changemoment.ca` and
 `www.changemoment.ca`, enable the HTTP-to-HTTPS redirect, then set WordPress `home`,

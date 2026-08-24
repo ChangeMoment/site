@@ -6,6 +6,7 @@ After=network-online.target apache2.service mariadb.service
 Type=oneshot
 User=admin
 Group=www-data
+Environment=HOME=/tmp
 WorkingDirectory=/srv/changemoment/app
 ExecStart=/usr/local/sbin/changemoment-rebuild
 Nice=10
