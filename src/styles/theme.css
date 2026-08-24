@@ -65,6 +65,25 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Keep the first impression consistent across short laptops and tall screens. */
+.home-hero {
+  min-height: clamp(42rem, 100svh, 56rem);
+}
+
+.home-hero-content {
+  min-height: calc(clamp(42rem, 100svh, 56rem) - 8rem);
+}
+
+@media (max-width: 767px) {
+  .home-hero {
+    min-height: clamp(45rem, 100svh, 48rem);
+  }
+
+  .home-hero-content {
+    min-height: calc(clamp(45rem, 100svh, 48rem) - 6rem);
+  }
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -604,7 +623,8 @@ body::-webkit-scrollbar {
 @media (max-width: 767px) {
   .support-gather-section {
     contain: none;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   .support-card-gather,
