@@ -8,6 +8,8 @@ const apache = readDeploymentFile("apache-changemoment.conf");
 const httpSite = readDeploymentFile("apache-changemoment-site.conf");
 const httpsSite = readDeploymentFile("apache-changemoment-ssl-site.conf");
 const rebuildService = readDeploymentFile("changemoment-rebuild.service");
+const provision = readDeploymentFile("provision.sh");
+const continueProvision = readDeploymentFile("continue-provision.sh");
 
 describe("production hardening configuration", () => {
   it("redirects every HTTP and www request to the canonical HTTPS origin", () => {
@@ -29,6 +31,12 @@ describe("production hardening configuration", () => {
     expect(apache).toContain(
       'Strict-Transport-Security "max-age=31536000"',
     );
+    for (const installer of [provision, continueProvision]) {
+      expect(installer).toContain(
+        "/etc/apache2/conf-available/zz-changemoment.conf",
+      );
+      expect(installer).toContain("a2enconf zz-changemoment");
+    }
   });
 
   it("keeps the frontend CSP strict without breaking WordPress or Rank Math", () => {

@@ -287,7 +287,7 @@ Install and validate Apache configuration:
 ```bash
 sudo install -o root -g root -m 0644 \
   deploy/wordpress/apache-changemoment.conf \
-  /etc/apache2/conf-available/changemoment.conf
+  /etc/apache2/conf-available/zz-changemoment.conf
 
 sudo install -o root -g root -m 0644 \
   deploy/wordpress/apache-changemoment-site.conf \
@@ -298,7 +298,8 @@ sudo install -o root -g root -m 0644 \
   /etc/apache2/sites-available/changemoment-le-ssl.conf
 
 sudo a2enmod rewrite headers ssl
-sudo a2enconf changemoment
+sudo a2disconf changemoment 2>/dev/null || true
+sudo a2enconf zz-changemoment
 sudo a2dissite 000-default default-ssl
 sudo a2ensite changemoment changemoment-le-ssl
 sudo apache2ctl configtest
@@ -311,6 +312,10 @@ canonical HTTPS origin, provides static-route handling, real 404 responses,
 `/cms` routing, HSTS, a frontend-only CSP, and the other security headers
 required by the application. The default Apache sites must remain disabled so
 an unknown host cannot bypass the canonical virtual host.
+
+The `zz-` prefix is intentional: Debian's `security.conf` sets `ServerTokens`
+and loads alphabetically. Loading this application configuration last keeps
+the production-only `ServerTokens Prod` setting effective.
 
 ## Automatic rebuilds after WordPress publishing
 

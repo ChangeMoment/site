@@ -22,9 +22,10 @@ sudo install -o root -g root -m 0644 deploy/wordpress/changemoment-rebuild.path 
 # fetch and Rank Math getHead calls have a reachable internal endpoint.
 sudo install -d -o www-data -g www-data -m 0755 /var/www/html
 sudo install -o www-data -g www-data -m 0644 deploy/wordpress/wordpress.htaccess /var/www/cms/.htaccess
-sudo install -o root -g root -m 0644 deploy/wordpress/apache-changemoment.conf /etc/apache2/conf-available/changemoment.conf
+sudo install -o root -g root -m 0644 deploy/wordpress/apache-changemoment.conf /etc/apache2/conf-available/zz-changemoment.conf
 sudo a2enmod rewrite headers
-sudo a2enconf changemoment
+sudo a2disconf changemoment 2>/dev/null || true
+sudo a2enconf zz-changemoment
 sudo apache2ctl configtest
 sudo systemctl reload apache2
 curl --fail --silent --show-error http://127.0.0.1/cms/wp-json/changemoment/v1/posts >/dev/null
