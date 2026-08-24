@@ -67,10 +67,11 @@ cp -a dist/. "$release/"
 ln -sfn "$release" /srv/changemoment/current.next
 mv -Tf /srv/changemoment/current.next /srv/changemoment/current
 
-sudo install -o root -g root -m 0644 deploy/wordpress/apache-changemoment.conf /etc/apache2/conf-available/changemoment.conf
+sudo install -o root -g root -m 0644 deploy/wordpress/apache-changemoment.conf /etc/apache2/conf-available/zz-changemoment.conf
 sudo sed -i 's#DocumentRoot /var/www/html#DocumentRoot /srv/changemoment/current#g' /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/default-ssl.conf
 sudo a2enmod rewrite headers
-sudo a2enconf changemoment
+sudo a2disconf changemoment 2>/dev/null || true
+sudo a2enconf zz-changemoment
 sudo apache2ctl configtest
 sudo systemctl reload apache2
 sudo systemctl daemon-reload
