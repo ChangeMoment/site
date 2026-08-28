@@ -29,7 +29,7 @@
       "Therapy"
     ],
     "imageQuery": "",
-    "featuredImage": "https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg",
+    "featuredImage": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg",
     "availableLanguages": [
       "en"
     ],
@@ -39,23 +39,23 @@
           "Person",
           "Organization"
         ],
-        "@id": "https://changemoment.ca/#person",
+        "@id": "https://changemoment.ca/cms/#person",
         "name": "ChangeMoment Mental Health Centre"
       },
       {
         "@type": "WebSite",
-        "@id": "https://changemoment.ca/#website",
-        "url": "https://changemoment.ca",
+        "@id": "https://changemoment.ca/cms/#website",
+        "url": "https://changemoment.ca/cms",
         "name": "ChangeMoment Mental Health Centre",
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "ImageObject",
-        "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg",
-        "url": "https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg",
+        "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg",
+        "url": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg",
         "width": "1920",
         "height": "1080",
         "caption": "Understanding Attachment Styles and How They Shape Relationships",
@@ -63,24 +63,24 @@
       },
       {
         "@type": "WebPage",
-        "@id": "https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#webpage",
-        "url": "https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/",
+        "@id": "https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#webpage",
+        "url": "https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships",
         "name": "Attachment Styles and Relationships | ChangeMoment",
         "datePublished": "2026-08-28T19:24:53+00:00",
         "dateModified": "2026-08-28T19:24:53+00:00",
         "isPartOf": {
-          "@id": "https://changemoment.ca/#website"
+          "@id": "https://changemoment.ca/cms/#website"
         },
         "primaryImageOfPage": {
-          "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg"
+          "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "Person",
-        "@id": "https://changemoment.ca/author/changemoment_admin/",
+        "@id": "https://changemoment.ca/cms/author/changemoment_admin/",
         "name": "changemoment_admin",
-        "url": "https://changemoment.ca/author/changemoment_admin/",
+        "url": "https://changemoment.ca/cms/author/changemoment_admin/",
         "image": {
           "@type": "ImageObject",
           "@id": "https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g",
@@ -97,28 +97,28 @@
         "dateModified": "2026-08-28T19:24:53+00:00",
         "articleSection": "Uncategorized",
         "author": {
-          "@id": "https://changemoment.ca/author/changemoment_admin/",
+          "@id": "https://changemoment.ca/cms/author/changemoment_admin/",
           "name": "changemoment_admin"
         },
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "description": "Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.",
         "name": "Attachment Styles and Relationships | ChangeMoment",
-        "@id": "https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#richSnippet",
+        "@id": "https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#richSnippet",
         "isPartOf": {
-          "@id": "https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#webpage"
+          "@id": "https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#webpage"
         },
         "image": {
-          "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg"
+          "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg"
         },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
-          "@id": "https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#webpage"
+          "@id": "https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#webpage"
         }
       }
     ],
-    "rankMathHead": "<meta name=\"description\" content=\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Attachment Styles and Relationships | ChangeMoment\" />\n<meta property=\"og:description\" content=\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Attachment Anxiety\" />\n<meta property=\"article:tag\" content=\"Attachment Avoidance\" />\n<meta property=\"article:tag\" content=\"Attachment Styles\" />\n<meta property=\"article:tag\" content=\"Relationships\" />\n<meta property=\"article:tag\" content=\"Therapy\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:image\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\" />\n<meta property=\"og:image:width\" content=\"1920\" />\n<meta property=\"og:image:height\" content=\"1080\" />\n<meta property=\"og:image:alt\" content=\"Understanding Attachment Styles and How They Shape Relationships\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2026-08-28T19:24:53+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Attachment Styles and Relationships | ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\" />\n<meta name=\"twitter:image\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"changemoment_admin\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/#website\",\"url\":\"https://changemoment.ca\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\",\"url\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\",\"width\":\"1920\",\"height\":\"1080\",\"caption\":\"Understanding Attachment Styles and How They Shape Relationships\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#webpage\",\"url\":\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/\",\"name\":\"Attachment Styles and Relationships | ChangeMoment\",\"datePublished\":\"2026-08-28T19:24:53+00:00\",\"dateModified\":\"2026-08-28T19:24:53+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/author/changemoment_admin/\",\"name\":\"changemoment_admin\",\"url\":\"https://changemoment.ca/author/changemoment_admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"caption\":\"changemoment_admin\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Attachment Styles and Relationships | ChangeMoment\",\"keywords\":\"attachment styles\",\"datePublished\":\"2026-08-28T19:24:53+00:00\",\"dateModified\":\"2026-08-28T19:24:53+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/author/changemoment_admin/\",\"name\":\"changemoment_admin\"},\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"description\":\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\",\"name\":\"Attachment Styles and Relationships | ChangeMoment\",\"@id\":\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#webpage\"},\"image\":{\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blog/understanding-attachment-styles-and-how-they-shape-relationships/#webpage\"}}]}</script>\n"
+    "rankMathHead": "<meta name=\"description\" content=\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Attachment Styles and Relationships | ChangeMoment\" />\n<meta property=\"og:description\" content=\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Attachment Anxiety\" />\n<meta property=\"article:tag\" content=\"Attachment Avoidance\" />\n<meta property=\"article:tag\" content=\"Attachment Styles\" />\n<meta property=\"article:tag\" content=\"Relationships\" />\n<meta property=\"article:tag\" content=\"Therapy\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:image\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\" />\n<meta property=\"og:image:width\" content=\"1920\" />\n<meta property=\"og:image:height\" content=\"1080\" />\n<meta property=\"og:image:alt\" content=\"Understanding Attachment Styles and How They Shape Relationships\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2026-08-28T19:24:53+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Attachment Styles and Relationships | ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\" />\n<meta name=\"twitter:image\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"changemoment_admin\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/cms/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/cms/#website\",\"url\":\"https://changemoment.ca/cms\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\",\"url\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\",\"width\":\"1920\",\"height\":\"1080\",\"caption\":\"Understanding Attachment Styles and How They Shape Relationships\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#webpage\",\"url\":\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships\",\"name\":\"Attachment Styles and Relationships | ChangeMoment\",\"datePublished\":\"2026-08-28T19:24:53+00:00\",\"dateModified\":\"2026-08-28T19:24:53+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/cms/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"name\":\"changemoment_admin\",\"url\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"caption\":\"changemoment_admin\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Attachment Styles and Relationships | ChangeMoment\",\"keywords\":\"attachment styles\",\"datePublished\":\"2026-08-28T19:24:53+00:00\",\"dateModified\":\"2026-08-28T19:24:53+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"name\":\"changemoment_admin\"},\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"description\":\"Understand attachment anxiety, avoidance, and security, how these patterns can shape close relationships, and why attachment is not a fixed identity.\",\"name\":\"Attachment Styles and Relationships | ChangeMoment\",\"@id\":\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#webpage\"},\"image\":{\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog_5_Understanding_Attachment_Styles_and_How_They_Shape_Relationships.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blogs/understanding-attachment-styles-and-how-they-shape-relationships#webpage\"}}]}</script>\n"
   },
   {
     "id": "wp-15",
@@ -150,7 +150,7 @@
       "Relationships"
     ],
     "imageQuery": "",
-    "featuredImage": "https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg",
+    "featuredImage": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg",
     "availableLanguages": [
       "en"
     ],
@@ -160,23 +160,23 @@
           "Person",
           "Organization"
         ],
-        "@id": "https://changemoment.ca/#person",
+        "@id": "https://changemoment.ca/cms/#person",
         "name": "ChangeMoment Mental Health Centre"
       },
       {
         "@type": "WebSite",
-        "@id": "https://changemoment.ca/#website",
-        "url": "https://changemoment.ca",
+        "@id": "https://changemoment.ca/cms/#website",
+        "url": "https://changemoment.ca/cms",
         "name": "ChangeMoment Mental Health Centre",
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "ImageObject",
-        "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg",
-        "url": "https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg",
+        "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg",
+        "url": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg",
         "width": "1920",
         "height": "1080",
         "caption": "Why Do We Repeat the Same Patterns in Relationships?",
@@ -184,24 +184,24 @@
       },
       {
         "@type": "WebPage",
-        "@id": "https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#webpage",
-        "url": "https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/",
+        "@id": "https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#webpage",
+        "url": "https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships",
         "name": "Why Do We Repeat Relationship Patterns? | ChangeMoment",
         "datePublished": "2026-08-28T19:24:52+00:00",
         "dateModified": "2026-08-28T19:24:52+00:00",
         "isPartOf": {
-          "@id": "https://changemoment.ca/#website"
+          "@id": "https://changemoment.ca/cms/#website"
         },
         "primaryImageOfPage": {
-          "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg"
+          "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "Person",
-        "@id": "https://changemoment.ca/author/changemoment_admin/",
+        "@id": "https://changemoment.ca/cms/author/changemoment_admin/",
         "name": "changemoment_admin",
-        "url": "https://changemoment.ca/author/changemoment_admin/",
+        "url": "https://changemoment.ca/cms/author/changemoment_admin/",
         "image": {
           "@type": "ImageObject",
           "@id": "https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g",
@@ -218,28 +218,28 @@
         "dateModified": "2026-08-28T19:24:52+00:00",
         "articleSection": "Uncategorized",
         "author": {
-          "@id": "https://changemoment.ca/author/changemoment_admin/",
+          "@id": "https://changemoment.ca/cms/author/changemoment_admin/",
           "name": "changemoment_admin"
         },
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "description": "Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.",
         "name": "Why Do We Repeat Relationship Patterns? | ChangeMoment",
-        "@id": "https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#richSnippet",
+        "@id": "https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#richSnippet",
         "isPartOf": {
-          "@id": "https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#webpage"
+          "@id": "https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#webpage"
         },
         "image": {
-          "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg"
+          "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg"
         },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
-          "@id": "https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#webpage"
+          "@id": "https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#webpage"
         }
       }
     ],
-    "rankMathHead": "<meta name=\"description\" content=\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Why Do We Repeat Relationship Patterns? | ChangeMoment\" />\n<meta property=\"og:description\" content=\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Attachment\" />\n<meta property=\"article:tag\" content=\"Communication\" />\n<meta property=\"article:tag\" content=\"Couples Counselling\" />\n<meta property=\"article:tag\" content=\"Relationship Patterns\" />\n<meta property=\"article:tag\" content=\"Relationships\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:image\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\" />\n<meta property=\"og:image:width\" content=\"1920\" />\n<meta property=\"og:image:height\" content=\"1080\" />\n<meta property=\"og:image:alt\" content=\"Why Do We Repeat the Same Patterns in Relationships?\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2026-08-28T19:24:52+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Why Do We Repeat Relationship Patterns? | ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\" />\n<meta name=\"twitter:image\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"changemoment_admin\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/#website\",\"url\":\"https://changemoment.ca\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\",\"url\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\",\"width\":\"1920\",\"height\":\"1080\",\"caption\":\"Why Do We Repeat the Same Patterns in Relationships?\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#webpage\",\"url\":\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/\",\"name\":\"Why Do We Repeat Relationship Patterns? | ChangeMoment\",\"datePublished\":\"2026-08-28T19:24:52+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/author/changemoment_admin/\",\"name\":\"changemoment_admin\",\"url\":\"https://changemoment.ca/author/changemoment_admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"caption\":\"changemoment_admin\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Why Do We Repeat Relationship Patterns? | ChangeMoment\",\"keywords\":\"relationship patterns\",\"datePublished\":\"2026-08-28T19:24:52+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/author/changemoment_admin/\",\"name\":\"changemoment_admin\"},\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"description\":\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\",\"name\":\"Why Do We Repeat Relationship Patterns? | ChangeMoment\",\"@id\":\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#webpage\"},\"image\":{\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blog/why-do-we-repeat-the-same-patterns-in-relationships/#webpage\"}}]}</script>\n"
+    "rankMathHead": "<meta name=\"description\" content=\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Why Do We Repeat Relationship Patterns? | ChangeMoment\" />\n<meta property=\"og:description\" content=\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Attachment\" />\n<meta property=\"article:tag\" content=\"Communication\" />\n<meta property=\"article:tag\" content=\"Couples Counselling\" />\n<meta property=\"article:tag\" content=\"Relationship Patterns\" />\n<meta property=\"article:tag\" content=\"Relationships\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:image\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\" />\n<meta property=\"og:image:width\" content=\"1920\" />\n<meta property=\"og:image:height\" content=\"1080\" />\n<meta property=\"og:image:alt\" content=\"Why Do We Repeat the Same Patterns in Relationships?\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2026-08-28T19:24:52+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Why Do We Repeat Relationship Patterns? | ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\" />\n<meta name=\"twitter:image\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"changemoment_admin\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/cms/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/cms/#website\",\"url\":\"https://changemoment.ca/cms\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\",\"url\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\",\"width\":\"1920\",\"height\":\"1080\",\"caption\":\"Why Do We Repeat the Same Patterns in Relationships?\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#webpage\",\"url\":\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships\",\"name\":\"Why Do We Repeat Relationship Patterns? | ChangeMoment\",\"datePublished\":\"2026-08-28T19:24:52+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/cms/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"name\":\"changemoment_admin\",\"url\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"caption\":\"changemoment_admin\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Why Do We Repeat Relationship Patterns? | ChangeMoment\",\"keywords\":\"relationship patterns\",\"datePublished\":\"2026-08-28T19:24:52+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"name\":\"changemoment_admin\"},\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"description\":\"Learn why familiar relationship patterns can repeat, how expectations and emotional cycles shape them, and how awareness can create room for change.\",\"name\":\"Why Do We Repeat Relationship Patterns? | ChangeMoment\",\"@id\":\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#webpage\"},\"image\":{\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-4-Why-Do-We-Repeat-the-Same-Patterns-in-Relationships.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blogs/why-do-we-repeat-the-same-patterns-in-relationships#webpage\"}}]}</script>\n"
   },
   {
     "id": "wp-9",
@@ -271,7 +271,7 @@
       "Self-Worth"
     ],
     "imageQuery": "",
-    "featuredImage": "https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg",
+    "featuredImage": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg",
     "availableLanguages": [
       "en"
     ],
@@ -281,23 +281,23 @@
           "Person",
           "Organization"
         ],
-        "@id": "https://changemoment.ca/#person",
+        "@id": "https://changemoment.ca/cms/#person",
         "name": "ChangeMoment Mental Health Centre"
       },
       {
         "@type": "WebSite",
-        "@id": "https://changemoment.ca/#website",
-        "url": "https://changemoment.ca",
+        "@id": "https://changemoment.ca/cms/#website",
+        "url": "https://changemoment.ca/cms",
         "name": "ChangeMoment Mental Health Centre",
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "ImageObject",
-        "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg",
-        "url": "https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg",
+        "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg",
+        "url": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg",
         "width": "1920",
         "height": "1080",
         "caption": "Why Is My Self-Esteem So Low? Understanding Self-Worth and Self-Criticism",
@@ -305,24 +305,24 @@
       },
       {
         "@type": "WebPage",
-        "@id": "https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#webpage",
-        "url": "https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/",
+        "@id": "https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#webpage",
+        "url": "https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism",
         "name": "Why Is My Self-Esteem So Low? | ChangeMoment",
         "datePublished": "2026-08-28T16:01:57+00:00",
         "dateModified": "2026-08-28T19:24:52+00:00",
         "isPartOf": {
-          "@id": "https://changemoment.ca/#website"
+          "@id": "https://changemoment.ca/cms/#website"
         },
         "primaryImageOfPage": {
-          "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg"
+          "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "Person",
-        "@id": "https://changemoment.ca/author/changemoment_admin/",
+        "@id": "https://changemoment.ca/cms/author/changemoment_admin/",
         "name": "changemoment_admin",
-        "url": "https://changemoment.ca/author/changemoment_admin/",
+        "url": "https://changemoment.ca/cms/author/changemoment_admin/",
         "image": {
           "@type": "ImageObject",
           "@id": "https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g",
@@ -339,28 +339,28 @@
         "dateModified": "2026-08-28T19:24:52+00:00",
         "articleSection": "Uncategorized",
         "author": {
-          "@id": "https://changemoment.ca/author/changemoment_admin/",
+          "@id": "https://changemoment.ca/cms/author/changemoment_admin/",
           "name": "changemoment_admin"
         },
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "description": "Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.",
         "name": "Why Is My Self-Esteem So Low? | ChangeMoment",
-        "@id": "https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#richSnippet",
+        "@id": "https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#richSnippet",
         "isPartOf": {
-          "@id": "https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#webpage"
+          "@id": "https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#webpage"
         },
         "image": {
-          "@id": "https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg"
+          "@id": "https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg"
         },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
-          "@id": "https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#webpage"
+          "@id": "https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#webpage"
         }
       }
     ],
-    "rankMathHead": "<meta name=\"description\" content=\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Why Is My Self-Esteem So Low? | ChangeMoment\" />\n<meta property=\"og:description\" content=\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Counselling\" />\n<meta property=\"article:tag\" content=\"Mental Health\" />\n<meta property=\"article:tag\" content=\"Self-Criticism\" />\n<meta property=\"article:tag\" content=\"Self-Esteem\" />\n<meta property=\"article:tag\" content=\"Self-Worth\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:updated_time\" content=\"2026-08-28T19:24:52+00:00\" />\n<meta property=\"og:image\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\" />\n<meta property=\"og:image:width\" content=\"1920\" />\n<meta property=\"og:image:height\" content=\"1080\" />\n<meta property=\"og:image:alt\" content=\"Why Is My Self-Esteem So Low? Understanding Self-Worth and Self-Criticism\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2026-08-28T16:01:57+00:00\" />\n<meta property=\"article:modified_time\" content=\"2026-08-28T19:24:52+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Why Is My Self-Esteem So Low? | ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\" />\n<meta name=\"twitter:image\" content=\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"changemoment_admin\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"6 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/#website\",\"url\":\"https://changemoment.ca\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\",\"url\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\",\"width\":\"1920\",\"height\":\"1080\",\"caption\":\"Why Is My Self-Esteem So Low? Understanding Self-Worth and Self-Criticism\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#webpage\",\"url\":\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/\",\"name\":\"Why Is My Self-Esteem So Low? | ChangeMoment\",\"datePublished\":\"2026-08-28T16:01:57+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/author/changemoment_admin/\",\"name\":\"changemoment_admin\",\"url\":\"https://changemoment.ca/author/changemoment_admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"caption\":\"changemoment_admin\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Why Is My Self-Esteem So Low? | ChangeMoment\",\"keywords\":\"low self-esteem\",\"datePublished\":\"2026-08-28T16:01:57+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/author/changemoment_admin/\",\"name\":\"changemoment_admin\"},\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"description\":\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\",\"name\":\"Why Is My Self-Esteem So Low? | ChangeMoment\",\"@id\":\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#webpage\"},\"image\":{\"@id\":\"https://changemoment.ca/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blog/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism/#webpage\"}}]}</script>\n"
+    "rankMathHead": "<meta name=\"description\" content=\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Why Is My Self-Esteem So Low? | ChangeMoment\" />\n<meta property=\"og:description\" content=\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Counselling\" />\n<meta property=\"article:tag\" content=\"Mental Health\" />\n<meta property=\"article:tag\" content=\"Self-Criticism\" />\n<meta property=\"article:tag\" content=\"Self-Esteem\" />\n<meta property=\"article:tag\" content=\"Self-Worth\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:updated_time\" content=\"2026-08-28T19:24:52+00:00\" />\n<meta property=\"og:image\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\" />\n<meta property=\"og:image:secure_url\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\" />\n<meta property=\"og:image:width\" content=\"1920\" />\n<meta property=\"og:image:height\" content=\"1080\" />\n<meta property=\"og:image:alt\" content=\"Why Is My Self-Esteem So Low? Understanding Self-Worth and Self-Criticism\" />\n<meta property=\"og:image:type\" content=\"image/jpeg\" />\n<meta property=\"article:published_time\" content=\"2026-08-28T16:01:57+00:00\" />\n<meta property=\"article:modified_time\" content=\"2026-08-28T19:24:52+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Why Is My Self-Esteem So Low? | ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\" />\n<meta name=\"twitter:image\" content=\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\" />\n<meta name=\"twitter:label1\" content=\"Written by\" />\n<meta name=\"twitter:data1\" content=\"changemoment_admin\" />\n<meta name=\"twitter:label2\" content=\"Time to read\" />\n<meta name=\"twitter:data2\" content=\"6 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/cms/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/cms/#website\",\"url\":\"https://changemoment.ca/cms\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\",\"url\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\",\"width\":\"1920\",\"height\":\"1080\",\"caption\":\"Why Is My Self-Esteem So Low? Understanding Self-Worth and Self-Criticism\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#webpage\",\"url\":\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism\",\"name\":\"Why Is My Self-Esteem So Low? | ChangeMoment\",\"datePublished\":\"2026-08-28T16:01:57+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/cms/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"name\":\"changemoment_admin\",\"url\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/d03548a8019cafd0da5423d2d641e954e532bf01a157fcad06b51c973cb291dc?s=96&amp;d=mm&amp;r=g\",\"caption\":\"changemoment_admin\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Why Is My Self-Esteem So Low? | ChangeMoment\",\"keywords\":\"low self-esteem\",\"datePublished\":\"2026-08-28T16:01:57+00:00\",\"dateModified\":\"2026-08-28T19:24:52+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/cms/author/changemoment_admin/\",\"name\":\"changemoment_admin\"},\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"description\":\"Explore how self-esteem and self-criticism develop, why harsh self-judgment can persist, and how counselling can support a more balanced sense of self.\",\"name\":\"Why Is My Self-Esteem So Low? | ChangeMoment\",\"@id\":\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#webpage\"},\"image\":{\"@id\":\"https://changemoment.ca/cms/wp-content/uploads/2026/08/blog-3-Why-Is-My-Self-Esteem-So-Low-1-1.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blogs/why-is-my-self-esteem-so-low-understanding-self-worth-and-self-criticism#webpage\"}}]}</script>\n"
   },
   {
     "id": "wp-6",
@@ -405,35 +405,35 @@
           "Person",
           "Organization"
         ],
-        "@id": "https://changemoment.ca/#person",
+        "@id": "https://changemoment.ca/cms/#person",
         "name": "ChangeMoment Mental Health Centre"
       },
       {
         "@type": "WebSite",
-        "@id": "https://changemoment.ca/#website",
-        "url": "https://changemoment.ca",
+        "@id": "https://changemoment.ca/cms/#website",
+        "url": "https://changemoment.ca/cms",
         "name": "ChangeMoment Mental Health Centre",
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "WebPage",
-        "@id": "https://changemoment.ca/blog/anxiety-beyond-worry/#webpage",
-        "url": "https://changemoment.ca/blog/anxiety-beyond-worry/",
+        "@id": "https://changemoment.ca/blogs/anxiety-beyond-worry#webpage",
+        "url": "https://changemoment.ca/blogs/anxiety-beyond-worry",
         "name": "Why Do I Feel Anxious Even When Everything Seems Fine? · ChangeMoment",
         "datePublished": "2026-08-12T12:00:00+00:00",
         "dateModified": "2026-08-12T12:00:00+00:00",
         "isPartOf": {
-          "@id": "https://changemoment.ca/#website"
+          "@id": "https://changemoment.ca/cms/#website"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "Person",
-        "@id": "https://changemoment.ca/author/",
-        "url": "https://changemoment.ca/author/",
+        "@id": "https://changemoment.ca/cms/author/",
+        "url": "https://changemoment.ca/cms/author/",
         "image": {
           "@type": "ImageObject",
           "@id": "https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g",
@@ -449,24 +449,24 @@
         "dateModified": "2026-08-12T12:00:00+00:00",
         "articleSection": "Uncategorized",
         "author": {
-          "@id": "https://changemoment.ca/author/"
+          "@id": "https://changemoment.ca/cms/author/"
         },
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "description": "Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.",
         "name": "Why Do I Feel Anxious Even When Everything Seems Fine? · ChangeMoment",
-        "@id": "https://changemoment.ca/blog/anxiety-beyond-worry/#richSnippet",
+        "@id": "https://changemoment.ca/blogs/anxiety-beyond-worry#richSnippet",
         "isPartOf": {
-          "@id": "https://changemoment.ca/blog/anxiety-beyond-worry/#webpage"
+          "@id": "https://changemoment.ca/blogs/anxiety-beyond-worry#webpage"
         },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
-          "@id": "https://changemoment.ca/blog/anxiety-beyond-worry/#webpage"
+          "@id": "https://changemoment.ca/blogs/anxiety-beyond-worry#webpage"
         }
       }
     ],
-    "rankMathHead": "<meta name=\"description\" content=\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blog/anxiety-beyond-worry/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Why Do I Feel Anxious Even When Everything Seems Fine? · ChangeMoment\" />\n<meta property=\"og:description\" content=\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blog/anxiety-beyond-worry/\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Anxiety\" />\n<meta property=\"article:tag\" content=\"Counselling\" />\n<meta property=\"article:tag\" content=\"Emotional Wellbeing\" />\n<meta property=\"article:tag\" content=\"Mental Health\" />\n<meta property=\"article:tag\" content=\"Uncertainty\" />\n<meta property=\"article:tag\" content=\"Worry\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"article:published_time\" content=\"2026-08-12T12:00:00+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Why Do I Feel Anxious Even When Everything Seems Fine? · ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\" />\n<meta name=\"twitter:label1\" content=\"Time to read\" />\n<meta name=\"twitter:data1\" content=\"6 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/#website\",\"url\":\"https://changemoment.ca\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blog/anxiety-beyond-worry/#webpage\",\"url\":\"https://changemoment.ca/blog/anxiety-beyond-worry/\",\"name\":\"Why Do I Feel Anxious Even When Everything Seems Fine? \\u00b7 ChangeMoment\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-12T12:00:00+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/#website\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/author/\",\"url\":\"https://changemoment.ca/author/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Why Do I Feel Anxious Even When Everything Seems Fine? \\u00b7 ChangeMoment\",\"keywords\":\"Anxiety, Mental Health, Counselling, Worry, Uncertainty\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-12T12:00:00+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/author/\"},\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"description\":\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\",\"name\":\"Why Do I Feel Anxious Even When Everything Seems Fine? \\u00b7 ChangeMoment\",\"@id\":\"https://changemoment.ca/blog/anxiety-beyond-worry/#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blog/anxiety-beyond-worry/#webpage\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blog/anxiety-beyond-worry/#webpage\"}}]}</script>\n"
+    "rankMathHead": "<meta name=\"description\" content=\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blogs/anxiety-beyond-worry\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Why Do I Feel Anxious Even When Everything Seems Fine? · ChangeMoment\" />\n<meta property=\"og:description\" content=\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blogs/anxiety-beyond-worry\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Anxiety\" />\n<meta property=\"article:tag\" content=\"Counselling\" />\n<meta property=\"article:tag\" content=\"Emotional Wellbeing\" />\n<meta property=\"article:tag\" content=\"Mental Health\" />\n<meta property=\"article:tag\" content=\"Uncertainty\" />\n<meta property=\"article:tag\" content=\"Worry\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"article:published_time\" content=\"2026-08-12T12:00:00+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"Why Do I Feel Anxious Even When Everything Seems Fine? · ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\" />\n<meta name=\"twitter:label1\" content=\"Time to read\" />\n<meta name=\"twitter:data1\" content=\"6 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/cms/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/cms/#website\",\"url\":\"https://changemoment.ca/cms\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blogs/anxiety-beyond-worry#webpage\",\"url\":\"https://changemoment.ca/blogs/anxiety-beyond-worry\",\"name\":\"Why Do I Feel Anxious Even When Everything Seems Fine? \\u00b7 ChangeMoment\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-12T12:00:00+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/cms/#website\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/cms/author/\",\"url\":\"https://changemoment.ca/cms/author/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"Why Do I Feel Anxious Even When Everything Seems Fine? \\u00b7 ChangeMoment\",\"keywords\":\"Anxiety, Mental Health, Counselling, Worry, Uncertainty\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-12T12:00:00+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/cms/author/\"},\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"description\":\"Anxiety is not always a response to something going wrong right now. Understanding why you feel anxious when everything seems fine can be a meaningful first step.\",\"name\":\"Why Do I Feel Anxious Even When Everything Seems Fine? \\u00b7 ChangeMoment\",\"@id\":\"https://changemoment.ca/blogs/anxiety-beyond-worry#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blogs/anxiety-beyond-worry#webpage\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blogs/anxiety-beyond-worry#webpage\"}}]}</script>\n"
   },
   {
     "id": "wp-5",
@@ -510,35 +510,35 @@
           "Person",
           "Organization"
         ],
-        "@id": "https://changemoment.ca/#person",
+        "@id": "https://changemoment.ca/cms/#person",
         "name": "ChangeMoment Mental Health Centre"
       },
       {
         "@type": "WebSite",
-        "@id": "https://changemoment.ca/#website",
-        "url": "https://changemoment.ca",
+        "@id": "https://changemoment.ca/cms/#website",
+        "url": "https://changemoment.ca/cms",
         "name": "ChangeMoment Mental Health Centre",
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "WebPage",
-        "@id": "https://changemoment.ca/blog/what-is-therapy/#webpage",
-        "url": "https://changemoment.ca/blog/what-is-therapy/",
+        "@id": "https://changemoment.ca/blogs/what-is-therapy#webpage",
+        "url": "https://changemoment.ca/blogs/what-is-therapy",
         "name": "What Is Therapy and What Happens in Your First Therapy Session? · ChangeMoment",
         "datePublished": "2026-08-12T12:00:00+00:00",
         "dateModified": "2026-08-13T20:07:49+00:00",
         "isPartOf": {
-          "@id": "https://changemoment.ca/#website"
+          "@id": "https://changemoment.ca/cms/#website"
         },
         "inLanguage": "en-US"
       },
       {
         "@type": "Person",
-        "@id": "https://changemoment.ca/author/",
-        "url": "https://changemoment.ca/author/",
+        "@id": "https://changemoment.ca/cms/author/",
+        "url": "https://changemoment.ca/cms/author/",
         "image": {
           "@type": "ImageObject",
           "@id": "https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g",
@@ -554,23 +554,23 @@
         "dateModified": "2026-08-13T20:07:49+00:00",
         "articleSection": "Uncategorized",
         "author": {
-          "@id": "https://changemoment.ca/author/"
+          "@id": "https://changemoment.ca/cms/author/"
         },
         "publisher": {
-          "@id": "https://changemoment.ca/#person"
+          "@id": "https://changemoment.ca/cms/#person"
         },
         "description": "Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.",
         "name": "What Is Therapy and What Happens in Your First Therapy Session? · ChangeMoment",
-        "@id": "https://changemoment.ca/blog/what-is-therapy/#richSnippet",
+        "@id": "https://changemoment.ca/blogs/what-is-therapy#richSnippet",
         "isPartOf": {
-          "@id": "https://changemoment.ca/blog/what-is-therapy/#webpage"
+          "@id": "https://changemoment.ca/blogs/what-is-therapy#webpage"
         },
         "inLanguage": "en-US",
         "mainEntityOfPage": {
-          "@id": "https://changemoment.ca/blog/what-is-therapy/#webpage"
+          "@id": "https://changemoment.ca/blogs/what-is-therapy#webpage"
         }
       }
     ],
-    "rankMathHead": "<meta name=\"description\" content=\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blog/what-is-therapy/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"What Is Therapy and What Happens in Your First Therapy Session? · ChangeMoment\" />\n<meta property=\"og:description\" content=\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blog/what-is-therapy/\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Counselling\" />\n<meta property=\"article:tag\" content=\"First Session\" />\n<meta property=\"article:tag\" content=\"Mental Health\" />\n<meta property=\"article:tag\" content=\"Psychotherapy\" />\n<meta property=\"article:tag\" content=\"Therapy\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:updated_time\" content=\"2026-08-13T20:07:49+00:00\" />\n<meta property=\"article:published_time\" content=\"2026-08-12T12:00:00+00:00\" />\n<meta property=\"article:modified_time\" content=\"2026-08-13T20:07:49+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"What Is Therapy and What Happens in Your First Therapy Session? · ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\" />\n<meta name=\"twitter:label1\" content=\"Time to read\" />\n<meta name=\"twitter:data1\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/#website\",\"url\":\"https://changemoment.ca\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blog/what-is-therapy/#webpage\",\"url\":\"https://changemoment.ca/blog/what-is-therapy/\",\"name\":\"What Is Therapy and What Happens in Your First Therapy Session? \\u00b7 ChangeMoment\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-13T20:07:49+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/#website\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/author/\",\"url\":\"https://changemoment.ca/author/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"What Is Therapy and What Happens in Your First Therapy Session? \\u00b7 ChangeMoment\",\"keywords\":\"Therapy, Counselling, First Session, Mental Health, Psychotherapy\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-13T20:07:49+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/author/\"},\"publisher\":{\"@id\":\"https://changemoment.ca/#person\"},\"description\":\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\",\"name\":\"What Is Therapy and What Happens in Your First Therapy Session? \\u00b7 ChangeMoment\",\"@id\":\"https://changemoment.ca/blog/what-is-therapy/#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blog/what-is-therapy/#webpage\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blog/what-is-therapy/#webpage\"}}]}</script>\n"
+    "rankMathHead": "<meta name=\"description\" content=\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\"/>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large\"/>\n<link rel=\"canonical\" href=\"https://changemoment.ca/blogs/what-is-therapy\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"What Is Therapy and What Happens in Your First Therapy Session? · ChangeMoment\" />\n<meta property=\"og:description\" content=\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\" />\n<meta property=\"og:url\" content=\"https://changemoment.ca/blogs/what-is-therapy\" />\n<meta property=\"og:site_name\" content=\"ChangeMoment Mental Health Centre\" />\n<meta property=\"article:tag\" content=\"Counselling\" />\n<meta property=\"article:tag\" content=\"First Session\" />\n<meta property=\"article:tag\" content=\"Mental Health\" />\n<meta property=\"article:tag\" content=\"Psychotherapy\" />\n<meta property=\"article:tag\" content=\"Therapy\" />\n<meta property=\"article:section\" content=\"Uncategorized\" />\n<meta property=\"og:updated_time\" content=\"2026-08-13T20:07:49+00:00\" />\n<meta property=\"article:published_time\" content=\"2026-08-12T12:00:00+00:00\" />\n<meta property=\"article:modified_time\" content=\"2026-08-13T20:07:49+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:title\" content=\"What Is Therapy and What Happens in Your First Therapy Session? · ChangeMoment\" />\n<meta name=\"twitter:description\" content=\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\" />\n<meta name=\"twitter:label1\" content=\"Time to read\" />\n<meta name=\"twitter:data1\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"rank-math-schema\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://changemoment.ca/cms/#person\",\"name\":\"ChangeMoment Mental Health Centre\"},{\"@type\":\"WebSite\",\"@id\":\"https://changemoment.ca/cms/#website\",\"url\":\"https://changemoment.ca/cms\",\"name\":\"ChangeMoment Mental Health Centre\",\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://changemoment.ca/blogs/what-is-therapy#webpage\",\"url\":\"https://changemoment.ca/blogs/what-is-therapy\",\"name\":\"What Is Therapy and What Happens in Your First Therapy Session? \\u00b7 ChangeMoment\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-13T20:07:49+00:00\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/cms/#website\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://changemoment.ca/cms/author/\",\"url\":\"https://changemoment.ca/cms/author/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g\",\"inLanguage\":\"en-US\"}},{\"@type\":\"BlogPosting\",\"headline\":\"What Is Therapy and What Happens in Your First Therapy Session? \\u00b7 ChangeMoment\",\"keywords\":\"Therapy, Counselling, First Session, Mental Health, Psychotherapy\",\"datePublished\":\"2026-08-12T12:00:00+00:00\",\"dateModified\":\"2026-08-13T20:07:49+00:00\",\"articleSection\":\"Uncategorized\",\"author\":{\"@id\":\"https://changemoment.ca/cms/author/\"},\"publisher\":{\"@id\":\"https://changemoment.ca/cms/#person\"},\"description\":\"Deciding to start therapy can feel uncertain. Knowing what to expect from your first counselling session can make that first appointment feel a little more manageable.\",\"name\":\"What Is Therapy and What Happens in Your First Therapy Session? \\u00b7 ChangeMoment\",\"@id\":\"https://changemoment.ca/blogs/what-is-therapy#richSnippet\",\"isPartOf\":{\"@id\":\"https://changemoment.ca/blogs/what-is-therapy#webpage\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://changemoment.ca/blogs/what-is-therapy#webpage\"}}]}</script>\n"
   }
 ]
