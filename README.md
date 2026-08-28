@@ -182,7 +182,7 @@ VITE_SITE_URL="https://www.example.com" \
 pnpm build
 ```
 
-The final static application is written to `dist/`. A successful build fails if required localized blog fields, routes, SEO metadata, JSON-LD, 404 output, or expected route chunks are missing.
+The final static application is written to `dist/`. A successful build fails if English blog fields, any started-but-incomplete translation, routes, SEO metadata, JSON-LD, 404 output, or expected route chunks are missing.
 
 ## WordPress requirements
 
@@ -229,7 +229,7 @@ curl --fail --silent --show-error \
   http://127.0.0.1/cms/wp-json/changemoment/v1/posts
 ```
 
-Every published post must include its required English, French, and Persian fields. Rank Math title, description, canonical, Open Graph fields, and JSON-LD are fetched during the build and preserved in the public article HTML.
+Every published post must include its English title, excerpt, and content. French and Persian are optional, but once any field for one of those languages is entered, that language's title, excerpt, and content must all be completed. The article is listed and indexed only in languages with complete content. Rank Math title, description, canonical, Open Graph fields, and JSON-LD are fetched during the build and preserved in the public article HTML.
 
 ## Server filesystem
 

@@ -9,7 +9,7 @@ import { BlogCard } from "../components/BlogCard";
 import { CTABand } from "../components/CTABand";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useLang, type Lang } from "../i18n/LanguageProvider";
-import { getBlogPost, blogPosts } from "../data/blogs";
+import { getBlogPost, blogPosts, hasBlogTranslation } from "../data/blogs";
 import { getBlogImage } from "../data/images";
 import { absoluteSiteUrl, localizedPath, localizedUrl, SEO_LOCALES } from "../lib/seo";
 import { BlogShareBar } from "../components/BlogShareBar";
@@ -340,7 +340,7 @@ export const faBlogBodies: Record<string, string[]> = {
 export function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
   const { t, lang, dir } = useLang();
-  const post = slug ? getBlogPost(slug) : undefined;
+  const post = slug ? getBlogPost(slug, lang) : undefined;
 
   if (!post) return <Navigate to="/blogs" replace />;
 
@@ -352,7 +352,9 @@ export function BlogDetail() {
     day: "numeric",
   });
 
-  const related = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
+  const related = blogPosts
+    .filter((candidate) => candidate.id !== post.id && hasBlogTranslation(candidate, lang))
+    .slice(0, 3);
   const image = post.featuredImage || getBlogImage(post.slug, post.id);
   const articleUrl = localizedUrl(`/blogs/${post.slug}`, lang);
   const seoTitle = post.slug === "what-is-therapy"

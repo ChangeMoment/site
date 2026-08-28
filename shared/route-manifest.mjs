@@ -55,7 +55,32 @@ export function basePaths(cmsPosts = []) {
 }
 
 export function localizedRoutes(cmsPosts = []) {
-  return basePaths(cmsPosts).flatMap((path) =>
+  const commonPaths = [
+    ...STATIC_PATHS,
+    ...SERVICE_SLUGS.map((slug) => `/services/${slug}`),
+  ];
+  const commonRoutes = commonPaths.flatMap((path) =>
     LOCALES.map((locale) => ({ ...locale, basePath: path, path: localizedPath(path, locale.prefix) })),
   );
+  const blogLanguages = new Map(
+    LEGACY_BLOG_SLUGS.map((slug) => [slug, LOCALES.map(({ code }) => code)]),
+  );
+  for (const post of cmsPosts) {
+    if (!post?.slug) continue;
+    blogLanguages.set(
+      post.slug,
+      Array.isArray(post.availableLanguages)
+        ? post.availableLanguages
+        : LOCALES.map(({ code }) => code),
+    );
+  }
+  const blogRoutes = Array.from(blogLanguages.entries()).flatMap(([slug, availableLanguages]) =>
+    LOCALES
+      .filter(({ code }) => availableLanguages.includes(code))
+      .map((locale) => {
+        const basePath = `/blogs/${slug}`;
+        return { ...locale, basePath, path: localizedPath(basePath, locale.prefix) };
+      }),
+  );
+  return [...commonRoutes, ...blogRoutes];
 }

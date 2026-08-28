@@ -32,6 +32,8 @@ export interface BlogPost {
   tags: string[];
   imageQuery: string;
   featuredImage?: string;
+  /** Locales with complete title, excerpt, and article content. Legacy posts support all locales. */
+  availableLanguages?: Lang[];
   /** Rank Math JSON-LD extracted during the publish refresh. */
   rankMathJsonLd?: Record<string, unknown>[];
 }
@@ -199,8 +201,12 @@ export const blogPosts: BlogPost[] = [
   ),
 ];
 
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find((b) => b.slug === slug);
+export function hasBlogTranslation(post: BlogPost, lang: Lang): boolean {
+  return !post.availableLanguages || post.availableLanguages.includes(lang);
+}
+
+export function getBlogPost(slug: string, lang?: Lang): BlogPost | undefined {
+  return blogPosts.find((post) => post.slug === slug && (!lang || hasBlogTranslation(post, lang)));
 }
 
 export const blogCategories: BlogCategory[] = [

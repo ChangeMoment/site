@@ -1,37 +1,31 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { basePaths, LOCALES, localizedPath } from "../shared/route-manifest.mjs";
+import { localizedRoutes } from "../shared/route-manifest.mjs";
 
 const siteUrl = "https://changemoment.ca";
 
 const cmsSnapshot = JSON.parse(
   await readFile(resolve("public", "blog-snapshot.json"), "utf8").catch(() => "[]"),
 );
-const paths = basePaths(cmsSnapshot);
+const routes = localizedRoutes(cmsSnapshot);
 
-function absolute(path, prefix = "") {
-  return `${siteUrl}${localizedPath(path, prefix)}`;
-}
-
-function alternateLinks(path) {
-  const links = LOCALES.map(
-    ({ hreflang, prefix }) =>
-      `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${absolute(path, prefix)}" />`,
+function alternateLinks(route) {
+  const alternates = routes.filter((candidate) => candidate.basePath === route.basePath);
+  const links = alternates.map(
+    ({ hreflang, path }) =>
+      `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${siteUrl}${path}" />`,
   );
-  links.push(
-    `    <xhtml:link rel="alternate" hreflang="x-default" href="${absolute(path)}" />`,
+  const english = alternates.find(({ code }) => code === "en") || alternates[0];
+  if (english) links.push(
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${english.path}" />`,
   );
   return links.join("\n");
 }
 
-const entries = paths.flatMap((path) =>
-  LOCALES.map(
-    ({ prefix }) => `  <url>
-    <loc>${absolute(path, prefix)}</loc>
-${alternateLinks(path)}
-  </url>`,
-  ),
-);
+const entries = routes.map((route) => `  <url>
+    <loc>${siteUrl}${route.path}</loc>
+${alternateLinks(route)}
+  </url>`);
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

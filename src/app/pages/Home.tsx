@@ -22,7 +22,7 @@ import { CurveDecoration } from "../components/CurveDecoration";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useLang } from "../i18n/LanguageProvider";
 import { services } from "../data/services";
-import { blogPosts } from "../data/blogs";
+import { blogPosts, hasBlogTranslation } from "../data/blogs";
 import changeMomentHeroImage from "../../imports/1086__1_.jpg";
 import secondSectionImage from "../../imports/Second_Section_of_Changemoment.jpg";
 import founderSpotlightImage from "../../imports/image-2.png";
@@ -71,7 +71,7 @@ const supportGatherOffsets = [
 export function Home() {
   const { t, tList, lang } = useLang();
   const supportSectionRef = useRef<HTMLDivElement | null>(null);
-  const previewBlogs = blogPosts.slice(0, 3);
+  const previewBlogs = blogPosts.filter((post) => hasBlogTranslation(post, lang)).slice(0, 3);
 
   useEffect(() => {
     const section = supportSectionRef.current;
