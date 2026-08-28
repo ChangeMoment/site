@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import sanitizeHtml from "sanitize-html";
+import { resolveAvailableBlogLanguages } from "./lib/blog-locales.mjs";
 
 const cmsUrl = (process.env.WORDPRESS_URL || "").replace(/\/$/, "");
 const siteUrl = (process.env.SITE_URL || "https://changemoment.ca").replace(/\/$/, "");
@@ -87,11 +88,7 @@ async function main() {
 
   const posts = [];
   for (const source of sourcePosts) {
-    for (const lang of ["en", "fr", "fa"]) {
-      if (!source.title?.[lang] || !source.excerpt?.[lang] || !source.contentHtml?.[lang]) {
-        throw new Error(`Post ${source.slug} is missing required ${lang} content.`);
-      }
-    }
+    const availableLanguages = resolveAvailableBlogLanguages(source);
     const rankMath = await rankMathFor(source.cmsPermalink, `${siteUrl}/blogs/${source.slug}`);
     posts.push({
       id: `wp-${source.id}`,
@@ -111,6 +108,7 @@ async function main() {
       tags: source.tags || [],
       imageQuery: "",
       featuredImage: rewriteOrigin(source.featuredImage || ""),
+      availableLanguages,
       rankMathJsonLd: rankMath.jsonLd,
       rankMathHead: rankMath.head,
     });

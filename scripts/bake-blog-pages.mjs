@@ -24,12 +24,21 @@ for (const lang of langs) {
   await writeFile(target, listing, "utf8");
 }
 
+function availableLanguages(post) {
+  return Array.isArray(post.availableLanguages)
+    ? langs.filter(({ code }) => post.availableLanguages.includes(code))
+    : langs;
+}
+
 function replaceHead(document, post, lang, route) {
   const canonical = `${siteUrl}${route}`;
-  const hreflang = langs.map((alternate) => {
+  const translatedLanguages = availableLanguages(post);
+  const hreflang = translatedLanguages.map((alternate) => {
     const href = `${siteUrl}${alternate.prefix}/blogs/${post.slug}`;
     return `<link rel="alternate" hreflang="${alternate.locale}" href="${href}" />`;
-  }).concat(`<link rel="alternate" hreflang="x-default" href="${siteUrl}/blogs/${post.slug}" />`).join("\n");
+  });
+  const english = translatedLanguages.find(({ code }) => code === "en") || translatedLanguages[0];
+  if (english) hreflang.push(`<link rel="alternate" hreflang="x-default" href="${siteUrl}${english.prefix}/blogs/${post.slug}" />`);
   const rankHead = post.rankMathHead || "";
   const safeRankHead = rankHead
     .replace(/<script(?![^>]+type=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi, "")
@@ -39,17 +48,19 @@ function replaceHead(document, post, lang, route) {
   return document
     .replace(/<html[^>]*>/i, `<html lang="${lang.locale}" dir="${lang.dir}">`)
     .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(post.title[lang.code])}</title>`)
-    .replace("</head>", `${safeRankHead}\n<link rel="canonical" href="${canonical}" />\n${hreflang}\n<meta property="og:url" content="${canonical}" />\n</head>`);
+    .replace("</head>", `${safeRankHead}\n<link rel="canonical" href="${canonical}" />\n${hreflang.join("\n")}\n<meta property="og:url" content="${canonical}" />\n</head>`);
 }
 
+let baked = 0;
 for (const post of posts) {
-  for (const lang of langs) {
+  for (const lang of availableLanguages(post)) {
     const route = `${lang.prefix}/blogs/${post.slug}`;
     const article = `<article data-static-blog-fallback lang="${lang.locale}" dir="${lang.dir}"><h1>${escapeHtml(post.title[lang.code])}</h1>${post.contentHtml[lang.code]}</article>`;
     const html = replaceHead(shell, post, lang, route).replace('<div id="root"></div>', `<div id="root">${article}</div>`);
     const target = resolve("dist", route.replace(/^\//, ""), "index.html");
     await mkdir(resolve(target, ".."), { recursive: true });
     await writeFile(target, html, "utf8");
+    baked += 1;
   }
 }
-console.log(`Baked ${posts.length * langs.length} crawlable localized blog pages.`);
+console.log(`Baked ${baked} crawlable localized blog pages.`);

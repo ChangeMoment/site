@@ -6,14 +6,16 @@ import { Section } from "../components/ui-kit";
 import { BlogCard } from "../components/BlogCard";
 import { CTABand } from "../components/CTABand";
 import { useLang } from "../i18n/LanguageProvider";
-import { blogPosts, blogCategories, type BlogCategory } from "../data/blogs";
+import { blogPosts, blogCategories, hasBlogTranslation, type BlogCategory } from "../data/blogs";
 
 export function Blogs() {
   const { t, lang } = useLang();
   const [active, setActive] = useState<BlogCategory | "all">("all");
 
-  const filtered =
-    active === "all" ? blogPosts : blogPosts.filter((p) => p.category === active);
+  const localizedPosts = blogPosts.filter((post) => hasBlogTranslation(post, lang));
+  const filtered = active === "all"
+    ? localizedPosts
+    : localizedPosts.filter((post) => post.category === active);
 
   const chip = (selected: boolean) =>
     `rounded-full px-4 py-2 text-sm transition-colors ${
