@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import sanitizeHtml from "sanitize-html";
 import { resolveAvailableBlogLanguages } from "./lib/blog-locales.mjs";
+import { normalizeCmsUrl, rewriteArticleUrl } from "./lib/blog-urls.mjs";
 
 const cmsUrl = (process.env.WORDPRESS_URL || "").replace(/\/$/, "");
 const siteUrl = (process.env.SITE_URL || "https://changemoment.ca").replace(/\/$/, "");
@@ -37,12 +38,7 @@ const stripTrailingReferences = (slug, value) => {
 };
 
 function rewriteOrigin(value) {
-  if (!cmsUrl || typeof value !== "string") return value;
-  return value.split(cmsUrl).join(siteUrl);
-}
-
-function rewriteArticleUrl(value, cmsPermalink, publicUrl) {
-  return rewriteOrigin(value).split(cmsPermalink).join(publicUrl);
+  return normalizeCmsUrl(value, cmsUrl, siteUrl);
 }
 
 function extractRankMath(head = "") {
@@ -67,8 +63,8 @@ async function rankMathFor(url, publicUrl) {
   if (!response.ok) throw new Error(`Rank Math getHead failed (${response.status}) for ${url}`);
   const payload = await response.json();
   return {
-    head: rewriteArticleUrl(payload.head || "", url, publicUrl),
-    jsonLd: extractRankMath(rewriteArticleUrl(payload.head || "", url, publicUrl)),
+    head: rewriteArticleUrl(payload.head || "", cmsUrl, siteUrl, url, publicUrl),
+    jsonLd: extractRankMath(rewriteArticleUrl(payload.head || "", cmsUrl, siteUrl, url, publicUrl)),
   };
 }
 
