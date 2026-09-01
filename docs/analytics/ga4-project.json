@@ -1,0 +1,16 @@
+{
+  "domain": "changemoment.ca",
+  "search_console_domain": "changemoment.ca",
+  "consent_required": true,
+  "google_signals": false,
+  "retention_months": 14,
+  "automatic_page_views": false,
+  "manual_page_views": true,
+  "dimensions": ["locale", "page_type", "content_group", "article_slug"],
+  "events": {
+    "page_view": {
+      "allowed_parameters": ["locale", "page_type", "content_group", "page_path", "article_slug"]
+    }
+  },
+  "key_events": []
+}
