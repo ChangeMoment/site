@@ -7,6 +7,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE_TEL, JANE_URL } from "../lib/constants";
 import { formatLgbtqia2sText } from "../lib/lgbtqia";
 import { localizedPath } from "../lib/seo";
 import { FooterCredentials } from "./FooterCredentials";
+import { resetAnalyticsConsent } from "../lib/analytics";
 
 export function Footer() {
   const { t, lang } = useLang();
@@ -152,6 +153,20 @@ export function Footer() {
           <p className="min-w-0">
             © {year} · {t("footer.rights")}
           </p>
+          <nav aria-label={t("footer.legalLinks")} className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-end">
+            <Link to={localizedPath("/privacy", lang)} className="hover:text-[var(--brand-deep-olive)] hover:underline">
+              {t("footer.privacy")}
+            </Link>
+            <Link to={localizedPath("/terms", lang)} className="hover:text-[var(--brand-deep-olive)] hover:underline">
+              {t("footer.terms")}
+            </Link>
+            <Link to={localizedPath("/accessibility", lang)} className="hover:text-[var(--brand-deep-olive)] hover:underline">
+              {t("footer.accessibility")}
+            </Link>
+            <button type="button" onClick={resetAnalyticsConsent} className="hover:text-[var(--brand-deep-olive)] hover:underline">
+              {t("footer.analyticsPreferences")}
+            </button>
+          </nav>
         </div>
       </div>
     </footer>

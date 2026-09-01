@@ -1,0 +1,18 @@
+{
+  "domain": "changemoment.ca",
+  "admin_exclusion_owner": "application",
+  "admin_trigger_name": "Path - WordPress Admin",
+  "admin_path_regex": "^/cms(?:/|$)",
+  "allowed_events": ["page_view"],
+  "allowed_data_layer_variables": [
+    "schema_version",
+    "site_id",
+    "environment",
+    "locale",
+    "page_type",
+    "content_group",
+    "page_path",
+    "article_slug"
+  ],
+  "forbidden_ad_tag_types": ["awct", "sp", "gclidw", "flc", "fls"]
+}

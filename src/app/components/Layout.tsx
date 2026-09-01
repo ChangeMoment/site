@@ -3,7 +3,9 @@ import { Outlet, useLocation } from "react-router";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { FloatingContact } from "./FloatingContact";
+import { AnalyticsConsent } from "./AnalyticsConsent";
 import { useLang } from "../i18n/LanguageProvider";
+import { trackPageView } from "../lib/analytics";
 
 export function Layout() {
   const { t, setLang } = useLang();
@@ -17,6 +19,11 @@ export function Layout() {
       setLang("en");
     }
   }, [location.pathname, setLang]);
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location.pathname]);
+
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <a
@@ -31,6 +38,7 @@ export function Layout() {
       </main>
       <FloatingContact />
       <Footer />
+      <AnalyticsConsent />
     </div>
   );
 }

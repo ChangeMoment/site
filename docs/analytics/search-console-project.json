@@ -1,0 +1,24 @@
+{
+  "domain": "changemoment.ca",
+  "property": "sc-domain:changemoment.ca",
+  "canonical_origin": "https://changemoment.ca",
+  "primary_locale": "en-CA",
+  "locale_mode": "other",
+  "sitemaps": ["https://changemoment.ca/sitemap.xml"],
+  "analysis_windows": {
+    "primary_days": 90,
+    "comparison_days": 90,
+    "max_history_months": 16
+  },
+  "api": {
+    "row_limit": 25000,
+    "url_inspection_daily_cap": 100
+  },
+  "indexing_request_limit_per_run": 5,
+  "ga4_property_id": "552122269",
+  "web_stream_id": "15527626516",
+  "bulk_export": {
+    "enabled": false,
+    "dataset": ""
+  }
+}

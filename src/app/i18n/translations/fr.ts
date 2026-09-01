@@ -53,8 +53,17 @@ export const fr: TranslationShape = {
     privacy: "Politique de confidentialité",
     terms: "Conditions d’utilisation",
     accessibility: "Accessibilité",
+    legalLinks: "Liens juridiques et de confidentialité",
+    analyticsPreferences: "Préférences d’analyse",
     rights: "© Centre de santé mentale ChangeMoment",
     bookCta: "Prendre rendez-vous",
+  },
+  analyticsConsent: {
+    title: "Vos choix de confidentialité",
+    body: "Nous utilisons Google Analytics de façon facultative uniquement pour comprendre l’utilisation des pages publiques et des langues. L’analyse reste désactivée sans votre accord, et nous n’envoyons jamais le contenu des formulaires, vos coordonnées ou des renseignements de santé.",
+    privacyLink: "Lire notre politique de confidentialité",
+    decline: "Essentiels seulement",
+    allow: "Autoriser l’analyse",
   },
   home: {
     meta: {
@@ -410,7 +419,7 @@ export const fr: TranslationShape = {
   },
   legal: {
     updatedLabel: "Dernière mise à jour",
-    updated: "16 août 2026",
+    updated: "1er septembre 2026",
     privacy: {
       title: "Politique de confidentialité",
       metaDesc:
@@ -420,7 +429,11 @@ export const fr: TranslationShape = {
       sections: [
         {
           title: "Ce que nous recueillons",
-          body: "Nous recueillons uniquement ce qui est nécessaire au counselling : votre nom et vos coordonnées, les renseignements que vous nous transmettez lors d’une réservation ou d’un message, vos informations d’assurance si vous demandez la facturation directe, et les dossiers cliniques créés durant votre suivi. Notre site n’utilise ni témoins publicitaires ni témoins de suivi.",
+          body: "Nous recueillons uniquement ce qui est nécessaire au counselling : votre nom et vos coordonnées, les renseignements que vous nous transmettez lors d’une réservation ou d’un message, vos informations d’assurance si vous demandez la facturation directe, et les dossiers cliniques créés durant votre suivi. Notre site n’utilise pas de témoins publicitaires. Les témoins d’analyse facultatifs restent désactivés tant que vous ne les autorisez pas.",
+        },
+        {
+          title: "Analyse facultative du site",
+          body: "Avec votre permission, nous utilisons Google Analytics par l’intermédiaire de Google Tag Manager pour comprendre quelles pages publiques et quelles langues sont utilisées. L’analyse reste désactivée jusqu’à ce que vous choisissiez de l’autoriser. Nous transmettons uniquement des informations contrôlées sur la page, comme la langue, le type de page et un chemin sans texte de requête; nous ne transmettons ni nom, ni coordonnées, ni contenu de formulaire, ni renseignement de santé, ni identifiant publicitaire. Vous pouvez modifier votre choix à tout moment dans le pied de page.",
         },
         {
           title: "Pourquoi nous les recueillons",

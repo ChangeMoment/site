@@ -51,8 +51,17 @@ export const en = {
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     accessibility: "Accessibility",
+    legalLinks: "Legal and privacy links",
+    analyticsPreferences: "Analytics preferences",
     rights: "© ChangeMoment Mental Health Centre",
     bookCta: "Book an Appointment",
+  },
+  analyticsConsent: {
+    title: "Your privacy choices",
+    body: "We use optional Google Analytics only to understand how public pages and languages are used. It stays off unless you allow it, and we never send form contents, contact details or health information.",
+    privacyLink: "Read our privacy policy",
+    decline: "Essential only",
+    allow: "Allow analytics",
   },
   home: {
     meta: {
@@ -408,7 +417,7 @@ export const en = {
   },
   legal: {
     updatedLabel: "Last updated",
-    updated: "16 August 2026",
+    updated: "1 September 2026",
     privacy: {
       title: "Privacy Policy",
       metaDesc:
@@ -418,7 +427,11 @@ export const en = {
       sections: [
         {
           title: "What we collect",
-          body: "We collect only what we need to provide counselling: your name and contact details, the information you give us when booking or writing to us, your insurance details if you ask us to bill directly, and the clinical records created during your care. Our website does not use advertising or tracking cookies.",
+          body: "We collect only what we need to provide counselling: your name and contact details, the information you give us when booking or writing to us, your insurance details if you ask us to bill directly, and the clinical records created during your care. Our website does not use advertising cookies. Optional analytics cookies remain disabled unless you choose to allow analytics.",
+        },
+        {
+          title: "Optional website analytics",
+          body: "With your permission, we use Google Analytics through Google Tag Manager to understand which public pages and languages are used. Analytics stays off until you choose Allow analytics. We send only controlled page information such as language, page type and a path without query text; we do not send names, contact details, form contents, health information or advertising identifiers. You can change your choice at any time from the website footer.",
         },
         {
           title: "Why we collect it",
