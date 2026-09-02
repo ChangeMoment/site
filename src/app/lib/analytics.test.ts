@@ -7,6 +7,7 @@ import {
   buildPageViewEvent,
   describeRoute,
   isChangeMomentGtmScript,
+  sanitizeAnalyticsReferrer,
 } from "./analytics";
 
 describe("analytics route classification", () => {
@@ -33,6 +34,8 @@ describe("analytics route classification", () => {
       page_type: "article",
       content_group: "blog",
       page_path: "/fa/blogs/healing",
+      page_location: "https://changemoment.ca/fa/blogs/healing",
+      page_referrer: "",
       article_slug: "healing",
     });
   });
@@ -90,5 +93,15 @@ describe("analytics route classification", () => {
     expect(isChangeMomentGtmScript(
       "https://example.com/gtm.js?id=GTM-T5DG75NW",
     )).toBe(false);
+  });
+
+  it("removes queries and limits external referrers to their origin", () => {
+    expect(sanitizeAnalyticsReferrer(
+      "https://changemoment.ca/fr/services?email=private@example.com#answer",
+    )).toBe("https://changemoment.ca/fr/services");
+    expect(sanitizeAnalyticsReferrer(
+      "https://search.example/results?q=private+health+question",
+    )).toBe("https://search.example");
+    expect(sanitizeAnalyticsReferrer("javascript:alert(1)")).toBe("");
   });
 });
