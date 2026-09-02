@@ -235,13 +235,26 @@ function updateGoogleConsent(analyticsStorage: "granted" | "denied") {
   });
 }
 
+export function isChangeMomentGtmScript(source: string) {
+  if (!source) return false;
+  try {
+    const url = new URL(source, "https://changemoment.ca");
+    return url.hostname === "www.googletagmanager.com"
+      && url.pathname === "/gtm.js"
+      && url.searchParams.get("id") === GTM_CONTAINER_ID;
+  } catch {
+    return false;
+  }
+}
+
+function hasExistingGtmScript() {
+  return Array.from(document.scripts).some((script) => isChangeMomentGtmScript(script.src));
+}
+
 export function initializeAnalytics() {
   if (typeof window === "undefined" || typeof document === "undefined") return false;
   if (getAnalyticsConsent() !== "granted") return false;
-  if (gtmInitialized || document.querySelector(`script[data-gtm-container="${GTM_CONTAINER_ID}"]`)) {
-    gtmInitialized = true;
-    return true;
-  }
+  if (gtmInitialized) return true;
 
   window.dataLayer = window.dataLayer ?? [];
   queueGtagCommand("consent", "default", {
@@ -250,6 +263,15 @@ export function initializeAnalytics() {
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
+
+  // Tag Assistant injects the preview-environment loader before the app runs.
+  // Reuse any loader for this exact container so Preview and production both
+  // execute a single container instance.
+  if (hasExistingGtmScript()) {
+    gtmInitialized = true;
+    return true;
+  }
+
   window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
 
   const script = document.createElement("script");

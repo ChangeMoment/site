@@ -6,6 +6,7 @@ import {
   buildLanguageChangeEvent,
   buildPageViewEvent,
   describeRoute,
+  isChangeMomentGtmScript,
 } from "./analytics";
 
 describe("analytics route classification", () => {
@@ -77,5 +78,17 @@ describe("analytics route classification", () => {
       percent: 90,
     });
     expect(buildContentProgressEvent("/services/anxiety", 50)).toBeNull();
+  });
+
+  it("reuses the exact GTM container loader injected by Tag Assistant", () => {
+    expect(isChangeMomentGtmScript(
+      "https://www.googletagmanager.com/gtm.js?id=GTM-T5DG75NW&gtm_preview=env-11&gtm_auth=preview",
+    )).toBe(true);
+    expect(isChangeMomentGtmScript(
+      "https://www.googletagmanager.com/gtm.js?id=GTM-OTHER",
+    )).toBe(false);
+    expect(isChangeMomentGtmScript(
+      "https://example.com/gtm.js?id=GTM-T5DG75NW",
+    )).toBe(false);
   });
 });
