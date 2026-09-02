@@ -22,13 +22,15 @@ interface AnalyticsEventBase {
   site_id: string;
   environment: AnalyticsEnvironment;
   locale: AnalyticsLocale;
+  page_path: string;
+  page_location: string;
+  page_referrer: string;
 }
 
 export interface PageViewEvent extends AnalyticsEventBase {
   event: "page_view";
   page_type: string;
   content_group: string;
-  page_path: string;
   article_slug?: string;
 }
 
@@ -90,12 +92,39 @@ function getEnvironment(): AnalyticsEnvironment {
     : "development";
 }
 
-function buildEventBase(locale: AnalyticsLocale): AnalyticsEventBase {
+function getSafeAnalyticsOrigin() {
+  if (typeof window === "undefined") return "https://changemoment.ca";
+  return window.location.hostname === "changemoment.ca" || window.location.hostname === "www.changemoment.ca"
+    ? "https://changemoment.ca"
+    : window.location.origin;
+}
+
+export function sanitizeAnalyticsReferrer(referrer: string, siteOrigin = "https://changemoment.ca") {
+  if (!referrer) return "";
+  try {
+    const url = new URL(referrer);
+    if (url.protocol !== "http:" && url.protocol !== "https:") return "";
+    return url.origin === siteOrigin
+      ? `${siteOrigin}${normalizePath(url.pathname)}`
+      : url.origin;
+  } catch {
+    return "";
+  }
+}
+
+function buildEventBase(locale: AnalyticsLocale, pagePath: string): AnalyticsEventBase {
+  const origin = getSafeAnalyticsOrigin();
   return {
     schema_version: SCHEMA_VERSION,
     site_id: SITE_ID,
     environment: getEnvironment(),
     locale,
+    page_path: pagePath,
+    page_location: `${origin}${pagePath}`,
+    page_referrer: sanitizeAnalyticsReferrer(
+      typeof document === "undefined" ? "" : document.referrer,
+      origin,
+    ),
   };
 }
 
@@ -140,10 +169,9 @@ export function buildPageViewEvent(pathname: string): PageViewEvent {
   const route = describeRoute(pathname);
   return {
     event: "page_view",
-    ...buildEventBase(route.locale),
+    ...buildEventBase(route.locale, route.pagePath),
     page_type: route.pageType,
     content_group: route.contentGroup,
-    page_path: route.pagePath,
     ...(route.articleSlug ? { article_slug: route.articleSlug } : {}),
   };
 }
@@ -156,7 +184,7 @@ export function buildBookingIntentEvent(
   const route = describeRoute(pathname);
   return {
     event: "booking_intent",
-    ...buildEventBase(route.locale),
+    ...buildEventBase(route.locale, route.pagePath),
     step_id: stepId,
     entry_point: route.pageType,
     placement,
@@ -170,7 +198,7 @@ export function buildGenerateLeadEvent(pathname: string): GenerateLeadEvent {
   const route = describeRoute(pathname);
   return {
     event: "generate_lead",
-    ...buildEventBase(route.locale),
+    ...buildEventBase(route.locale, route.pagePath),
     lead_type: "contact_form",
     entry_point: "contact",
   };
@@ -183,7 +211,7 @@ export function buildLanguageChangeEvent(
   const route = describeRoute(pathname);
   return {
     event: "language_change",
-    ...buildEventBase(route.locale),
+    ...buildEventBase(route.locale, route.pagePath),
     from_locale: route.locale,
     to_locale: toLocale,
     placement: "header",
@@ -198,7 +226,7 @@ export function buildContentProgressEvent(
   if (route.pageType !== "article" || !route.articleSlug) return null;
   return {
     event: "content_progress",
-    ...buildEventBase(route.locale),
+    ...buildEventBase(route.locale, route.pagePath),
     page_type: "article",
     content_group: "blog",
     article_slug: route.articleSlug,
