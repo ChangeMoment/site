@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { useLang } from "../i18n/LanguageProvider";
 import { localizedPath } from "../lib/seo";
@@ -12,9 +12,19 @@ import {
 export function AnalyticsConsent() {
   const { t, lang, dir } = useLang();
   const location = useLocation();
-  const [choice, setChoice] = useState<AnalyticsConsentChoice>(() => getAnalyticsConsent());
+  const [choice, setChoice] = useState<AnalyticsConsentChoice>(null);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  if (choice !== null) return null;
+  useEffect(() => {
+    setChoice(getAnalyticsConsent());
+    setHasMounted(true);
+  }, []);
+
+  // The server cannot read browser storage. Keep the server markup and the
+  // browser's first render identical, then reveal the consent prompt only
+  // after the saved choice is known. This prevents React hydration recovery
+  // for returning visitors and avoids briefly flashing the prompt for them.
+  if (!hasMounted || choice !== null) return null;
 
   const allow = () => {
     grantAnalyticsConsent(location.pathname);

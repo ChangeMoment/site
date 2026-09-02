@@ -17,6 +17,15 @@ describe("privacy-safe analytics integration", () => {
     expect(analytics).not.toMatch(/form\.(?:name|email|phone|message)/);
   });
 
+  it("keeps the consent component hydration-safe before browser storage is available", async () => {
+    const consent = await readFile(resolve("src/app/components/AnalyticsConsent.tsx"), "utf8");
+
+    expect(consent).toContain("const [hasMounted, setHasMounted] = useState(false)");
+    expect(consent).toContain("setChoice(getAnalyticsConsent())");
+    expect(consent).toContain("if (!hasMounted || choice !== null) return null");
+    expect(consent).not.toContain("useState<AnalyticsConsentChoice>(() => getAnalyticsConsent())");
+  });
+
   it("allows only GTM and GA4 collection endpoints in the public CSP", async () => {
     const apache = await readFile(resolve("deploy/wordpress/apache-changemoment.conf"), "utf8");
 
