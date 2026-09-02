@@ -5,6 +5,7 @@ import { useLang } from "../i18n/LanguageProvider";
 import type { Service } from "../data/services";
 import { JANE_URL } from "../lib/constants";
 import { localizedPath } from "../lib/seo";
+import { trackBookingIntent } from "../lib/analytics";
 
 import { formatLgbtqia2sText as renderServiceName } from "../lib/lgbtqia";
 
@@ -59,6 +60,7 @@ export function ServiceCard({ service, paletteIndex }: ServiceCardProps) {
           href={JANE_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackBookingIntent("open_jane", "service_card")}
           className={`text-sm underline-offset-4 transition-colors hover:underline ${palette?.secondaryLink ?? "text-[var(--brand-ink-muted)] hover:text-[var(--brand-deep-olive)]"}`}
         >
           {t("cta.book")}

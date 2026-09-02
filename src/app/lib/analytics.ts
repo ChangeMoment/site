@@ -7,18 +7,66 @@ const SCHEMA_VERSION = "1";
 
 export type AnalyticsConsent = "granted" | "denied" | null;
 export type AnalyticsLocale = "en" | "fa" | "fr";
+export type AnalyticsEnvironment = "production" | "development";
+export type BookingStep = "open_booking_page" | "open_jane";
+export type AnalyticsPlacement =
+  | "header"
+  | "footer"
+  | "service_card"
+  | "therapist_card"
+  | "booking_page"
+  | "internal_cta";
 
-export interface PageViewEvent {
-  event: "page_view";
+interface AnalyticsEventBase {
   schema_version: string;
   site_id: string;
-  environment: "production";
+  environment: AnalyticsEnvironment;
   locale: AnalyticsLocale;
+}
+
+export interface PageViewEvent extends AnalyticsEventBase {
+  event: "page_view";
   page_type: string;
   content_group: string;
   page_path: string;
   article_slug?: string;
 }
+
+export interface BookingIntentEvent extends AnalyticsEventBase {
+  event: "booking_intent";
+  step_id: BookingStep;
+  entry_point: string;
+  placement: AnalyticsPlacement;
+  destination_domain?: "changemoment.janeapp.com";
+}
+
+export interface GenerateLeadEvent extends AnalyticsEventBase {
+  event: "generate_lead";
+  lead_type: "contact_form";
+  entry_point: "contact";
+}
+
+export interface LanguageChangeEvent extends AnalyticsEventBase {
+  event: "language_change";
+  from_locale: AnalyticsLocale;
+  to_locale: AnalyticsLocale;
+  placement: "header";
+}
+
+export interface ContentProgressEvent extends AnalyticsEventBase {
+  event: "content_progress";
+  page_type: "article";
+  content_group: "blog";
+  article_slug: string;
+  percent: 50 | 90;
+}
+
+export type ChangeMomentAnalyticsEvent =
+  | PageViewEvent
+  | BookingIntentEvent
+  | GenerateLeadEvent
+  | LanguageChangeEvent
+  | ContentProgressEvent;
 
 declare global {
   interface Window {
@@ -33,6 +81,22 @@ function normalizePath(pathname: string) {
   const path = pathname.split(/[?#]/, 1)[0] || "/";
   if (path === "/") return path;
   return `/${path.replace(/^\/+|\/+$/g, "")}`;
+}
+
+function getEnvironment(): AnalyticsEnvironment {
+  if (typeof window === "undefined") return "production";
+  return window.location.hostname === "changemoment.ca" || window.location.hostname === "www.changemoment.ca"
+    ? "production"
+    : "development";
+}
+
+function buildEventBase(locale: AnalyticsLocale): AnalyticsEventBase {
+  return {
+    schema_version: SCHEMA_VERSION,
+    site_id: SITE_ID,
+    environment: getEnvironment(),
+    locale,
+  };
 }
 
 export function describeRoute(pathname: string) {
@@ -76,14 +140,69 @@ export function buildPageViewEvent(pathname: string): PageViewEvent {
   const route = describeRoute(pathname);
   return {
     event: "page_view",
-    schema_version: SCHEMA_VERSION,
-    site_id: SITE_ID,
-    environment: "production",
-    locale: route.locale,
+    ...buildEventBase(route.locale),
     page_type: route.pageType,
     content_group: route.contentGroup,
     page_path: route.pagePath,
     ...(route.articleSlug ? { article_slug: route.articleSlug } : {}),
+  };
+}
+
+export function buildBookingIntentEvent(
+  pathname: string,
+  stepId: BookingStep,
+  placement: AnalyticsPlacement,
+): BookingIntentEvent {
+  const route = describeRoute(pathname);
+  return {
+    event: "booking_intent",
+    ...buildEventBase(route.locale),
+    step_id: stepId,
+    entry_point: route.pageType,
+    placement,
+    // Explicitly clear the field for internal booking events so GTM cannot reuse
+    // a destination left in its version-2 data model by an earlier Jane click.
+    destination_domain: stepId === "open_jane" ? "changemoment.janeapp.com" : undefined,
+  };
+}
+
+export function buildGenerateLeadEvent(pathname: string): GenerateLeadEvent {
+  const route = describeRoute(pathname);
+  return {
+    event: "generate_lead",
+    ...buildEventBase(route.locale),
+    lead_type: "contact_form",
+    entry_point: "contact",
+  };
+}
+
+export function buildLanguageChangeEvent(
+  pathname: string,
+  toLocale: AnalyticsLocale,
+): LanguageChangeEvent {
+  const route = describeRoute(pathname);
+  return {
+    event: "language_change",
+    ...buildEventBase(route.locale),
+    from_locale: route.locale,
+    to_locale: toLocale,
+    placement: "header",
+  };
+}
+
+export function buildContentProgressEvent(
+  pathname: string,
+  percent: 50 | 90,
+): ContentProgressEvent | null {
+  const route = describeRoute(pathname);
+  if (route.pageType !== "article" || !route.articleSlug) return null;
+  return {
+    event: "content_progress",
+    ...buildEventBase(route.locale),
+    page_type: "article",
+    content_group: "blog",
+    article_slug: route.articleSlug,
+    percent,
   };
 }
 
@@ -151,6 +270,34 @@ export function trackPageView(pathname: string) {
   window.dataLayer.push(event);
   lastTrackedPath = event.page_path;
   return true;
+}
+
+export function trackAnalyticsEvent(event: ChangeMomentAnalyticsEvent) {
+  if (typeof window === "undefined" || getAnalyticsConsent() !== "granted") return false;
+  initializeAnalytics();
+  window.dataLayer = window.dataLayer ?? [];
+  window.dataLayer.push(event);
+  return true;
+}
+
+export function trackBookingIntent(stepId: BookingStep, placement: AnalyticsPlacement) {
+  if (typeof window === "undefined") return false;
+  return trackAnalyticsEvent(buildBookingIntentEvent(window.location.pathname, stepId, placement));
+}
+
+export function trackGenerateLead(pathname: string) {
+  return trackAnalyticsEvent(buildGenerateLeadEvent(pathname));
+}
+
+export function trackLanguageChange(pathname: string, toLocale: AnalyticsLocale) {
+  const event = buildLanguageChangeEvent(pathname, toLocale);
+  if (event.from_locale === event.to_locale) return false;
+  return trackAnalyticsEvent(event);
+}
+
+export function trackContentProgress(pathname: string, percent: 50 | 90) {
+  const event = buildContentProgressEvent(pathname, percent);
+  return event ? trackAnalyticsEvent(event) : false;
 }
 
 export function grantAnalyticsConsent(pathname: string) {

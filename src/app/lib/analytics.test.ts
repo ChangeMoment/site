@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { buildPageViewEvent, describeRoute } from "./analytics";
+import {
+  buildBookingIntentEvent,
+  buildContentProgressEvent,
+  buildGenerateLeadEvent,
+  buildLanguageChangeEvent,
+  buildPageViewEvent,
+  describeRoute,
+} from "./analytics";
 
 describe("analytics route classification", () => {
   it.each([
@@ -27,5 +34,48 @@ describe("analytics route classification", () => {
       page_path: "/fa/blogs/healing",
       article_slug: "healing",
     });
+  });
+
+  it("builds booking intent events without a destination URL", () => {
+    expect(buildBookingIntentEvent("/fr/services/anxiety?email=private@example.com", "open_jane", "service_card"))
+      .toMatchObject({
+        event: "booking_intent",
+        locale: "fr",
+        step_id: "open_jane",
+        entry_point: "service_detail",
+        placement: "service_card",
+        destination_domain: "changemoment.janeapp.com",
+      });
+
+    expect(buildBookingIntentEvent("/book", "open_booking_page", "internal_cta").destination_domain)
+      .toBeUndefined();
+  });
+
+  it("builds a lead only from the successful contact boundary", () => {
+    expect(buildGenerateLeadEvent("/fa/contact")).toMatchObject({
+      event: "generate_lead",
+      locale: "fa",
+      lead_type: "contact_form",
+      entry_point: "contact",
+    });
+  });
+
+  it("uses controlled locale fields for language changes", () => {
+    expect(buildLanguageChangeEvent("/fr/services", "en")).toMatchObject({
+      event: "language_change",
+      locale: "fr",
+      from_locale: "fr",
+      to_locale: "en",
+      placement: "header",
+    });
+  });
+
+  it("tracks article progress only for blog detail routes", () => {
+    expect(buildContentProgressEvent("/blogs/anxiety-beyond-worry", 90)).toMatchObject({
+      event: "content_progress",
+      article_slug: "anxiety-beyond-worry",
+      percent: 90,
+    });
+    expect(buildContentProgressEvent("/services/anxiety", 50)).toBeNull();
   });
 });

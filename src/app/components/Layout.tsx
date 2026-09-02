@@ -5,7 +5,7 @@ import { Footer } from "./Footer";
 import { FloatingContact } from "./FloatingContact";
 import { AnalyticsConsent } from "./AnalyticsConsent";
 import { useLang } from "../i18n/LanguageProvider";
-import { trackPageView } from "../lib/analytics";
+import { describeRoute, trackContentProgress, trackPageView } from "../lib/analytics";
 
 export function Layout() {
   const { t, setLang } = useLang();
@@ -22,6 +22,35 @@ export function Layout() {
 
   useEffect(() => {
     trackPageView(location.pathname);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const route = describeRoute(location.pathname);
+    if (route.pageType !== "article") return;
+
+    const sent = new Set<50 | 90>();
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      const percent = Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+      for (const threshold of [50, 90] as const) {
+        if (percent >= threshold && !sent.has(threshold)) {
+          if (trackContentProgress(location.pathname, threshold)) sent.add(threshold);
+        }
+      }
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(measure);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    measure();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, [location.pathname]);
 
   return (
