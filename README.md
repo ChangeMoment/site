@@ -338,16 +338,23 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now changemoment-rebuild.path
 ```
 
-Before installation, update the public hostname variables inside `rebuild-site.sh`. The current file contains the staging hostname and is not a production-ready domain configuration.
-
 Publishing a WordPress post then follows this path:
 
 1. WordPress writes `/var/lib/changemoment/rebuild-requested`.
 2. The systemd path unit starts `changemoment-rebuild.service`.
 3. A filesystem lock prevents concurrent builds.
-4. The service fetches WordPress and Rank Math output and runs the verified build.
-5. A new release directory is created and activated atomically.
-6. Old releases are pruned, retaining the three most recent releases.
+4. The service reads the immutable Git revision recorded in the active release.
+5. A detached temporary worktree is created from that exact revision, so an old
+   or dirty server checkout cannot change the deployed application code.
+6. The service fetches WordPress and Rank Math output and runs the verified build.
+7. A new revision-labelled release is activated atomically and public routes are
+   smoke-tested. A failed postflight restores the previous release.
+8. The temporary worktree is removed and only the eight newest releases are kept.
+
+Every code deployment must write its full 40-character Git SHA to
+`.revision` inside the release. The rebuild intentionally does not fetch or
+advance `origin/main`: publishing CMS content must preserve the exact frontend
+revision already approved for production.
 
 Inspect rebuild status and logs with:
 
