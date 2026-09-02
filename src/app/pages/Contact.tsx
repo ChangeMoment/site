@@ -8,6 +8,7 @@ import { BrandSelect } from "../components/BrandSelect";
 import { useLang } from "../i18n/LanguageProvider";
 import { CONTACT_EMAIL, CONTACT_PHONE_TEL } from "../lib/constants";
 import { submitContactForm } from "../lib/contact";
+import { trackGenerateLead } from "../lib/analytics";
 
 interface FormState {
   name: string;
@@ -66,6 +67,7 @@ export function Contact() {
 
     try {
       await submitContactForm(form, controller.signal);
+      trackGenerateLead(window.location.pathname);
       setSuccess(true);
       setForm({ name: "", email: "", phone: "", language: "en", message: "", website: "" });
     } catch {

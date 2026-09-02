@@ -3,7 +3,7 @@
   "admin_exclusion_owner": "application",
   "admin_trigger_name": "Path - WordPress Admin",
   "admin_path_regex": "^/cms(?:/|$)",
-  "allowed_events": ["page_view"],
+  "allowed_events": ["page_view", "booking_intent", "generate_lead", "language_change", "content_progress"],
   "allowed_data_layer_variables": [
     "schema_version",
     "site_id",
@@ -12,7 +12,15 @@
     "page_type",
     "content_group",
     "page_path",
-    "article_slug"
+    "article_slug",
+    "step_id",
+    "entry_point",
+    "placement",
+    "destination_domain",
+    "lead_type",
+    "from_locale",
+    "to_locale",
+    "percent"
   ],
   "forbidden_ad_tag_types": ["awct", "sp", "gclidw", "flc", "fls"]
 }

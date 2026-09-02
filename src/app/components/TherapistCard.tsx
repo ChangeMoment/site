@@ -7,6 +7,7 @@ import { services } from "../data/services";
 import { JANE_URL } from "../lib/constants";
 import { LANGS } from "../i18n/LanguageProvider";
 import { formatLgbtqia2sText } from "../lib/lgbtqia";
+import { trackBookingIntent } from "../lib/analytics";
 
 export function TherapistCard({ therapist }: { therapist: Therapist }) {
   const { t, lang } = useLang();
@@ -61,6 +62,7 @@ export function TherapistCard({ therapist }: { therapist: Therapist }) {
           href={JANE_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackBookingIntent("open_jane", "therapist_card")}
           className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-[var(--brand-deep-olive)]/45 px-5 py-2.5 text-sm font-medium text-[var(--brand-deep-olive)] transition-all hover:bg-[var(--brand-deep-olive)] hover:text-white"
         >
           {t("cta.bookWith")}

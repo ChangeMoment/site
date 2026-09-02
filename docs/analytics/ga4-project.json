@@ -6,11 +6,36 @@
   "retention_months": 14,
   "automatic_page_views": false,
   "manual_page_views": true,
-  "dimensions": ["locale", "page_type", "content_group", "article_slug"],
+  "dimensions": [
+    "locale",
+    "page_type",
+    "content_group",
+    "article_slug",
+    "step_id",
+    "entry_point",
+    "placement",
+    "lead_type",
+    "from_locale",
+    "to_locale",
+    "destination_domain",
+    "percent"
+  ],
   "events": {
     "page_view": {
       "allowed_parameters": ["locale", "page_type", "content_group", "page_path", "article_slug"]
+    },
+    "booking_intent": {
+      "allowed_parameters": ["locale", "step_id", "entry_point", "placement", "destination_domain"]
+    },
+    "generate_lead": {
+      "allowed_parameters": ["locale", "lead_type", "entry_point"]
+    },
+    "language_change": {
+      "allowed_parameters": ["locale", "from_locale", "to_locale", "placement"]
+    },
+    "content_progress": {
+      "allowed_parameters": ["locale", "page_type", "content_group", "article_slug", "percent"]
     }
   },
-  "key_events": []
+  "key_events": ["generate_lead"]
 }

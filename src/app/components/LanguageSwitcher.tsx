@@ -8,6 +8,7 @@ import {
 import { LANGS, useLang } from "../i18n/LanguageProvider";
 import { useLocation, useNavigate } from "react-router";
 import { localizedPath, stripLanguagePrefix } from "../lib/seo";
+import { trackLanguageChange } from "../lib/analytics";
 
 export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const { lang, setLang, t } = useLang();
@@ -16,6 +17,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
 
   const selectLanguage = (nextLang: (typeof LANGS)[number]["code"]) => {
     const basePath = stripLanguagePrefix(location.pathname);
+    trackLanguageChange(location.pathname, nextLang);
     setLang(nextLang);
     navigate(`${localizedPath(basePath, nextLang)}${location.search}${location.hash}`);
   };

@@ -7,7 +7,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE_TEL, JANE_URL } from "../lib/constants";
 import { formatLgbtqia2sText } from "../lib/lgbtqia";
 import { localizedPath } from "../lib/seo";
 import { FooterCredentials } from "./FooterCredentials";
-import { resetAnalyticsConsent } from "../lib/analytics";
+import { resetAnalyticsConsent, trackBookingIntent } from "../lib/analytics";
 
 export function Footer() {
   const { t, lang } = useLang();
@@ -42,6 +42,7 @@ export function Footer() {
                 href={JANE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackBookingIntent("open_jane", "footer")}
                 className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-deep-olive)] px-4 py-2 text-sm font-medium text-white shadow-[0_10px_30px_-12px_rgba(124,128,103,0.65)] transition-colors hover:bg-[#686c55]"
               >
                 {t("footer.bookCta")}

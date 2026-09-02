@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useLang } from "../i18n/LanguageProvider";
 import { localizedPath } from "../lib/seo";
+import { trackBookingIntent, type AnalyticsPlacement } from "../lib/analytics";
 
 /* ── Buttons ───────────────────────────────────────────────── */
 
@@ -65,8 +66,13 @@ export function LinkButton({
 }: BtnBaseProps & { to: string }) {
   const { dir, lang } = useLang();
   const Arrow = dir === "rtl" ? ArrowLeft : ArrowRight;
+  const onClick = to === "/book" ? () => trackBookingIntent("open_booking_page", "internal_cta") : undefined;
   return (
-    <Link to={localizedPath(to, lang)} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}>
+    <Link
+      to={localizedPath(to, lang)}
+      onClick={onClick}
+      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+    >
       {children}
       {arrow && <Arrow className="size-4" aria-hidden="true" />}
     </Link>
@@ -80,15 +86,21 @@ export function ExternalButton({
   children,
   className = "",
   arrow = false,
+  analyticsPlacement = "booking_page",
+  onClick,
   ...rest
-}: BtnBaseProps & ComponentProps<"a">) {
+}: BtnBaseProps & ComponentProps<"a"> & { analyticsPlacement?: AnalyticsPlacement }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
       {...rest}
+      onClick={(event) => {
+        trackBookingIntent("open_jane", analyticsPlacement);
+        onClick?.(event);
+      }}
+      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {children}
       {arrow && <ArrowRight className="size-4" aria-hidden="true" />}
