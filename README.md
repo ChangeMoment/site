@@ -229,7 +229,7 @@ curl --fail --silent --show-error \
   http://127.0.0.1/cms/wp-json/changemoment/v1/posts
 ```
 
-Every published post must include its English title, excerpt, and content. French and Persian are optional while editing, but a localized page is created only after that language's title, excerpt, and content are all complete. Incomplete optional translations are shown as such in WordPress and are excluded from the public site without blocking English or another complete language. Rank Math title, description, canonical, Open Graph fields, and JSON-LD are fetched during the build and preserved in the public article HTML.
+Every published post must include its English title, excerpt, and content. French and Persian are optional while editing. A localized page is created after that language's title and article body are complete; its short excerpt is optional and is generated from the localized body when left blank. Incomplete optional translations are shown as such in WordPress and are excluded from the public site without blocking English or another complete language. Rank Math title, description, canonical, Open Graph fields, and JSON-LD are fetched during the build and preserved in the public article HTML.
 
 ## Server filesystem
 

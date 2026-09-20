@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ChangeMoment Headless Blog
  * Description: Three-language editorial fields plus sanitized blog and contact REST contracts for the ChangeMoment frontend.
- * Version: 1.3.0
+ * Version: 1.3.1
  */
 
 if (!defined('ABSPATH')) { exit; }
@@ -175,10 +175,21 @@ function cm_submit_contact(WP_REST_Request $request) {
     return cm_contact_response(['accepted' => true], 202);
 }
 
+function cm_localized_excerpt($post_id, $lang) {
+    $excerpt = trim((string) get_post_meta($post_id, '_cm_excerpt_' . $lang, true));
+    if ($excerpt !== '') return $excerpt;
+
+    $title = trim(wp_strip_all_tags((string) get_post_meta($post_id, '_cm_title_' . $lang, true)));
+    $content = trim(wp_strip_all_tags((string) get_post_meta($post_id, '_cm_content_' . $lang, true)));
+    if ($title === '' || $content === '') return '';
+
+    return wp_trim_words($content, 32, '…');
+}
+
 function cm_translation_state($post_id, $lang) {
     $values = [
         get_post_meta($post_id, '_cm_title_' . $lang, true),
-        get_post_meta($post_id, '_cm_excerpt_' . $lang, true),
+        cm_localized_excerpt($post_id, $lang),
         get_post_meta($post_id, '_cm_content_' . $lang, true),
     ];
     $completed = count(array_filter($values, function ($value) {
@@ -225,10 +236,10 @@ add_action('add_meta_boxes', function () {
             $content = get_post_meta($post->ID, '_cm_content_' . $lang, true);
             echo '<section class="cm-language-panel" dir="' . esc_attr($direction) . '">';
             echo '<div class="cm-language-heading"><h3>' . esc_html($heading) . '</h3>' . cm_translation_badge(cm_translation_state($post->ID, $lang)) . '</div>';
-            echo '<p>Complete the title, short excerpt, and article body to publish the ' . esc_html($name) . ' page.</p>';
+            echo '<p>Complete the title and article body to publish the ' . esc_html($name) . ' page. The short excerpt is optional and will be generated from the article body when left blank.</p>';
             echo '<div class="cm-field"><label for="cm_title_' . esc_attr($lang) . '">' . esc_html($name) . ' title</label>';
             echo '<input class="widefat" id="cm_title_' . esc_attr($lang) . '" name="cm_title_' . esc_attr($lang) . '" value="' . esc_attr($title) . '"></div>';
-            echo '<div class="cm-field"><label for="cm_excerpt_' . esc_attr($lang) . '">' . esc_html($name) . ' short excerpt</label>';
+            echo '<div class="cm-field"><label for="cm_excerpt_' . esc_attr($lang) . '">' . esc_html($name) . ' short excerpt (optional)</label>';
             echo '<textarea class="widefat" id="cm_excerpt_' . esc_attr($lang) . '" name="cm_excerpt_' . esc_attr($lang) . '" rows="3">' . esc_textarea($excerpt) . '</textarea></div>';
             echo '<div class="cm-field"><label for="cm_content_' . esc_attr($lang) . '">' . esc_html($name) . ' article body</label>';
             wp_editor($content, 'cm_content_' . $lang, [
@@ -309,8 +320,8 @@ add_action('rest_api_init', function () {
                     ],
                     'excerpt' => [
                         'en' => wp_strip_all_tags(get_the_excerpt($post)),
-                        'fr' => get_post_meta($post->ID, '_cm_excerpt_fr', true),
-                        'fa' => get_post_meta($post->ID, '_cm_excerpt_fa', true),
+                        'fr' => cm_localized_excerpt($post->ID, 'fr'),
+                        'fa' => cm_localized_excerpt($post->ID, 'fa'),
                     ],
                     'contentHtml' => [
                         'en' => wp_kses_post(apply_filters('the_content', $post->post_content)),

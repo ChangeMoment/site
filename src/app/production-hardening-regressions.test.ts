@@ -76,6 +76,15 @@ describe("production hardening configuration", () => {
     expect(headlessPlugin).toContain("'translationStatus'");
   });
 
+  it("publishes a localized article when its optional excerpt is left blank", () => {
+    expect(headlessPlugin).toContain("function cm_localized_excerpt");
+    expect(headlessPlugin).toContain("wp_trim_words($content, 32, '…')");
+    expect(headlessPlugin).toContain("cm_localized_excerpt($post_id, $lang)");
+    expect(headlessPlugin).toContain("cm_localized_excerpt($post->ID, 'fr')");
+    expect(headlessPlugin).toContain("cm_localized_excerpt($post->ID, 'fa')");
+    expect(headlessPlugin).toContain("short excerpt (optional)");
+  });
+
   it("does not discard a second editorial save that arrives during a rebuild", () => {
     expect(rebuildScript).toContain('START_MARKER_TOKEN="$(cat "$MARKER"');
     expect(rebuildScript).toContain('CURRENT_MARKER_TOKEN="$(cat "$MARKER"');
