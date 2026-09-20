@@ -2,7 +2,7 @@
 Description=Watch for ChangeMoment WordPress publish requests
 
 [Path]
-PathChanged=/var/lib/changemoment/rebuild-requested
+PathExists=/var/lib/changemoment/rebuild-requested
 Unit=changemoment-rebuild.service
 
 [Install]

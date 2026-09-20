@@ -8,6 +8,7 @@ const apache = readDeploymentFile("apache-changemoment.conf");
 const httpSite = readDeploymentFile("apache-changemoment-site.conf");
 const httpsSite = readDeploymentFile("apache-changemoment-ssl-site.conf");
 const rebuildService = readDeploymentFile("changemoment-rebuild.service");
+const rebuildPath = readDeploymentFile("changemoment-rebuild.path");
 const rebuildScript = readDeploymentFile("rebuild-site.sh");
 const headlessPlugin = readDeploymentFile("changemoment-headless.php");
 const provision = readDeploymentFile("provision.sh");
@@ -81,5 +82,11 @@ describe("production hardening configuration", () => {
     expect(rebuildScript).toContain(
       '"$CURRENT_MARKER_TOKEN" == "$START_MARKER_TOKEN"',
     );
+    expect(rebuildPath).toContain(
+      "PathExists=/var/lib/changemoment/rebuild-requested",
+    );
+    expect(rebuildPath).not.toContain("PathChanged=");
+    expect(rebuildService).toContain("StartLimitIntervalSec=300");
+    expect(rebuildService).toContain("StartLimitBurst=3");
   });
 });

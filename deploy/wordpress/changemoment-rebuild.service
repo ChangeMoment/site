@@ -1,6 +1,8 @@
 [Unit]
 Description=Build and atomically publish ChangeMoment after a WordPress update
 After=network-online.target apache2.service mariadb.service
+StartLimitIntervalSec=300
+StartLimitBurst=3
 
 [Service]
 Type=oneshot

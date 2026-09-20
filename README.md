@@ -341,7 +341,7 @@ sudo systemctl enable --now changemoment-rebuild.path
 Publishing a WordPress post then follows this path:
 
 1. WordPress writes `/var/lib/changemoment/rebuild-requested`.
-2. The systemd path unit starts `changemoment-rebuild.service`.
+2. The systemd path unit starts `changemoment-rebuild.service` while that queue marker exists.
 3. A filesystem lock prevents concurrent builds.
 4. The service reads the immutable Git revision recorded in the active release.
 5. A detached temporary worktree is created from that exact revision, so an old
@@ -350,7 +350,9 @@ Publishing a WordPress post then follows this path:
 7. A new revision-labelled release is activated atomically and public routes are
    smoke-tested. A failed postflight restores the previous release.
 8. The processed marker is removed only if no newer editorial save arrived
-   during the build; otherwise systemd performs one more rebuild so no save is lost.
+   during the build; otherwise the still-existing queue marker makes systemd
+   perform one more rebuild so no save is lost. A bounded systemd start limit
+   prevents an endless retry loop if builds repeatedly fail.
 9. The temporary worktree is removed and only the eight newest releases are kept.
 
 Every code deployment must write its full 40-character Git SHA to
