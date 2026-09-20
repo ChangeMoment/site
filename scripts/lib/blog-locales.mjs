@@ -1,7 +1,8 @@
 export const BLOG_LANGUAGES = ["en", "fr", "fa"];
 
-export function resolveAvailableBlogLanguages(source) {
+export function inspectBlogLanguages(source) {
   const availableLanguages = [];
+  const incompleteLanguages = [];
   for (const lang of BLOG_LANGUAGES) {
     const fields = [source.title?.[lang], source.excerpt?.[lang], source.contentHtml?.[lang]];
     const completedFields = fields.filter(
@@ -11,9 +12,13 @@ export function resolveAvailableBlogLanguages(source) {
       throw new Error(`Post ${source.slug} is missing required English content.`);
     }
     if (lang !== "en" && completedFields > 0 && completedFields !== fields.length) {
-      throw new Error(`Post ${source.slug} has an incomplete ${lang} translation.`);
+      incompleteLanguages.push(lang);
     }
     if (completedFields === fields.length) availableLanguages.push(lang);
   }
-  return availableLanguages;
+  return { availableLanguages, incompleteLanguages };
+}
+
+export function resolveAvailableBlogLanguages(source) {
+  return inspectBlogLanguages(source).availableLanguages;
 }

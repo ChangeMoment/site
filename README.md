@@ -182,7 +182,7 @@ VITE_SITE_URL="https://www.example.com" \
 pnpm build
 ```
 
-The final static application is written to `dist/`. A successful build fails if English blog fields, any started-but-incomplete translation, routes, SEO metadata, JSON-LD, 404 output, or expected route chunks are missing.
+The final static application is written to `dist/`. A successful build fails if required English blog fields, routes, SEO metadata, JSON-LD, 404 output, or expected route chunks are missing. A partly entered French or Persian translation is reported as a warning and withheld from the public site until its title, excerpt, and body are all complete; it does not block the complete languages from publishing.
 
 ## WordPress requirements
 
@@ -201,7 +201,7 @@ sudo install -o www-data -g www-data -m 0644 \
   /var/www/cms/wp-content/mu-plugins/changemoment-headless.php
 ```
 
-The must-use plugin adds French and Persian editorial fields, exposes the sanitized `/wp-json/changemoment/v1/posts` contract, and writes a rebuild marker whenever a post is published.
+The must-use plugin adds clearly separated French and Persian editorial panels, exposes the sanitized `/wp-json/changemoment/v1/posts` contract, and writes a rebuild marker whenever a published post is created, edited, translated, unpublished, or trashed.
 
 The same plugin delivers contact-form messages through Resend. Store the API
 credential outside the repository and outside every web document root:
@@ -229,7 +229,7 @@ curl --fail --silent --show-error \
   http://127.0.0.1/cms/wp-json/changemoment/v1/posts
 ```
 
-Every published post must include its English title, excerpt, and content. French and Persian are optional, but once any field for one of those languages is entered, that language's title, excerpt, and content must all be completed. The article is listed and indexed only in languages with complete content. Rank Math title, description, canonical, Open Graph fields, and JSON-LD are fetched during the build and preserved in the public article HTML.
+Every published post must include its English title, excerpt, and content. French and Persian are optional while editing, but a localized page is created only after that language's title, excerpt, and content are all complete. Incomplete optional translations are shown as such in WordPress and are excluded from the public site without blocking English or another complete language. Rank Math title, description, canonical, Open Graph fields, and JSON-LD are fetched during the build and preserved in the public article HTML.
 
 ## Server filesystem
 
@@ -349,7 +349,9 @@ Publishing a WordPress post then follows this path:
 6. The service fetches WordPress and Rank Math output and runs the verified build.
 7. A new revision-labelled release is activated atomically and public routes are
    smoke-tested. A failed postflight restores the previous release.
-8. The temporary worktree is removed and only the eight newest releases are kept.
+8. The processed marker is removed only if no newer editorial save arrived
+   during the build; otherwise systemd performs one more rebuild so no save is lost.
+9. The temporary worktree is removed and only the eight newest releases are kept.
 
 Every code deployment must write its full 40-character Git SHA to
 `.revision` inside the release. The rebuild intentionally does not fetch or

@@ -17,6 +17,7 @@ RELEASE_DIR="$RELEASES_ROOT/$BUILD_ID-$TARGET_REVISION"
 PREVIOUS_RELEASE="$ACTIVE_RELEASE"
 WORKTREE_CREATED=0
 SWITCHED=0
+START_MARKER_TOKEN="$(cat "$MARKER" 2>/dev/null || true)"
 
 case "$ACTIVE_RELEASE" in
   "$RELEASES_ROOT"/*) ;;
@@ -90,7 +91,13 @@ test "$cms_code" = "200"
 test "$(readlink -f "$ACTIVE_LINK")" = "$RELEASE_DIR"
 
 SWITCHED=0
-rm -f "$MARKER"
+
+# Do not discard an editorial save that arrived while this build was running.
+# If the marker changed, leave it in place so systemd schedules one more build.
+CURRENT_MARKER_TOKEN="$(cat "$MARKER" 2>/dev/null || true)"
+if [[ -n "$START_MARKER_TOKEN" && "$CURRENT_MARKER_TOKEN" == "$START_MARKER_TOKEN" ]]; then
+  rm -f "$MARKER"
+fi
 echo "Published WordPress content from revision $TARGET_REVISION as $RELEASE_DIR"
 
 # Keep the eight newest releases. Validate every resolved path before removal
