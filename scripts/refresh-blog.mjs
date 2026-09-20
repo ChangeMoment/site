@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import sanitizeHtml from "sanitize-html";
-import { resolveAvailableBlogLanguages } from "./lib/blog-locales.mjs";
+import { inspectBlogLanguages } from "./lib/blog-locales.mjs";
 import { normalizeCmsUrl, rewriteArticleUrl } from "./lib/blog-urls.mjs";
 
 const cmsUrl = (process.env.WORDPRESS_URL || "").replace(/\/$/, "");
@@ -84,7 +84,13 @@ async function main() {
 
   const posts = [];
   for (const source of sourcePosts) {
-    const availableLanguages = resolveAvailableBlogLanguages(source);
+    const { availableLanguages, incompleteLanguages } = inspectBlogLanguages(source);
+    if (incompleteLanguages.length) {
+      console.warn(
+        `Post ${source.slug} has incomplete ${incompleteLanguages.join(", ")} translation fields; `
+        + "the complete languages will still be published.",
+      );
+    }
     const rankMath = await rankMathFor(source.cmsPermalink, `${siteUrl}/blogs/${source.slug}`);
     posts.push({
       id: `wp-${source.id}`,

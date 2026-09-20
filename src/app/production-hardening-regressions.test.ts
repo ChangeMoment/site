@@ -8,6 +8,8 @@ const apache = readDeploymentFile("apache-changemoment.conf");
 const httpSite = readDeploymentFile("apache-changemoment-site.conf");
 const httpsSite = readDeploymentFile("apache-changemoment-ssl-site.conf");
 const rebuildService = readDeploymentFile("changemoment-rebuild.service");
+const rebuildScript = readDeploymentFile("rebuild-site.sh");
+const headlessPlugin = readDeploymentFile("changemoment-headless.php");
 const provision = readDeploymentFile("provision.sh");
 const continueProvision = readDeploymentFile("continue-provision.sh");
 
@@ -62,5 +64,22 @@ describe("production hardening configuration", () => {
   it("gives the sandboxed rebuild a readable home directory", () => {
     expect(rebuildService).toContain("ProtectHome=true");
     expect(rebuildService).toContain("Environment=HOME=/tmp");
+  });
+
+  it("queues a rebuild for published article edits and gives editors clear locale status", () => {
+    expect(headlessPlugin).toContain("add_action('save_post_post'");
+    expect(headlessPlugin).toContain("cm_rebuild_after_featured_image_change");
+    expect(headlessPlugin).toContain("wp_generate_uuid4()");
+    expect(headlessPlugin).toContain("Complete — visible on the website");
+    expect(headlessPlugin).toContain("Incomplete — not visible yet");
+    expect(headlessPlugin).toContain("'translationStatus'");
+  });
+
+  it("does not discard a second editorial save that arrives during a rebuild", () => {
+    expect(rebuildScript).toContain('START_MARKER_TOKEN="$(cat "$MARKER"');
+    expect(rebuildScript).toContain('CURRENT_MARKER_TOKEN="$(cat "$MARKER"');
+    expect(rebuildScript).toContain(
+      '"$CURRENT_MARKER_TOKEN" == "$START_MARKER_TOKEN"',
+    );
   });
 });

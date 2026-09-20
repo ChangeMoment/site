@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveAvailableBlogLanguages } from "./lib/blog-locales.mjs";
+import { inspectBlogLanguages, resolveAvailableBlogLanguages } from "./lib/blog-locales.mjs";
 import { normalizeCmsUrl, rewriteArticleUrl } from "./lib/blog-urls.mjs";
 import { localizedRoutes } from "../shared/route-manifest.mjs";
 
@@ -24,10 +24,13 @@ describe("WordPress publishing locales", () => {
     expect(resolveAvailableBlogLanguages(source())).toEqual(["en"]);
   });
 
-  it("fails closed when an optional translation is only partly entered", () => {
-    expect(() => resolveAvailableBlogLanguages(source({
+  it("keeps complete languages publishable when an optional translation is only partly entered", () => {
+    expect(inspectBlogLanguages(source({
       title: { en: complete.title, fr: "Titre", fa: "" },
-    }))).toThrow("incomplete fr translation");
+    }))).toEqual({
+      availableLanguages: ["en"],
+      incompleteLanguages: ["fr"],
+    });
   });
 
   it("creates only the localized routes that contain complete article content", () => {
