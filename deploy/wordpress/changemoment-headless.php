@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ChangeMoment Headless Blog
  * Description: Three-language editorial fields plus sanitized blog and contact REST contracts for the ChangeMoment frontend.
- * Version: 1.3.1
+ * Version: 1.3.2
  */
 
 if (!defined('ABSPATH')) { exit; }
@@ -224,7 +224,7 @@ add_action('add_meta_boxes', function () {
             .cm-field textarea{min-height:80px}.cm-settings{display:grid;grid-template-columns:2fr 1fr;gap:16px}
             @media(max-width:782px){.cm-language-heading{align-items:flex-start;flex-direction:column}.cm-settings{grid-template-columns:1fr}}
         </style>';
-        echo '<div class="cm-editor-guide"><strong>How languages work:</strong> Write the English version in the normal WordPress title, excerpt, and editor above. A French or Persian page appears only when all three fields for that language are complete. You can safely save a partial translation; the complete languages will continue to publish.</div>';
+        echo '<div class="cm-editor-guide"><strong>How languages work:</strong> Write the English version in the normal WordPress title, excerpt, and editor above. A French or Persian page appears when its title and article body are complete. The short excerpt is optional and will be generated from the article body when left blank. You can safely save a partial translation; complete languages will continue to publish.</div>';
 
         $languages = [
             'fr' => ['French version', 'ltr', 'French'],

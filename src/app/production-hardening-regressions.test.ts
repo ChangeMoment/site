@@ -83,6 +83,7 @@ describe("production hardening configuration", () => {
     expect(headlessPlugin).toContain("cm_localized_excerpt($post->ID, 'fr')");
     expect(headlessPlugin).toContain("cm_localized_excerpt($post->ID, 'fa')");
     expect(headlessPlugin).toContain("short excerpt (optional)");
+    expect(headlessPlugin).toContain("appears when its title and article body are complete");
   });
 
   it("does not discard a second editorial save that arrives during a rebuild", () => {
