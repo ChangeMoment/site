@@ -6,7 +6,7 @@ describe("route manifest", () => {
   it("has one unique localized URL for every supported route", () => {
     const routes = localizedRoutes();
     expect(new Set(routes.map((route) => route.path)).size).toBe(routes.length);
-    expect(routes).toHaveLength(81);
+    expect(routes).toHaveLength(75); // Static and service routes; articles come only from the CMS.
   });
 
   it("matches the service data exactly", () => {

@@ -194,12 +194,9 @@ export const legacyBlogPosts: BlogPost[] = [
 
 const typedCmsBlogPosts = cmsBlogPosts as unknown as BlogPost[];
 
-export const blogPosts: BlogPost[] = [
-  ...typedCmsBlogPosts,
-  ...legacyBlogPosts.filter(
-    (legacy) => !typedCmsBlogPosts.some((cms) => cms.slug === legacy.slug),
-  ),
-];
+// WordPress is the publishing authority, including deletions and slug changes.
+// Keep the legacy export only for the one-time migration tooling above.
+export const blogPosts: BlogPost[] = typedCmsBlogPosts;
 
 export function hasBlogTranslation(post: BlogPost, lang: Lang): boolean {
   return !post.availableLanguages || post.availableLanguages.includes(lang);

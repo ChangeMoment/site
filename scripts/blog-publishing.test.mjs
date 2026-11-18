@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { inspectBlogLanguages, resolveAvailableBlogLanguages } from "./lib/blog-locales.mjs";
 import { normalizeCmsUrl, rewriteArticleUrl } from "./lib/blog-urls.mjs";
-import { localizedRoutes } from "../shared/route-manifest.mjs";
+import { basePaths, localizedRoutes } from "../shared/route-manifest.mjs";
 
 const complete = {
   title: "Title",
@@ -70,5 +70,20 @@ describe("WordPress URL normalization", () => {
       cmsPermalink,
       `${publicSite}/blogs/english-only`,
     )).toContain(`href="${publicSite}/blogs/english-only"`);
+  });
+});
+
+
+describe("WordPress deletions and renamed articles", () => {
+  it("does not generate any article routes when WordPress has no published posts", () => {
+    expect(basePaths([]).filter((path) => path.startsWith("/blogs/"))).toEqual([]);
+    expect(localizedRoutes([]).filter(({basePath}) => basePath.startsWith("/blogs/"))).toEqual([]);
+  });
+
+  it("removes a retired slug in all languages when WordPress renames an article", () => {
+    const posts = [{slug: "first-therapy-session", availableLanguages: ["en", "fr", "fa"]}];
+    const paths = localizedRoutes(posts).map(({path}) => path);
+    expect(paths.filter((path) => path.endsWith("/blogs/what-is-therapy"))).toEqual([]);
+    expect(paths.filter((path) => path.endsWith("/blogs/first-therapy-session"))).toHaveLength(3);
   });
 });
