@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { blogPosts } from "./data/blogs";
+import { legacyBlogPosts } from "./data/blogs";
 import { translations } from "./i18n/translations";
 import { getServiceBodyText } from "./pages/ServiceDetail";
 
@@ -46,7 +46,7 @@ const ifhp = {
 
 describe("Bahar feedback: message-by-message release checklist", () => {
   it("421826 removes References from the anxiety article and future CMS refreshes", () => {
-    const article = blogPosts.find((post) => post.slug === "anxiety-beyond-worry");
+    const article = legacyBlogPosts.find((post) => post.slug === "anxiety-beyond-worry");
     expect(article).toBeDefined();
     expect(article?.body.join(" ")).not.toMatch(/References|Références|منابع/);
     expect(source("../../scripts/refresh-blog.mjs")).toContain("stripTrailingReferences");
