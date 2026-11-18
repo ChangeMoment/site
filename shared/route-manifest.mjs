@@ -44,7 +44,6 @@ export function localizedPath(path, prefix) {
 
 export function basePaths(cmsPosts = []) {
   const blogSlugs = Array.from(new Set([
-    ...LEGACY_BLOG_SLUGS,
     ...cmsPosts.map((post) => post.slug).filter(Boolean),
   ]));
   return [
@@ -62,9 +61,8 @@ export function localizedRoutes(cmsPosts = []) {
   const commonRoutes = commonPaths.flatMap((path) =>
     LOCALES.map((locale) => ({ ...locale, basePath: path, path: localizedPath(path, locale.prefix) })),
   );
-  const blogLanguages = new Map(
-    LEGACY_BLOG_SLUGS.map((slug) => [slug, LOCALES.map(({ code }) => code)]),
-  );
+  // The CMS snapshot is authoritative even when it is empty.
+  const blogLanguages = new Map();
   for (const post of cmsPosts) {
     if (!post?.slug) continue;
     blogLanguages.set(
